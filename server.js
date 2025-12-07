@@ -11,6 +11,8 @@ const notificationRoutes = require('./routes/notifications');
 const { addUserToLocals } = require('./middleware/auth');
 
 const app = express();
+// Trust proxy is required for secure cookies behind Render's load balancer
+app.set('trust proxy', 1);
 const PORT = process.env.PORT || 3000;
 
 // Parse JSON (default small limit; text-only prompts)
