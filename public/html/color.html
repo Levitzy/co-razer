@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML - Colors | Co.Razer Docs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="/assets/basics.css">
+    <link rel="stylesheet" href="/assets/colors.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: '#6ee7ff',
+              accent: '#64f5a1',
+              'dark-bg': '#0b0d10',
+              'dark-panel': '#11151a',
+              'dark-border': '#1e2630',
+            }
+          }
+        }
+      }
+    </script>
+      <script defer src="/assets/app.js"></script>
+      <script defer src="/assets/comments.js"></script>
+    </head>
+  <body>
+    <div id="site-header"></div>
+
+    <main class="container docs">
+      <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false">
+        <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+        <span class="sidebar-toggle__label">HTML Docs</span>
+      </button>
+
+      <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+        <h3 id="docs-nav-heading">HTML Tutorial</h3>
+        <a href="/html/introduction.html">Introduction</a>
+        <a href="/html/editors.html">Editors</a>
+        <a href="/html/basics.html">Basics</a>
+        <a href="/html/elements.html">Elements</a>
+        <a href="/html/attributes.html">Attributes</a>
+        <a href="/html/headings.html">Headings</a>
+        <a href="/html/paragraphs.html">Paragraphs</a>
+        <a href="/html/styles.html">Styles</a>
+        <a href="/html/formatting.html">Formatting</a>
+        <a href="/html/comments.html">Comments</a>
+        <a href="/html/colors.html" class="active">Colors</a>
+        <a href="/html/qua.html">Quotations</a>
+        <h3>HTML Colors</h3>
+        <a href="/html/colors/rgb.html">RGB &amp; RGBA</a>
+      </aside>
+
+      <article class="article colors-article">
+        <h1>HTML Colors</h1>
+        <p>HTML colors are specified with predefined color names, or with RGB, HEX, HSL, RGBA, or HSLA values.</p>
+
+        <h2>Color Names</h2>
+        <p>In HTML, a color can be specified by using a color name:</p>
+        <div class="swatch-list" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;">
+          <div class="sw-row"><span class="swatch" style="background:Tomato"></span> Tomato</div>
+          <div class="sw-row"><span class="swatch" style="background:Orange"></span> Orange</div>
+          <div class="sw-row"><span class="swatch" style="background:DodgerBlue"></span> DodgerBlue</div>
+          <div class="sw-row"><span class="swatch" style="background:MediumSeaGreen"></span> MediumSeaGreen</div>
+          <div class="sw-row"><span class="swatch" style="background:Gray"></span> Gray</div>
+          <div class="sw-row"><span class="swatch" style="background:SlateBlue"></span> SlateBlue</div>
+          <div class="sw-row"><span class="swatch" style="background:Violet"></span> Violet</div>
+          <div class="sw-row"><span class="swatch" style="background:LightGray"></span> LightGray</div>
+        </div>
+        <p>HTML supports 140 standard color names.</p>
+
+        <h2>Background Color</h2>
+        <p>You can set the background color for HTML elements:</p>
+        <div class="live-demo">
+          <h1 style="background-color:DodgerBlue; padding:6px 8px; border-radius:6px;">Hello World</h1>
+          <p style="background-color:Tomato; padding:6px 8px; border-radius:6px; color: white;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <h3>Example</h3>
+<pre><code>&lt;h1 style="background-color:DodgerBlue;"&gt;Hello World&lt;/h1&gt;
+&lt;p style="background-color:Tomato;"&gt;Lorem ipsum...&lt;/p&gt;</code></pre>
+
+        <h2>Text Color</h2>
+        <p>You can set the color of text:</p>
+        <div class="live-demo">
+          <h1 style="color:Tomato;">Hello World</h1>
+          <p style="color:DodgerBlue;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+          <p style="color:MediumSeaGreen;">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <h3>Example</h3>
+<pre><code>&lt;h1 style="color:Tomato;"&gt;Hello World&lt;/h1&gt;
+&lt;p style="color:DodgerBlue;"&gt;Lorem ipsum...&lt;/p&gt;
+&lt;p style="color:MediumSeaGreen;"&gt;Ut wisi enim...&lt;/p&gt;</code></pre>
+
+        <h2>Border Color</h2>
+        <p>You can set the color of borders:</p>
+        <div class="live-demo">
+          <h1 style="border:2px solid Tomato; padding:4px 6px; border-radius:6px;">Hello World</h1>
+          <h1 style="border:2px solid DodgerBlue; padding:4px 6px; border-radius:6px;">Hello World</h1>
+          <h1 style="border:2px solid Violet; padding:4px 6px; border-radius:6px;">Hello World</h1>
+        </div>
+        <h3>Example</h3>
+<pre><code>&lt;h1 style="border:2px solid Tomato;"&gt;Hello World&lt;/h1&gt;
+&lt;h1 style="border:2px solid DodgerBlue;"&gt;Hello World&lt;/h1&gt;
+&lt;h1 style="border:2px solid Violet;"&gt;Hello World&lt;/h1&gt;</code></pre>
+
+        <h2>Color Values</h2>
+        <p>In HTML, colors can also be specified using RGB values, HEX values, HSL values, RGBA values, and HSLA values.</p>
+        <p>The following three <code>&lt;div&gt;</code> elements have their background color set with RGB, HEX, and HSL values:</p>
+        <div class="live-demo" style="display:grid; gap:6px;">
+          <div style="background:rgb(255, 99, 71); padding:8px; border-radius:6px;">rgb(255, 99, 71)</div>
+          <div style="background:#ff6347; padding:8px; border-radius:6px;">#ff6347</div>
+          <div style="background:hsl(9, 100%, 64%); padding:8px; border-radius:6px;">hsl(9, 100%, 64%)</div>
+        </div>
+        <p>The following two <code>&lt;div&gt;</code> elements have their background color set with RGBA and HSLA values, which add an Alpha channel to the color (here we have 50% transparency):</p>
+        <div class="live-demo" style="display:grid; gap:6px;">
+          <div style="background:rgba(255, 99, 71, 0.5); padding:8px; border-radius:6px;">rgba(255, 99, 71, 0.5)</div>
+          <div style="background:hsla(9, 100%, 64%, 0.5); padding:8px; border-radius:6px;">hsla(9, 100%, 64%, 0.5)</div>
+        </div>
+        <h3>Example</h3>
+<pre><code>&lt;h1 style="background-color:rgb(255, 99, 71);"&gt;...&lt;/h1&gt;
+&lt;h1 style="background-color:#ff6347;"&gt;...&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(9, 100%, 64%);"&gt;...&lt;/h1&gt;
+
+&lt;h1 style="background-color:rgba(255, 99, 71, 0.5);"&gt;...&lt;/h1&gt;
+&lt;h1 style="background-color:hsla(9, 100%, 64%, 0.5);"&gt;...&lt;/h1&gt;</code></pre>
+
+        <hr>
+        <h2>Practice: HTML Colors Game</h2>
+        <section id="colors-quiz" class="colors-quiz quiz-stage">
+          <!-- Q1: choose valid text color style (no radios) -->
+          <div id="kq1" class="quiz-screen">
+            <h3>Quick Quiz 1</h3>
+            <p class="note">Select the correct syntax to set text color to Tomato.</p>
+            <div class="q-choices" role="list">
+              <div class="k-choice" role="button" tabindex="0" data-correct="true"><span class="swatch" style="background:Tomato"></span> &lt;h1 style="color:Tomato;"&gt;Hello&lt;/h1&gt;</div>
+              <div class="k-choice" role="button" tabindex="0" data-correct="false"><span class="swatch" style="background:Tomato"></span> &lt;h1 style="text:Tomato;"&gt;Hello&lt;/h1&gt;</div>
+              <div class="k-choice" role="button" tabindex="0" data-correct="false"><span class="swatch" style="background:Tomato"></span> &lt;h1 color="Tomato"&gt;Hello&lt;/h1&gt;</div>
+              <div class="k-choice" role="button" tabindex="0" data-correct="false"><span class="swatch" style="background:Tomato"></span> &lt;h1 style="font-color:Tomato;"&gt;Hello&lt;/h1&gt;</div>
+            </div>
+            <div class="q-feedback" role="status" aria-live="polite"></div>
+          </div>
+
+          <!-- Q2: DnD background colors for h1 and p -->
+          <div id="kq2" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 2</h3>
+            <p class="note">Drag the correct attribute and values to set background colors.</p>
+            <section id="bg-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">&lt;h1 <span class="lslot" tabindex="0" data-accept="style-attr" aria-label="style attribute"></span>=<span class="lslot" tabindex="0" data-accept="bg-dodger" aria-label="dodger"></span>&gt;Hello World&lt;/h1&gt;</div>
+                <div class="code-line">&lt;p <span class="lslot" tabindex="0" data-accept="style-attr" aria-label="style attribute"></span>=<span class="lslot" tabindex="0" data-accept="bg-tomato" aria-label="tomato"></span>&gt;Lorem ipsum...&lt;/p&gt;</div>
+              </div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="style-attr"><code>style</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="style-attr"><code>style</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="bg-dodger"><code>"background-color:DodgerBlue;"</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="bg-tomato"><code>"background-color:Tomato;"</code></div>
+              </div>
+              <div id="kq2-score" class="link-score" aria-live="polite">Score: 0/4</div>
+            </section>
+          </div>
+
+          <!-- Q3: choose RGBA swatch -->
+          <div id="kq3" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 3</h3>
+            <p class="note">Which swatch represents <code>rgba(255, 99, 71, 0.5)</code>?</p>
+            <div class="q-choices" role="list">
+              <div class="k-choice" role="button" tabindex="0" data-correct="true"><span class="swatch" style="background:rgba(255,99,71,.5)"></span> rgba(255, 99, 71, 0.5)</div>
+              <div class="k-choice" role="button" tabindex="0" data-correct="false"><span class="swatch" style="background:hsla(9,100%,64%,.5)"></span> hsla(9, 100%, 64%, 0.5)</div>
+              <div class="k-choice" role="button" tabindex="0" data-correct="false"><span class="swatch" style="background:#ff6347"></span> #ff6347</div>
+            </div>
+            <div class="q-feedback" role="status" aria-live="polite"></div>
+          </div>
+
+          <div id="kq-done" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>All Quizzes Completed</h3>
+            <div class="done-card">
+              <p><strong>Great!</strong> You passed the HTML colors quizzes.</p>
+              <p><button type="button" class="button" id="kq-restart">Restart</button></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section video-section">
+          <h2>Video Tutorial</h2>
+          <p>Watch <a href="https://www.youtube.com/watch?v=yfoY53QXEnI" target="_blank" rel="noopener">Traversy Media's CSS Crash Course for Absolute Beginners</a> for an overview of color keywords, HEX/RGB syntax, and practical styling.</p>
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/yfoY53QXEnI" title="CSS Crash Course for Absolute Beginners" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <script defer src="/assets/colors-quiz.js"></script>
+
+        <!-- Comments Section -->
+        <div id="comments-section"></div>
+      </article>
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+</html>

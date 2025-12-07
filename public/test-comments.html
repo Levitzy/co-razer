@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Comments - Co.Razer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: '#6ee7ff',
+              accent: '#64f5a1',
+              'dark-bg': '#0b0d10',
+              'dark-panel': '#11151a',
+              'dark-border': '#1e2630',
+            }
+          }
+        }
+      }
+    </script>
+    <script src="/assets/comments.js"></script>
+</head>
+<body class="bg-dark-bg text-white min-h-screen">
+    <div id="site-header"></div>
+    
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="mb-12">
+            <h1 class="text-5xl font-bold mb-6 bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">
+                Test Comments System
+            </h1>
+            <p class="text-xl text-gray-300 leading-relaxed mb-6">
+                This page demonstrates the new commenting system. Try it out!
+            </p>
+        </div>
+
+        <!-- Sample Content -->
+        <section class="mb-12 p-8 bg-dark-panel border border-dark-border rounded-2xl">
+            <h2 class="text-3xl font-bold mb-4 text-white">About This Feature</h2>
+            
+            <div class="space-y-4 text-gray-300">
+                <p>
+                    The commenting system allows logged-in users to:
+                </p>
+                
+                <ul class="list-disc list-inside space-y-2 pl-4">
+                    <li>Post comments on any documentation page</li>
+                    <li>Like and unlike comments</li>
+                    <li>Edit their own comments</li>
+                    <li>Delete their own comments</li>
+                    <li>View all their comments in the dashboard</li>
+                </ul>
+
+                <div class="mt-6 p-4 bg-brand/10 border border-brand/30 rounded-xl">
+                    <h3 class="font-bold text-brand mb-2">💡 Tips:</h3>
+                    <ul class="space-y-1 text-sm">
+                        <li>• You must be logged in to comment</li>
+                        <li>• Comments support up to 2000 characters</li>
+                        <li>• Your profile picture will appear with your comments</li>
+                        <li>• Scroll down to try the comment section below!</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Showcase -->
+        <section class="mb-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 bg-dark-panel border border-dark-border rounded-xl">
+                <div class="text-4xl mb-4">💬</div>
+                <h3 class="text-xl font-bold mb-2">Post Comments</h3>
+                <p class="text-gray-400">Share your thoughts, ask questions, or provide feedback on any documentation page.</p>
+            </div>
+
+            <div class="p-6 bg-dark-panel border border-dark-border rounded-xl">
+                <div class="text-4xl mb-4">❤️</div>
+                <h3 class="text-xl font-bold mb-2">Like System</h3>
+                <p class="text-gray-400">Show appreciation for helpful comments with the like button.</p>
+            </div>
+
+            <div class="p-6 bg-dark-panel border border-dark-border rounded-xl">
+                <div class="text-4xl mb-4">📷</div>
+                <h3 class="text-xl font-bold mb-2">Profile Pictures</h3>
+                <p class="text-gray-400">Your profile picture appears with all your comments automatically.</p>
+            </div>
+
+            <div class="p-6 bg-dark-panel border border-dark-border rounded-xl">
+                <div class="text-4xl mb-4">🔐</div>
+                <h3 class="text-xl font-bold mb-2">Secure</h3>
+                <p class="text-gray-400">Enhanced password encryption with 12 bcrypt rounds for maximum security.</p>
+            </div>
+        </section>
+
+        <!-- How to Use -->
+        <section class="mb-12 p-8 bg-gradient-to-br from-brand/5 via-dark-panel to-accent/5 border border-dark-border rounded-2xl">
+            <h2 class="text-3xl font-bold mb-6 text-white">How to Add Comments to Your Pages</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-lg font-semibold text-brand mb-2">Step 1: Include the Script</h3>
+                    <pre class="bg-dark-bg p-4 rounded-lg overflow-x-auto text-sm"><code class="text-gray-300">&lt;script src="/assets/comments.js"&gt;&lt;/script&gt;</code></pre>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-accent mb-2">Step 2: Add the Container</h3>
+                    <pre class="bg-dark-bg p-4 rounded-lg overflow-x-auto text-sm"><code class="text-gray-300">&lt;div id="comments-section"&gt;&lt;/div&gt;</code></pre>
+                </div>
+
+                <div>
+                    <p class="text-gray-300">
+                        That's it! The comments widget will automatically initialize and display comments for the current page URL.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comments Section -->
+        <div id="comments-section"></div>
+    </main>
+    
+    <div id="site-footer"></div>
+    <script defer src="/assets/app.js"></script>
+</body>
+</html>
+

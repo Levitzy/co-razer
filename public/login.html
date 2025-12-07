@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to Co.Razer - Access your HTML & CSS learning dashboard">
+    <meta name="theme-color" content="#6ee7ff">
+    <title>Login - Co.Razer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#6ee7ff',
+                        accent: '#64f5a1',
+                        'dark-bg': '#0b0d10',
+                        'dark-panel': '#11151a',
+                        'dark-border': '#1e2630',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-bg min-h-screen flex items-center justify-center p-4">
+    <!-- Animated background gradient -->
+    <div class="fixed inset-0 bg-gradient-to-br from-brand/5 via-dark-bg to-accent/5 pointer-events-none"></div>
+    
+    <div class="relative z-10 w-full max-w-md">
+        <!-- Auth Container -->
+        <div class="bg-dark-panel border-2 border-dark-border rounded-3xl p-8 sm:p-10 shadow-2xl backdrop-blur-xl">
+            <!-- Logo Section -->
+            <div class="text-center mb-8">
+                <a href="/" class="inline-block mb-4 transition-transform hover:scale-105">
+                    <img src="/assets/logo.png" alt="Co.Razer logo" class="w-16 h-16 mx-auto rounded-2xl shadow-lg ring-2 ring-brand/30 hover:ring-brand transition-all duration-300" onerror="this.style.display='none'">
+                </a>
+                <h1 class="text-3xl font-bold bg-gradient-to-r from-brand via-white to-accent bg-clip-text text-transparent mb-2">
+                    Welcome Back
+                </h1>
+                <p class="text-gray-400 text-sm">Sign in to continue your learning journey</p>
+            </div>
+
+            <!-- Alert Container -->
+            <div id="alertContainer" class="mb-6"></div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="space-y-5">
+                <div>
+                    <label for="identifier" class="block text-sm font-semibold text-gray-300 mb-2">
+                        Email or Username
+                    </label>
+                    <input 
+                        type="text" 
+                        id="identifier" 
+                        name="identifier" 
+                        required 
+                        autocomplete="username"
+                        class="w-full px-4 py-3 bg-dark-bg border-2 border-dark-border rounded-xl text-white placeholder-gray-500 transition-all duration-300 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 hover:border-brand/50"
+                        placeholder="Enter your email or username"
+                    >
+                </div>
+
+                <div>
+                    <label for="password" class="block text-sm font-semibold text-gray-300 mb-2">
+                        Password
+                    </label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        required 
+                        autocomplete="current-password"
+                        class="w-full px-4 py-3 bg-dark-bg border-2 border-dark-border rounded-xl text-white placeholder-gray-500 transition-all duration-300 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 hover:border-brand/50"
+                        placeholder="Enter your password"
+                    >
+                </div>
+
+                <button 
+                    type="submit" 
+                    id="loginBtn"
+                    class="w-full py-3.5 bg-gradient-to-r from-brand to-accent text-dark-bg font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-brand/50 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-dark-panel disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+                >
+                    <span class="inline-flex items-center justify-center gap-2">
+                        <span>🔑</span>
+                        <span>Login</span>
+                    </span>
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="relative my-8">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-dark-border"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-4 bg-dark-panel text-gray-500 font-medium">OR</span>
+                </div>
+            </div>
+
+            <!-- Register Link -->
+            <div class="text-center space-y-4">
+                <p class="text-gray-400 text-sm">
+                    Don't have an account? 
+                    <a href="/register.html" class="text-brand font-semibold hover:text-accent transition-colors duration-300 hover:underline">
+                        Register here
+                    </a>
+                </p>
+                
+                <a href="/" class="inline-flex items-center gap-2 text-gray-500 text-sm hover:text-brand transition-colors duration-300 group">
+                    <span class="group-hover:-translate-x-1 transition-transform">←</span>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="mt-6 text-center">
+            <p class="text-gray-500 text-xs">
+                By logging in, you agree to our 
+                <a href="#" class="text-brand hover:text-accent transition-colors">Terms</a> and 
+                <a href="#" class="text-brand hover:text-accent transition-colors">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const loginBtn = document.getElementById('loginBtn');
+        const alertContainer = document.getElementById('alertContainer');
+
+        // Check if already logged in
+        async function checkAuthAndRedirect() {
+            try {
+                const response = await fetch('/api/auth/me');
+                const data = await response.json();
+                if (data.success && data.user) {
+                    window.location.href = '/dashboard.html';
+                }
+            } catch (error) {
+                // Not logged in, stay on login page
+            }
+        }
+
+        checkAuthAndRedirect();
+
+        function showAlert(message, type = 'error') {
+            const bgColor = type === 'error' ? 'bg-red-500/10' : 'bg-accent/10';
+            const borderColor = type === 'error' ? 'border-red-500/50' : 'border-accent/50';
+            const textColor = type === 'error' ? 'text-red-400' : 'text-accent';
+            const icon = type === 'error' ? '❌' : '✅';
+            
+            alertContainer.innerHTML = `
+                <div class="${bgColor} ${borderColor} ${textColor} border-2 rounded-xl p-4 flex items-start gap-3 animate-pulse">
+                    <span class="text-lg flex-shrink-0">${icon}</span>
+                    <span class="text-sm font-medium">${message}</span>
+                </div>
+            `;
+            setTimeout(() => {
+                alertContainer.innerHTML = '';
+            }, 5000);
+        }
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const identifier = document.getElementById('identifier').value;
+            const password = document.getElementById('password').value;
+
+            // Disable button and update text
+            loginBtn.disabled = true;
+            loginBtn.innerHTML = `
+                <span class="inline-flex items-center justify-center gap-2">
+                    <svg class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span>Logging in...</span>
+                </span>
+            `;
+
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ identifier, password })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showAlert('Login successful! Redirecting...', 'success');
+                    setTimeout(() => {
+                        window.location.href = '/dashboard.html';
+                    }, 1000);
+                } else {
+                    showAlert(data.error || 'Login failed');
+                    loginBtn.disabled = false;
+                    loginBtn.innerHTML = `
+                        <span class="inline-flex items-center justify-center gap-2">
+                            <span>🔑</span>
+                            <span>Login</span>
+                        </span>
+                    `;
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                showAlert('An error occurred. Please try again.');
+                loginBtn.disabled = false;
+                loginBtn.innerHTML = `
+                    <span class="inline-flex items-center justify-center gap-2">
+                        <span>🔑</span>
+                        <span>Login</span>
+                    </span>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS - Custom Properties | Co.Razer Docs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/css-docs.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#6ee7ff',
+            accent: '#64f5a1',
+            'dark-bg': '#0b0d10',
+            'dark-panel': '#11151a',
+            'dark-border': '#1e2630',
+          }
+        }
+      }
+    }
+  </script>
+  <script defer src="/assets/app.js"></script>
+  <script defer src="/assets/css-quiz.js"></script>
+  <script defer src="/assets/comments.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container docs">
+    <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false">
+      <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+      <span class="sidebar-toggle__label">CSS Docs</span>
+    </button>
+
+    <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+      <h3 id="docs-nav-heading">CSS Docs</h3>
+      <a href="/css/introduction.html">Introduction</a>
+      <a href="/css/selectors.html">Selectors</a>
+      <a href="/css/layout.html">Layout</a>
+      <a href="/css/box-model.html">Box Model</a>
+      <a href="/css/typography.html">Typography</a>
+      <a href="/css/flexbox.html">Flexbox</a>
+      <a href="/css/grid.html">Grid</a>
+      <a href="/css/variables.html">Custom Properties</a>
+    </aside>
+
+    <article class="article css-article">
+      <header>
+        <h1>CSS Custom Properties</h1>
+        <p class="lead">Custom properties, also known as CSS variables, let you store reusable values and adjust them at runtime. They are scoped, cascade-aware, and incredibly powerful for theming.</p>
+      </header>
+
+      <section class="doc-section">
+        <h2>Declaring Variables</h2>
+        <p>Custom properties start with two hyphens. Declare globals on <code>:root</code> and component-level tokens inside selectors so they inherit appropriately.</p>
+        <div class="variables-preview">
+          <div class="swatch"><span style="width:18px;height:18px;border-radius:50%;background:#38bdf8;display:inline-block;"></span><code>--accent</code> = <code>#38bdf8</code></div>
+          <div class="swatch"><span style="width:18px;height:18px;border-radius:50%;background:#0f172a;display:inline-block;"></span><code>--surface</code> = <code>#0f172a</code></div>
+        </div>
+<pre><code>:root {
+  --accent: #38bdf8;
+  --surface: #0f172a;
+  --radius-lg: 18px;
+}</code></pre>
+      </section>
+
+      <section class="doc-section">
+        <h2>Using And Overriding</h2>
+        <p>Reference variables with <code>var(--name, fallback)</code>. Because they participate in the cascade, you can override tokens for specific themes or components.</p>
+<pre><code>.card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--accent), transparent 70%);
+}</code></pre>
+        <p>Provide a fallback value for older browsers or unexpected overrides.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>Theming Patterns</h2>
+        <p>Scope variables to theme selectors and toggle them with classes or media queries. Keep semantic names (<code>--color-text-muted</code>) so the tokens describe intent rather than raw hues.</p>
+<pre><code>.theme-light {
+  --color-text: #0f172a;
+  --color-panel: #ffffff;
+}
+
+.theme-dark {
+  --color-text: #e2e8f0;
+  --color-panel: #0f172a;
+}</code></pre>
+        <p>Switching themes becomes as simple as changing a class on <code>&lt;body&gt;</code>.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>Runtime Tricks And Best Practices</h2>
+        <ul class="definition-list">
+          <li><strong>Use in calculations:</strong> Variables plug into <code>calc()</code>, letting you compose spacing systems such as <code>calc(var(--gap) * 2)</code>.</li>
+          <li><strong>Expose from JavaScript:</strong> Update values with <code>element.style.setProperty('--accent', '#4ade80')</code> to react to user preferences or live sliders.</li>
+          <li><strong>Type safety:</strong> The <code>@property</code> rule registers custom properties with syntax and defaults, enabling transitions on color tokens and lengths.</li>
+          <li><strong>Avoid hard-coding:</strong> Start with design tokens like <code>--color-background</code> instead of generic names so swapping palettes remains clear.</li>
+        </ul>
+        <p>Because custom properties participate in the cascade, always define sensible defaults near the root and override them closer to the components that need them.</p>
+      </section>
+
+      <section class="css-quiz" id="variables-quiz" aria-labelledby="variables-quiz-heading">
+        <h2 id="variables-quiz-heading">Mini Game: Variable Synth</h2>
+        <p class="note">Drag tokens into each blank to wire up a theme with custom properties.</p>
+
+        <div class="quiz-stage" data-stage="declare" tabindex="-1">
+          <h3>Stage 1 - Declare Values</h3>
+          <p>Create the variables needed for a glowing panel component.</p>
+<pre><code>:root {
+  <span class="drop-slot" data-accept="accent-line" data-placeholder="--accent: ?;"></span>
+  <span class="drop-slot" data-accept="surface-line" data-placeholder="--surface: ?;"></span>
+  <span class="drop-slot" data-accept="radius-line" data-placeholder="--radius-lg: ?;"></span>
+}</code></pre>
+          <div class="token-bank">
+            <div class="drag-token" data-token="accent-line" data-display="<code>--accent: #38bdf8;</code>"><code>--accent: #38bdf8;</code></div>
+            <div class="drag-token" data-token="surface-line" data-display="<code>--surface: #0f172a;</code>"><code>--surface: #0f172a;</code></div>
+            <div class="drag-token" data-token="radius-line" data-display="<code>--radius-lg: 18px;</code>"><code>--radius-lg: 18px;</code></div>
+          </div>
+          <div class="quiz-score" data-role="score">Score: 0/3</div>
+          <div class="quiz-actions">
+            <button type="button" data-role="reset">Reset stage</button>
+          </div>
+          <p class="is-hidden" data-role="complete">Smooth! Your design tokens are declared.</p>
+        </div>
+
+        <div class="quiz-stage is-hidden" data-stage="apply" tabindex="-1">
+          <h3>Stage 2 - Apply And Fallback</h3>
+          <p>Assign each rule to the statement it satisfies.</p>
+          <ul class="definition-list">
+            <li><span class="drop-slot" data-accept="accent-usage" data-placeholder="Drop rule"></span> sets button text color and adapts when the theme changes.</li>
+            <li><span class="drop-slot" data-accept="surface-fallback" data-placeholder="Drop rule"></span> fills panels but falls back if <code>--surface</code> is missing.</li>
+            <li><span class="drop-slot" data-accept="radius-usage" data-placeholder="Drop rule"></span> rounds corners using the shared radius token.</li>
+          </ul>
+          <div class="token-bank">
+            <div class="drag-token" data-token="accent-usage" data-display="<code>color: var(--accent);</code>"><code>color: var(--accent);</code></div>
+            <div class="drag-token" data-token="surface-fallback" data-display="<code>background: var(--surface, #111827);</code>"><code>background: var(--surface, #111827);</code></div>
+            <div class="drag-token" data-token="radius-usage" data-display="<code>border-radius: var(--radius-lg);</code>"><code>border-radius: var(--radius-lg);</code></div>
+          </div>
+          <div class="quiz-score" data-role="score">Score: 0/3</div>
+          <div class="quiz-actions">
+            <button type="button" data-role="reset">Reset stage</button>
+          </div>
+          <p class="is-hidden" data-role="complete">Nice! Your component is powered by resilient tokens.</p>
+        </div>
+
+        <div class="quiz-complete is-hidden" data-role="quiz-done" aria-hidden="true">
+          <h3>You synthesized a theme!</h3>
+          <p>Custom properties scale from button colors to full application design systems.</p>
+          <button type="button" class="button" data-role="restart">Play again</button>
+        </div>
+      </section>
+
+      <!-- Comments Section -->
+      <div id="comments-section"></div>
+    </article>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

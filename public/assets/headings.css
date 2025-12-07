@@ -1,0 +1,7 @@
+/* Minor tweaks specific to Headings page */
+.headings-article h1 { margin-bottom: 6px; }
+.headings-article h2 { margin-top: 24px; margin-bottom: 8px; }
+.headings-article h3 { margin-top: 14px; color: var(--muted); }
+.headings-article pre { margin: 12px 0 18px; }
+.headings-article .note { color: var(--muted); }
+

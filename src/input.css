@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables for dark theme */
+:root {
+  --bg: #0b0d10;
+  --panel: #11151a;
+  --text: #e7edf3;
+  --muted: #a6b3bf;
+  --brand: #6ee7ff;
+  --link: #7dd3fc;
+  --accent: #64f5a1;
+  --danger: #f87171;
+  --border: #1e2630;
+  --code-bg: #0e1318;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+  --radius: 16px;
+  --header-height: 70px;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-white font-sans overflow-x-hidden;
+    background: radial-gradient(1200px 800px at 10% 0%, rgba(110, 231, 255, 0.06), transparent 60%),
+                radial-gradient(800px 600px at 90% 10%, rgba(100, 245, 161, 0.05), transparent 60%),
+                var(--bg);
+  }
+
+  img, svg, video, canvas {
+    @apply max-w-full h-auto;
+  }
+}
+
+@layer components {
+  /* Skip Link */
+  .skip-link {
+    @apply absolute -translate-y-full focus:translate-y-0 bg-brand text-dark-bg px-4 py-2 rounded-lg font-semibold z-50 transition-transform;
+  }
+
+  /* Header Styles */
+  .site-header {
+    @apply sticky top-0 z-50 w-full bg-dark-panel/80 backdrop-blur-lg border-b border-dark-border flex items-center justify-between px-4 lg:px-6;
+    min-height: var(--header-height);
+  }
+
+  .brand {
+    @apply flex items-center gap-3 no-underline text-white font-bold tracking-wide hover:text-brand transition-colors;
+  }
+
+  .brand img {
+    @apply w-8 h-8 rounded-full shadow-glow;
+  }
+
+  /* Navigation */
+  .main-nav {
+    @apply hidden lg:flex gap-2 items-center ml-auto;
+  }
+
+  .main-nav a {
+    @apply no-underline text-gray-400 px-3 py-2 rounded-xl border border-transparent hover:text-white hover:border-dark-border hover:bg-gradient-to-b hover:from-brand/5 hover:to-accent/5 transition-all;
+  }
+
+  .main-nav a.active {
+    @apply text-white border-dark-border bg-gradient-to-b from-brand/5 to-accent/5;
+  }
+
+  /* Buttons */
+  .button {
+    @apply inline-flex items-center gap-2 no-underline px-5 py-3 rounded-xl font-semibold text-base transition-all border-2 border-transparent;
+  }
+
+  .button.primary {
+    @apply bg-gradient-to-br from-brand to-accent text-dark-bg hover:-translate-y-0.5 hover:shadow-glow-brand;
+  }
+
+  .button.secondary {
+    @apply bg-white/5 text-white border-dark-border backdrop-blur-md hover:bg-white/10 hover:border-brand hover:shadow-glow-brand/50;
+  }
+
+  /* Feature Cards */
+  .feature-card {
+    @apply bg-dark-panel border border-dark-border rounded-xl p-6 shadow-glow transition-all hover:-translate-y-1 hover:shadow-xl hover:border-brand relative overflow-hidden;
+  }
+
+  .feature-card::before {
+    @apply content-[''] absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand to-accent opacity-0 transition-opacity;
+  }
+
+  .feature-card:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Partnership Items */
+  .partnership-item {
+    @apply p-5 bg-white/5 border border-dark-border rounded-xl transition-all hover:bg-white/10 hover:border-brand;
+  }
+
+  /* Footer */
+  .site-footer {
+    @apply mt-16 pt-8 pb-6 border-t border-dark-border text-gray-400 bg-gradient-to-b from-dark-panel/80 to-dark-bg/90;
+  }
+
+  /* Code Blocks */
+  .article pre {
+    @apply relative bg-gradient-to-br from-brand/10 to-accent/10 p-4 rounded-xl border border-dark-border shadow-glow overflow-auto;
+    background: radial-gradient(120% 140% at 10% -10%, rgba(110,231,255,0.09), transparent 60%),
+                radial-gradient(120% 140% at 100% 0%, rgba(100,245,161,0.08), transparent 60%),
+                var(--code-bg);
+    border-left: 3px solid var(--link);
+  }
+
+  /* Playground Styles */
+  .pg-editor textarea {
+    @apply w-full min-h-[200px] p-3 rounded-xl border border-dark-border text-white font-mono leading-relaxed resize-vertical;
+    background: radial-gradient(120% 140% at 10% -10%, rgba(110,231,255,0.07), transparent 60%),
+                radial-gradient(120% 140% at 100% 0%, rgba(100,245,161,0.06), transparent 60%),
+                var(--code-bg);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent;
+  }
+}
+

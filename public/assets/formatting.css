@@ -1,0 +1,10 @@
+/* Formatting page helpers */
+.format-article h1 { margin-bottom: 6px; }
+.format-article h2 { margin-top: 24px; margin-bottom: 8px; }
+.format-article h3 { margin-top: 14px; color: var(--muted); }
+.format-article pre { margin: 12px 0 18px; }
+.format-article .note { color: var(--muted); }
+.mini-table { width: 100%; border-collapse: collapse; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.mini-table th, .mini-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; }
+.mini-table thead th { background: rgba(255,255,255,0.03); color: var(--muted); }
+

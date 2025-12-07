@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Coding Guide | Co.Razer Docs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: '#6ee7ff',
+              accent: '#64f5a1',
+              'dark-bg': '#0b0d10',
+              'dark-panel': '#11151a',
+              'dark-border': '#1e2630',
+            }
+          }
+        }
+      }
+    </script>
+    <script defer src="/assets/app.js"></script>
+    <script defer src="/vendor/marked/lib/marked.umd.js"></script>
+    <script defer src="/assets/ai.js"></script>
+  </head>
+  <body class="bg-dark-bg text-white">
+    <div id="site-header"></div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+      <!-- Hero Section -->
+      <section class="relative overflow-hidden bg-gradient-to-br from-brand/10 via-dark-panel to-accent/5 border-2 border-dark-border rounded-3xl p-8 lg:p-12 shadow-2xl">
+        <div class="absolute inset-0 bg-gradient-to-r from-brand/5 to-accent/5 opacity-50 blur-3xl"></div>
+        
+        <div class="relative z-10 text-center">
+          <div class="flex items-center justify-center gap-3 mb-4">
+            <span class="text-5xl" aria-hidden="true">🤖</span>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-brand via-white to-accent bg-clip-text text-transparent">
+              AI Coding Guide
+            </h1>
+          </div>
+          <p class="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            Ask for help with HTML, CSS, and general web dev. Get concise, actionable answers with runnable snippets powered by advanced AI.
+          </p>
+        </div>
+      </section>
+
+      <!-- Chat Section -->
+      <section class="space-y-6" aria-label="AI coding chat">
+        <!-- Messages Area -->
+        <div id="ai-messages" class="min-h-[400px] max-h-[600px] overflow-y-auto bg-dark-panel border-2 border-dark-border rounded-2xl p-4 lg:p-6 shadow-xl" role="log" aria-live="polite"></div>
+
+        <!-- Input Form -->
+        <form id="ai-form" class="bg-dark-panel border-2 border-dark-border rounded-2xl p-4 lg:p-6 shadow-xl space-y-4" aria-label="Ask a question">
+          <div>
+            <label for="ai-input" class="block text-sm font-semibold text-gray-300 mb-2 flex items-center gap-2">
+              <span class="text-brand">💬</span>
+              Your Question
+            </label>
+            <textarea 
+              id="ai-input" 
+              rows="4" 
+              placeholder="Ask about HTML/CSS, debugging, best practices, or frameworks..."
+              class="w-full p-4 rounded-xl border-2 border-dark-border bg-dark-bg/50 text-white placeholder-gray-500 focus:border-brand focus:outline-none transition-colors resize-none"
+            ></textarea>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row gap-3">
+            <button 
+              id="ai-send" 
+              class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-brand to-accent text-dark-bg font-bold rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-brand/30"
+              type="submit"
+            >
+              <span class="text-xl">🚀</span>
+              Ask AI
+            </button>
+            <button 
+              id="ai-clear" 
+              class="sm:flex-initial flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/5 backdrop-blur-md text-white font-semibold rounded-xl border-2 border-dark-border hover:bg-white/10 hover:border-red-500 transition-all"
+              type="button"
+            >
+              <span class="text-xl">🗑️</span>
+              Clear Chat
+            </button>
+          </div>
+        </form>
+
+        <!-- Suggestions -->
+        <div class="space-y-3">
+          <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider flex items-center gap-2">
+            <span class="text-accent">✨</span>
+            Try These Examples
+          </h3>
+          <div class="flex flex-wrap gap-3">
+            <button 
+              class="inline-flex items-center gap-2 px-4 py-2.5 bg-dark-panel border-2 border-dark-border rounded-xl text-sm text-gray-300 hover:text-white hover:border-brand hover:bg-dark-panel/80 transition-all"
+              data-example
+            >
+              <span class="text-brand">📦</span>
+              Explain CSS Flexbox with a small layout
+            </button>
+            <button 
+              class="inline-flex items-center gap-2 px-4 py-2.5 bg-dark-panel border-2 border-dark-border rounded-xl text-sm text-gray-300 hover:text-white hover:border-accent hover:bg-dark-panel/80 transition-all"
+              data-example
+            >
+              <span class="text-accent">🐛</span>
+              Debug a layout broken by CSS specificity
+            </button>
+            <button 
+              class="inline-flex items-center gap-2 px-4 py-2.5 bg-dark-panel border-2 border-dark-border rounded-xl text-sm text-gray-300 hover:text-white hover:border-brand hover:bg-dark-panel/80 transition-all"
+              data-example
+            >
+              <span class="text-brand">📱</span>
+              Make a responsive 2-column grid
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+</html>

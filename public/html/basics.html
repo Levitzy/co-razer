@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn HTML basics with practical examples. Master document structure, headings, paragraphs, links, images, and essential HTML elements with interactive tutorials.">
+  <meta name="keywords" content="HTML basics, HTML tutorial, document structure, headings, paragraphs, links, images, HTML elements">
+  <meta name="author" content="Co.Razer Documentation Team">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HTML Basics - Learn Essential HTML Elements">
+  <meta property="og:description" content="Master HTML basics with practical examples and interactive tutorials. Learn document structure, headings, paragraphs, links, and images.">
+  <meta property="og:url" content="https://co-razer.com/html/basics.html">
+  
+  <title>HTML Basics - Learn Essential HTML Elements | Co.Razer Docs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/basics.css">
+  <link rel="canonical" href="https://co-razer.com/html/basics.html">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#6ee7ff',
+            accent: '#64f5a1',
+            'dark-bg': '#0b0d10',
+            'dark-panel': '#11151a',
+            'dark-border': '#1e2630',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "HTML Basics - Learn Essential HTML Elements",
+    "description": "Master HTML basics with practical examples and interactive tutorials",
+    "author": {
+      "@type": "Organization",
+      "name": "Co.Razer Documentation Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Co.Razer",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "/assets/logo.png"
+      }
+    },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://co-razer.com/html/basics.html"
+    }
+  }
+  </script>
+  
+  <script defer src="/assets/app.js"></script>
+  <script defer src="/assets/comments.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main id="main-content" class="container docs">
+    <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false" aria-label="Toggle HTML documentation navigation">
+      <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+      <span class="sidebar-toggle__label">HTML Docs</span>
+    </button>
+
+    <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+      <h3 id="docs-nav-heading">HTML Tutorial</h3>
+      <nav aria-label="HTML tutorial navigation">
+        <a href="/html/introduction.html">Introduction</a>
+        <a href="/html/editors.html">Editors</a>
+        <a href="/html/basics.html" class="active" aria-current="page">Basics</a>
+        <a href="/html/elements.html">Elements</a>
+        <a href="/html/attributes.html">Attributes</a>
+        <a href="/html/headings.html">Headings</a>
+        <a href="/html/paragraphs.html">Paragraphs</a>
+        <a href="/html/styles.html">Styles</a>
+        <a href="/html/formatting.html">Formatting</a>
+        <a href="/html/comments.html">Comments</a>
+        <a href="/html/colors.html">Colors</a>
+        <a href="/html/colors/rgb.html">RGB &amp; RGBA</a>
+        <a href="/html/qua.html">Quotations</a>
+      </nav>
+    </aside>
+
+      <article class="article basic-article">
+        <h1>HTML Basic Examples</h1>
+        <p>In this chapter we will show some basic HTML examples. Don't worry if we <u></u>se tags you have not learned about yet.</p>
+
+        <h2>HTML Documents</h2>
+        <p>All HTML documents must start with a document type declaration: <code>&lt;!DOCTYPE html&gt;</code>.</p>
+        <p>The HTML document itself begins with <code>&lt;html&gt;</code> and ends with <code>&lt;/html&gt;</code>.</p>
+        <p>The visible part of the HTML document is between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>.</p>
+
+        <h3>Example</h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;My First Heading&lt;/h1&gt;
+&lt;p&gt;My first paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h2>The &lt;!DOCTYPE&gt; Declaration</h2>
+        <p>The <code>&lt;!DOCTYPE&gt;</code> declaration represents the document type, and helps browsers to display web pages correctly.</p>
+        <p>It must only appear once, at the top of the page (before any HTML tags).</p>
+        <p>The <code>&lt;!DOCTYPE&gt;</code> declaration is not case sensitive.</p>
+        <p>The <code>&lt;!DOCTYPE&gt;</code> declaration for HTML5 is:</p>
+<pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+
+        <h2>HTML Headings</h2>
+        <p>HTML headings are defined with the <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> tags.</p>
+        <p><code>&lt;h1&gt;</code> defines the most important heading. <code>&lt;h6&gt;</code> defines the least important heading:</p>
+        <h3>Example</h3>
+<pre><code>&lt;h1&gt;This is heading 1&lt;/h1&gt;
+&lt;h2&gt;This is heading 2&lt;/h2&gt;
+&lt;h3&gt;This is heading 3&lt;/h3&gt;</code></pre>
+
+        <h2>HTML Paragraphs</h2>
+        <p>HTML paragraphs are defined with the <code>&lt;p&gt;</code> tag:</p>
+        <h3>Example</h3>
+<pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;</code></pre>
+
+        <h2>HTML Links</h2>
+        <p>HTML links are defined with the <code>&lt;a&gt;</code> tag:</p>
+        <h3>Example</h3>
+<pre><code>&lt;a href="https://www.w3schools.com"&gt;This is a link&lt;/a&gt;</code></pre>
+        <p>The link's destination is specified in the <code>href</code> attribute.</p>
+        <p>Attributes are used to provide additional information about HTML elements.</p>
+        <p>You will learn more about attributes in a later chapter.</p>
+
+        <h2>HTML Images</h2>
+        <p>HTML images are defined with the <code>&lt;img&gt;</code> tag.</p>
+        <p>The source file (<code>src</code>), alternative text (<code>alt</code>), width, and height are provided as attributes:</p>
+        <h3>Example</h3>
+<pre><code>&lt;img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142"&gt;</code></pre>
+
+        <h2>How to View HTML Source</h2>
+        <p>Have you ever seen a Web page and wondered "Hey! How did they do that?"</p>
+        <p><strong>View HTML Source Code:</strong><br>
+        Click CTRL + U in an HTML page, or right-click on the page and select "View Page Source". This will open a new tab containing the HTML source code of the page.</p>
+        <p><strong>Inspect an HTML Element:</strong><br>
+        Right-click on an element (or a blank area), and choose "Inspect" to see what elements are made up of (you will see both the HTML and the CSS). You can also edit the HTML or CSS on-the-fly in the Elements or Styles panel that opens.</p>
+
+        <hr>
+        <section id="quiz-stage" class="quiz-stage">
+          <div id="quiz1-screen" class="quiz-screen">
+            <h2>Quick Quiz 1</h2>
+            <section id="dnd-quiz" class="dnd-quiz" aria-live="polite">
+          <p class="note">Question: What is a correct HTML markup for the document type declaration?</p>
+
+          <div class="dnd-choices" role="list">
+            <div class="dnd-choice" role="listitem" draggable="true" data-value="<!DOCTYPE html>"><code>&lt;!DOCTYPE html&gt;</code></div>
+            <div class="dnd-choice" role="listitem" draggable="true" data-value="DOCTYPE html;"><code>DOCTYPE html;</code></div>
+            <div class="dnd-choice" role="listitem" draggable="true" data-value="--DOCTYPE html;"><code>--DOCTYPE html;</code></div>
+          </div>
+
+          <div class="dnd-answer-wrap">
+            <div id="dnd-drop" class="dnd-drop" tabindex="0" aria-label="Answer drop zone">Drop answer here</div>
+          </div>
+
+              <div id="dnd-result" class="dnd-result" aria-live="polite"></div>
+              <div class="reveal-row">
+                <button type="button" class="button secondary" id="dq-reveal">Show Answer</button>
+                <button type="button" class="button secondary" id="dq-reset">Reset</button>
+              </div>
+            </section>
+          </div>
+
+          <div id="quiz2-screen" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h2 id="quiz2-heading">Quick Quiz 2</h2>
+            <p class="note">Place the start- and end-tags in the correct positions.</p>
+            <p class="hint">Hint: Drag each tag chip into a blank. Double-click a blank or press Backspace to clear.</p>
+            <section id="tags-quiz" class="tags-quiz" aria-live="polite">
+              <div class="tags-board" aria-label="Complete the HTML by placing tags into blanks">
+                <div class="code-line">&lt;!DOCTYPE html&gt;</div>
+                <div class="code-line"><span class="slot" tabindex="0" data-accept="html-open" aria-label="html open slot"></span></div>
+                <div class="code-line"><span class="slot" tabindex="0" data-accept="body-open" aria-label="body open slot"></span></div>
+                <div class="code-line">
+                  <span class="slot" tabindex="0" data-accept="h1-open" aria-label="h1 open slot"></span>
+                  <span> My First Heading </span>
+                  <span class="slot" tabindex="0" data-accept="h1-close" aria-label="h1 close slot"></span>
+                </div>
+                <div class="code-line">
+                  <span class="slot" tabindex="0" data-accept="p-open" aria-label="p open slot"></span>
+                  <span> My first paragraph. </span>
+                  <span class="slot" tabindex="0" data-accept="p-close" aria-label="p close slot"></span>
+                </div>
+                <div class="code-line"><span class="slot" tabindex="0" data-accept="body-close" aria-label="body close slot"></span></div>
+                <div class="code-line"><span class="slot" tabindex="0" data-accept="html-close" aria-label="html close slot"></span></div>
+              </div>
+
+          <div class="tag-choices" role="list" aria-label="Drag these tags into the blanks">
+            <div class="tag" role="listitem" draggable="true" data-token="body-open"><code>&lt;body&gt;</code></div>
+            <div class="tag" role="listitem" draggable="true" data-token="h1-open"><code>&lt;h1&gt;</code></div>
+            <div class="tag" role="listitem" draggable="true" data-token="p-close"><code>&lt;/p&gt;</code></div>
+            <div class="tag" role="listitem" draggable="true" data-token="html-close"><code>&lt;/html&gt;</code></div>
+            <div class="tag" role="listitem" draggable="true" data-token="p-open"><code>&lt;p&gt;</code></div>
+            <div class="tag" role="listitem" draggable="true" data-token="body-close"><code>&lt;/body&gt;</code></div>
+            <div class="tag" role="listitem" draggable="true" data-token="html-open"><code>&lt;html&gt;</code></div>
+            <div class="tag" role="listitem" draggable="true" data-token="h1-close"><code>&lt;/h1&gt;</code></div>
+          </div>
+
+              <div class="reveal-row">
+                <button type="button" class="button secondary" id="tq-reveal">Show Answer</button>
+                <button type="button" class="button secondary" id="tq-reset">Reset</button>
+              </div>
+              <div id="tags-score" class="tags-score" aria-live="polite">Score: 0/8</div>
+            </section>
+          </div>
+
+          <div id="quiz3-screen" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h2 id="quiz3-heading">Quick Quiz 3</h2>
+            <p class="note">HTML elements are surrounded by a specific type of brackets, which one?</p>
+            <p class="hint">Hint: Drag brackets into the blanks. Double-click a blank or press Backspace to clear.</p>
+            <section id="brackets-quiz" class="brackets-quiz" aria-live="polite">
+              <div class="brackets-board">
+                <div class="code-line">
+                  <span class="bslot" tabindex="0" data-accept="lt" aria-label="opening bracket slot"></span>
+                  <span>p</span>
+                  <span class="bslot" tabindex="0" data-accept="gt" aria-label="closing bracket slot"></span>
+                  <span> This is a paragraph. </span>
+                  <span class="bslot" tabindex="0" data-accept="lt-slash" aria-label="closing tag left slot"></span>
+                  <span>p</span>
+                  <span class="bslot" tabindex="0" data-accept="gt" aria-label="closing tag right slot"></span>
+                </div>
+              </div>
+              <div class="reveal-row">
+                <button type="button" class="button secondary" id="bq-reveal">Show Answer</button>
+                <button type="button" class="button secondary" id="bq-reset">Reset</button>
+              </div>
+              <div class="btag-choices" role="list" aria-label="Drag brackets to the blanks">
+                <div class="btag" role="listitem" draggable="true" data-token="lt"><code>&lt;</code></div>
+                <div class="btag" role="listitem" draggable="true" data-token="gt"><code>&gt;</code></div>
+                <div class="btag" role="listitem" draggable="true" data-token="lt-slash"><code>&lt;/</code></div>
+                <div class="btag" role="listitem" draggable="true" data-token="gt"><code>&gt;</code></div>
+                <div class="btag" role="listitem" draggable="true" data-token="lt"><code>&lt;</code></div>
+              </div>
+
+              <div id="brackets-score" class="brackets-score" aria-live="polite">Score: 0/4</div>
+            </section>
+          </div>
+
+          <div id="quiz4-screen" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h2 id="quiz4-heading">Quick Quiz 4</h2>
+            <p class="note">Fill in the missing code to complete the markup of the HTML hyperlink.</p>
+            <p class="hint">Hint: Drag the missing parts into the blanks. Double-click a blank or press Backspace to clear.</p>
+            <section id="link-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">
+                  <span class="lslot" tabindex="0" data-accept="a-open" aria-label="anchor open slot"></span>
+                  <span>href="https://www.w3schools.com"&gt;This is a link</span>
+                  <span class="lslot" tabindex="0" data-accept="a-close" aria-label="anchor close slot"></span>
+                </div>
+              </div>
+              <div class="reveal-row">
+                <button type="button" class="button secondary" id="aq-reveal">Show Answer</button>
+                <button type="button" class="button secondary" id="aq-reset">Reset</button>
+              </div>
+              <div class="ltag-choices" role="list" aria-label="Drag the missing parts to the blanks">
+                <div class="ltag" role="listitem" draggable="true" data-token="a-open"><code>&lt;a </code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="a-close"><code>&lt;/a&gt;</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="a-open"><code>&lt;a </code></div>
+              </div>
+              <div id="link-score" class="link-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <div id="quiz-done" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h2>All Quiz Completed</h2>
+            <div class="done-card">
+              <p><strong>Congratulations!</strong> You passed all HTML basics quizzes.</p>
+              <p>Next up: explore more in <a href="/html/editors.html">Editors</a> or revisit the <a href="/html/introduction.html">Introduction</a>.</p>
+              <p><button type="button" class="button" id="quiz-restart">Restart Quiz</button></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section video-section">
+          <h2>Video Tutorial</h2>
+          <p>Need a refresher? Watch <a href="https://www.youtube.com/watch?v=qz0aGYrrlhU" target="_blank" rel="noopener" style="color: white;">HTML Tutorial for Beginners by Programming with Mosh</a> for a guided tour of the basics.</p>
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/qz0aGYrrlhU" title="HTML Tutorial for Beginners" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <!-- Comments Section -->
+        <div id="comments-section"></div>
+      </article>
+    </main>
+
+    <div id="site-footer"></div>
+    <script>
+      (function() {
+        const CORRECT = '<!DOCTYPE html>';
+        const drop = document.getElementById('dnd-drop');
+        const choices = document.querySelectorAll('.dnd-choice');
+        const result = document.getElementById('dnd-result');
+        let selected = '';
+
+        choices.forEach(choice => {
+          choice.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', choice.dataset.value || '');
+            e.dataTransfer.effectAllowed = 'copy';
+            choice.classList.add('dragging');
+          });
+          choice.addEventListener('dragend', () => choice.classList.remove('dragging'));
+          // Disable click-to-select: only drag-and-drop is allowed
+        });
+
+        drop.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          drop.classList.add('over');
+          e.dataTransfer.dropEffect = 'copy';
+        });
+        drop.addEventListener('dragleave', () => drop.classList.remove('over'));
+          drop.addEventListener('drop', (e) => {
+            e.preventDefault();
+            drop.classList.remove('over');
+            selected = e.dataTransfer.getData('text/plain');
+            drop.textContent = selected || 'Drop answer here';
+            drop.dataset.value = selected;
+            drop.classList.remove('correct','incorrect');
+            autoCheck();
+          });
+
+        // Auto check on drop
+        function autoCheck() {
+          const val = drop.dataset.value || '';
+          const ok = val === CORRECT;
+          result.innerHTML = ok ? '<strong>Correct!</strong> Your score: 1/1.' : 'Incorrect. Your score: 0/1.';
+          drop.classList.toggle('correct', ok);
+          drop.classList.toggle('incorrect', !ok);
+          if (ok) showQuiz2();
+        }
+
+        // Show/Hide and Reset for Quiz 1
+        const dqReveal = document.getElementById('dq-reveal');
+        const dqReset = document.getElementById('dq-reset');
+        dqReveal && dqReveal.addEventListener('click', () => {
+          const showing = dqReveal.dataset.state === 'shown';
+          if (!showing) {
+            drop.dataset.value = CORRECT;
+            drop.textContent = CORRECT;
+            drop.classList.remove('correct','incorrect');
+            autoCheck();
+            dqReveal.textContent = 'Hide Answer';
+            dqReveal.dataset.state = 'shown';
+          } else {
+            drop.dataset.value = '';
+            drop.textContent = 'Drop answer here';
+            result.textContent = '';
+            drop.classList.remove('correct','incorrect');
+            dqReveal.textContent = 'Show Answer';
+            dqReveal.dataset.state = 'hidden';
+          }
+        });
+        dqReset && dqReset.addEventListener('click', () => {
+          drop.dataset.value = '';
+          drop.textContent = 'Drop answer here';
+          result.textContent = '';
+          drop.classList.remove('correct','incorrect');
+          if (dqReveal) { dqReveal.textContent = 'Show Answer'; dqReveal.dataset.state = 'hidden'; }
+        });
+
+        // Allow keyboard paste/enter? Keep DnD only for now
+
+        // =============================
+        // Quiz 2: Place HTML tags
+        // =============================
+        const stage1 = document.getElementById('quiz1-screen');
+        const stage2 = document.getElementById('quiz2-screen');
+        let quiz2Shown = stage2 && !stage2.classList.contains('is-hidden');
+        function showQuiz2() {
+          if (quiz2Shown) return;
+          quiz2Shown = true;
+          if (stage1) {
+            stage1.classList.add('is-hidden');
+            stage1.setAttribute('aria-hidden', 'true');
+            stage1.setAttribute('inert', '');
+          }
+          if (stage2) {
+            stage2.classList.remove('is-hidden');
+            stage2.removeAttribute('aria-hidden');
+            stage2.removeAttribute('inert');
+            const heading = document.getElementById('quiz2-heading');
+            (heading || stage2).scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+          const TOKENS = {
+            'html-open': '<html>',
+            'html-close': '</html>',
+            'body-open': '<body>',
+            'body-close': '</body>',
+            'h1-open': '<h1>',
+            'h1-close': '</h1>',
+            'p-open': '<p>',
+            'p-close': '</p>'
+          };
+
+          const tagChoices = document.querySelectorAll('#tags-quiz .tag');
+          const slots = Array.from(document.querySelectorAll('#tags-quiz .slot'));
+          const tagScore = document.getElementById('tags-score');
+
+          function tagsUseChip(token) {
+            const chip = document.querySelector(`#tags-quiz .tag[data-token="${token}"]:not(.chip-used)`);
+            if (chip) chip.classList.add('chip-used');
+          }
+          function tagsRestoreChip(token) {
+            const chip = document.querySelector(`#tags-quiz .tag[data-token="${token}"].chip-used`);
+            if (chip) chip.classList.remove('chip-used');
+          }
+          function tagsRestoreAllChips() {
+            document.querySelectorAll('#tags-quiz .tag.chip-used').forEach(c => c.classList.remove('chip-used'));
+          }
+          function tagsClearSlots() {
+            slots.forEach(s => { s.dataset.token=''; s.textContent=''; s.classList.remove('correct','incorrect'); });
+            tagScore.textContent = 'Score: 0/8';
+          }
+
+        function updateTagScore() {
+          let correct = 0;
+          slots.forEach(slot => {
+            const placed = slot.dataset.token || '';
+            const need = slot.dataset.accept || '';
+            const ok = placed === need;
+            if (ok) correct++;
+            slot.classList.toggle('correct', ok && placed);
+            slot.classList.toggle('incorrect', !ok && placed);
+          });
+          tagScore.textContent = `Score: ${correct}/8`;
+          if (correct === 8) showQuiz3();
+        }
+
+        tagChoices.forEach(chip => {
+          chip.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', chip.dataset.token || '');
+            e.dataTransfer.effectAllowed = 'copy';
+            chip.classList.add('dragging');
+          });
+          chip.addEventListener('dragend', () => chip.classList.remove('dragging'));
+        });
+
+        slots.forEach(slot => {
+          slot.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            slot.classList.add('over');
+            e.dataTransfer.dropEffect = 'copy';
+          });
+          slot.addEventListener('dragleave', () => slot.classList.remove('over'));
+          slot.addEventListener('drop', (e) => {
+            e.preventDefault();
+            slot.classList.remove('over');
+            const token = e.dataTransfer.getData('text/plain');
+            if (!token || !TOKENS[token]) return;
+            const prev = slot.dataset.token || '';
+            if (prev && prev !== token) tagsRestoreChip(prev);
+            if (!prev || prev !== token) tagsUseChip(token);
+            slot.dataset.token = token;
+            slot.textContent = TOKENS[token];
+            updateTagScore();
+          });
+          // Clear on double-click or Backspace/Delete
+          slot.addEventListener('dblclick', () => {
+            const prev = slot.dataset.token || '';
+            if (!prev) return;
+            tagsRestoreChip(prev);
+            slot.dataset.token = '';
+            slot.textContent = '';
+            slot.classList.remove('correct','incorrect');
+            updateTagScore();
+          });
+          slot.addEventListener('keydown', (e) => {
+            if (e.key === 'Backspace' || e.key === 'Delete') {
+              e.preventDefault();
+              const prev = slot.dataset.token || '';
+              if (prev) tagsRestoreChip(prev);
+              slot.dataset.token = '';
+              slot.textContent = '';
+              slot.classList.remove('correct','incorrect');
+              updateTagScore();
+            }
+          });
+        });
+
+        // Reveal/Reset for Quiz 2 (tags)
+        const tqReveal = document.getElementById('tq-reveal');
+        const tqReset = document.getElementById('tq-reset');
+        tqReveal && tqReveal.addEventListener('click', () => {
+          const showing = tqReveal.dataset.state === 'shown';
+          if (!showing) {
+            const answers = ['html-open','body-open','h1-open','h1-close','p-open','p-close','body-close','html-close'];
+            tagsClearSlots();
+            tagsRestoreAllChips();
+            slots.forEach((s, i) => { s.dataset.token = answers[i]; s.textContent = TOKENS[answers[i]]; tagsUseChip(answers[i]); });
+            updateTagScore();
+            tqReveal.textContent = 'Hide Answer';
+            tqReveal.dataset.state = 'shown';
+          } else {
+            tagsClearSlots();
+            tagsRestoreAllChips();
+            updateTagScore();
+            tqReveal.textContent = 'Show Answer';
+            tqReveal.dataset.state = 'hidden';
+          }
+        });
+        tqReset && tqReset.addEventListener('click', () => {
+          tagsClearSlots();
+          tagsRestoreAllChips();
+          updateTagScore();
+          if (tqReveal) { tqReveal.textContent = 'Show Answer'; tqReveal.dataset.state = 'hidden'; }
+        });
+
+        // =============================
+        // Quiz 3: Bracket selection
+        // =============================
+        const stage3 = document.getElementById('quiz3-screen');
+        function showQuiz3() {
+          if (!stage3 || !stage2) return;
+          if (!stage3.classList.contains('is-hidden')) return;
+          stage2.classList.add('is-hidden');
+          stage2.setAttribute('aria-hidden','true');
+          stage2.setAttribute('inert','');
+          stage3.classList.remove('is-hidden');
+          stage3.removeAttribute('aria-hidden');
+          stage3.removeAttribute('inert');
+          const h = document.getElementById('quiz3-heading');
+          (h || stage3).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+          const BMAP = { 'lt': '<', 'gt': '>', 'lt-slash': '</' };
+          const btags = document.querySelectorAll('#brackets-quiz .btag');
+          const bslots = Array.from(document.querySelectorAll('#brackets-quiz .bslot'));
+          const bscoreEl = document.getElementById('brackets-score');
+
+          function bUseChip(token) {
+            const chip = document.querySelector(`#brackets-quiz .btag[data-token="${token}"]:not(.chip-used)`);
+            if (chip) chip.classList.add('chip-used');
+          }
+          function bRestoreChip(token) {
+            const chip = document.querySelector(`#brackets-quiz .btag[data-token="${token}"].chip-used`);
+            if (chip) chip.classList.remove('chip-used');
+          }
+          function bRestoreAll() {
+            document.querySelectorAll('#brackets-quiz .btag.chip-used').forEach(c => c.classList.remove('chip-used'));
+          }
+          function bClearSlots() {
+            bslots.forEach(s => { s.dataset.token=''; s.textContent=''; s.classList.remove('correct','incorrect'); });
+            bscoreEl.textContent = 'Score: 0/4';
+          }
+
+        function updateBracketScore() {
+          let correct = 0;
+          bslots.forEach(s => {
+            const placed = s.dataset.token || '';
+            const need = s.dataset.accept || '';
+            const ok = placed === need;
+            if (ok) correct++;
+            s.classList.toggle('correct', ok && placed);
+            s.classList.toggle('incorrect', !ok && placed);
+          });
+          bscoreEl.textContent = `Score: ${correct}/4`;
+          if (correct === 4) showQuiz4();
+        }
+
+        btags.forEach(chip => {
+          chip.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', chip.dataset.token || '');
+            e.dataTransfer.effectAllowed = 'copy';
+            chip.classList.add('dragging');
+          });
+          chip.addEventListener('dragend', () => chip.classList.remove('dragging'));
+        });
+
+        bslots.forEach(slot => {
+          slot.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            slot.classList.add('over');
+            e.dataTransfer.dropEffect = 'copy';
+          });
+          slot.addEventListener('dragleave', () => slot.classList.remove('over'));
+          slot.addEventListener('drop', (e) => {
+            e.preventDefault();
+            slot.classList.remove('over');
+            const token = e.dataTransfer.getData('text/plain');
+            if (!token || !BMAP[token]) return;
+            const prev = slot.dataset.token || '';
+            if (prev && prev !== token) bRestoreChip(prev);
+            if (!prev || prev !== token) bUseChip(token);
+            slot.dataset.token = token;
+            slot.textContent = BMAP[token];
+            updateBracketScore();
+          });
+          slot.addEventListener('dblclick', () => {
+            const prev = slot.dataset.token || '';
+            if (!prev) return;
+            bRestoreChip(prev);
+            slot.dataset.token = '';
+            slot.textContent = '';
+            slot.classList.remove('correct','incorrect');
+            updateBracketScore();
+          });
+          slot.addEventListener('keydown', (e) => {
+            if (e.key === 'Backspace' || e.key === 'Delete') {
+              e.preventDefault();
+              const prev = slot.dataset.token || '';
+              if (prev) bRestoreChip(prev);
+              slot.dataset.token = '';
+              slot.textContent = '';
+              slot.classList.remove('correct','incorrect');
+              updateBracketScore();
+            }
+          });
+        });
+
+        // Reveal answer for Quiz 3
+        const bReveal = document.getElementById('bq-reveal');
+          bReveal && bReveal.addEventListener('click', () => {
+            const showing = bReveal.dataset.state === 'shown';
+            if (!showing) {
+              // Fill correct tokens
+              const answers = ['lt','gt','lt-slash','gt'];
+              bClearSlots();
+              bRestoreAll();
+              bslots.forEach((s, i) => { s.dataset.token = answers[i]; s.textContent = BMAP[answers[i]]; bUseChip(answers[i]); });
+              updateBracketScore();
+              bReveal.textContent = 'Hide Answer';
+              bReveal.dataset.state = 'shown';
+            } else {
+              // Clear
+              bClearSlots();
+              bRestoreAll();
+              updateBracketScore();
+              bReveal.textContent = 'Show Answer';
+              bReveal.dataset.state = 'hidden';
+            }
+          });
+        const bReset = document.getElementById('bq-reset');
+        bReset && bReset.addEventListener('click', () => {
+          bClearSlots();
+          bRestoreAll();
+          updateBracketScore();
+          if (bReveal) { bReveal.textContent = 'Show Answer'; bReveal.dataset.state = 'hidden'; }
+        });
+
+        // =============================
+        // Quiz 4: Anchor tag fill
+        // =============================
+        const stage4 = document.getElementById('quiz4-screen');
+        function showQuiz4() {
+          if (!stage4 || !stage3) return;
+          if (!stage4.classList.contains('is-hidden')) return;
+          stage3.classList.add('is-hidden');
+          stage3.setAttribute('aria-hidden','true');
+          stage3.setAttribute('inert','');
+          stage4.classList.remove('is-hidden');
+          stage4.removeAttribute('aria-hidden');
+          stage4.removeAttribute('inert');
+          const h = document.getElementById('quiz4-heading');
+          (h || stage4).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+          const ALMAP = { 'a-open': '<a ', 'a-close': '</a>' };
+          const ltags = document.querySelectorAll('#link-quiz .ltag');
+          const lslots = Array.from(document.querySelectorAll('#link-quiz .lslot'));
+          const lscoreEl = document.getElementById('link-score');
+
+          function aUseChip(token) {
+            const chip = document.querySelector(`#link-quiz .ltag[data-token="${token}"]:not(.chip-used)`);
+            if (chip) chip.classList.add('chip-used');
+          }
+          function aRestoreChip(token) {
+            const chip = document.querySelector(`#link-quiz .ltag[data-token="${token}"].chip-used`);
+            if (chip) chip.classList.remove('chip-used');
+          }
+          function aRestoreAll() {
+            document.querySelectorAll('#link-quiz .ltag.chip-used').forEach(c => c.classList.remove('chip-used'));
+          }
+          function aClearSlots() {
+            lslots.forEach(s => { s.dataset.token=''; s.textContent=''; s.classList.remove('correct','incorrect'); });
+            lscoreEl.textContent = 'Score: 0/2';
+          }
+
+        function updateLinkScore() {
+          let correct = 0;
+          lslots.forEach(s => {
+            const placed = s.dataset.token || '';
+            const need = s.dataset.accept || '';
+            const ok = placed === need;
+            if (ok) correct++;
+            s.classList.toggle('correct', ok && placed);
+            s.classList.toggle('incorrect', !ok && placed);
+          });
+          lscoreEl.textContent = `Score: ${correct}/2`;
+          if (correct === 2) showDone();
+        }
+
+        ltags.forEach(chip => {
+          chip.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', chip.dataset.token || '');
+            e.dataTransfer.effectAllowed = 'copy';
+            chip.classList.add('dragging');
+          });
+          chip.addEventListener('dragend', () => chip.classList.remove('dragging'));
+        });
+
+        lslots.forEach(slot => {
+          slot.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            slot.classList.add('over');
+            e.dataTransfer.dropEffect = 'copy';
+          });
+          slot.addEventListener('dragleave', () => slot.classList.remove('over'));
+          slot.addEventListener('drop', (e) => {
+            e.preventDefault();
+            slot.classList.remove('over');
+            const token = e.dataTransfer.getData('text/plain');
+            if (!token || !ALMAP[token]) return;
+            const prev = slot.dataset.token || '';
+            if (prev && prev !== token) aRestoreChip(prev);
+            if (!prev || prev !== token) aUseChip(token);
+            slot.dataset.token = token;
+            slot.textContent = ALMAP[token];
+            updateLinkScore();
+          });
+          slot.addEventListener('dblclick', () => {
+            const prev = slot.dataset.token || '';
+            if (!prev) return;
+            aRestoreChip(prev);
+            slot.dataset.token = '';
+            slot.textContent = '';
+            slot.classList.remove('correct','incorrect');
+            updateLinkScore();
+          });
+          slot.addEventListener('keydown', (e) => {
+            if (e.key === 'Backspace' || e.key === 'Delete') {
+              e.preventDefault();
+              const prev = slot.dataset.token || '';
+              if (prev) aRestoreChip(prev);
+              slot.dataset.token = '';
+              slot.textContent = '';
+              slot.classList.remove('correct','incorrect');
+              updateLinkScore();
+            }
+          });
+        });
+
+        const aReveal = document.getElementById('aq-reveal');
+          aReveal && aReveal.addEventListener('click', () => {
+            const showing = aReveal.dataset.state === 'shown';
+            if (!showing) {
+              const answers = ['a-open','a-close'];
+              aClearSlots();
+              aRestoreAll();
+              lslots.forEach((s, i) => { s.dataset.token = answers[i]; s.textContent = ALMAP[answers[i]]; aUseChip(answers[i]); });
+              updateLinkScore();
+              aReveal.textContent = 'Hide Answer';
+              aReveal.dataset.state = 'shown';
+            } else {
+              aClearSlots();
+              aRestoreAll();
+              updateLinkScore();
+              aReveal.textContent = 'Show Answer';
+              aReveal.dataset.state = 'hidden';
+            }
+          });
+        const aReset = document.getElementById('aq-reset');
+        aReset && aReset.addEventListener('click', () => {
+          aClearSlots();
+          aRestoreAll();
+          updateLinkScore();
+          if (aReveal) { aReveal.textContent = 'Show Answer'; aReveal.dataset.state = 'hidden'; }
+        });
+
+        // =============================
+        // Done screen
+        // =============================
+          const stageDone = document.getElementById('quiz-done');
+          function showDone() {
+            if (!stageDone) return;
+            // hide stage4
+            if (stage4) {
+              stage4.classList.add('is-hidden');
+              stage4.setAttribute('aria-hidden','true');
+              stage4.setAttribute('inert','');
+            }
+            stageDone.classList.remove('is-hidden');
+            stageDone.removeAttribute('aria-hidden');
+            stageDone.removeAttribute('inert');
+            stageDone.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+
+          // Restart all quizzes
+          const restartBtn = document.getElementById('quiz-restart');
+          restartBtn && restartBtn.addEventListener('click', () => {
+            // reset quiz1
+            drop.dataset.value = '';
+            drop.textContent = 'Drop answer here';
+            result.textContent = '';
+            drop.classList.remove('correct','incorrect');
+            const dqRev = document.getElementById('dq-reveal');
+            if (dqRev) { dqRev.textContent = 'Show Answer'; dqRev.dataset.state = 'hidden'; }
+
+            // reset quiz2
+            tagsClearSlots();
+            tagsRestoreAllChips();
+            const tqRev = document.getElementById('tq-reveal');
+            if (tqRev) { tqRev.textContent = 'Show Answer'; tqRev.dataset.state = 'hidden'; }
+
+            // reset quiz3
+            bClearSlots();
+            bRestoreAll();
+            const bRev = document.getElementById('bq-reveal');
+            if (bRev) { bRev.textContent = 'Show Answer'; bRev.dataset.state = 'hidden'; }
+
+            // reset quiz4
+            aClearSlots();
+            aRestoreAll();
+            const aRev = document.getElementById('aq-reveal');
+            if (aRev) { aRev.textContent = 'Show Answer'; aRev.dataset.state = 'hidden'; }
+
+            // show stage1
+            [stage2, stage3, stage4, stageDone].forEach(st => {
+              if (!st) return;
+              st.classList.add('is-hidden');
+              st.setAttribute('aria-hidden','true');
+              st.setAttribute('inert','');
+            });
+            if (stage1) {
+              stage1.classList.remove('is-hidden');
+              stage1.removeAttribute('aria-hidden');
+              stage1.removeAttribute('inert');
+              stage1.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            quiz2Shown = false; // allow showing quiz2 again when quiz1 correct
+          });
+      })();
+    </script>
+  </body>
+  </html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS - Grid | Co.Razer Docs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/css-docs.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#6ee7ff',
+            accent: '#64f5a1',
+            'dark-bg': '#0b0d10',
+            'dark-panel': '#11151a',
+            'dark-border': '#1e2630',
+          }
+        }
+      }
+    }
+  </script>
+  <script defer src="/assets/app.js"></script>
+  <script defer src="/assets/css-quiz.js"></script>
+  <script defer src="/assets/comments.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container docs">
+    <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false">
+      <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+      <span class="sidebar-toggle__label">CSS Docs</span>
+    </button>
+
+    <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+      <h3 id="docs-nav-heading">CSS Docs</h3>
+      <a href="/css/introduction.html">Introduction</a>
+      <a href="/css/selectors.html">Selectors</a>
+      <a href="/css/layout.html">Layout</a>
+      <a href="/css/box-model.html">Box Model</a>
+      <a href="/css/typography.html">Typography</a>
+      <a href="/css/flexbox.html">Flexbox</a>
+      <a href="/css/grid.html">Grid</a>
+      <a href="/css/variables.html">Custom Properties</a>
+    </aside>
+
+    <article class="article css-article">
+      <header>
+        <h1>CSS Grid</h1>
+        <p class="lead">Grid is a two-dimensional layout system made for expressive compositions. Define tracks and place items across rows and columns with pixel-perfect control.</p>
+      </header>
+
+      <section class="doc-section">
+        <h2>Grid Containers</h2>
+        <p>Enable a grid by declaring <code>display: grid;</code> (or <code>inline-grid</code>). Tracks are the rows and columns that items snap to, and they follow the document's writing mode so vertical layouts behave naturally.</p>
+        <div class="grid-demo">
+          <div class="grid-preview">
+            <span>Hero</span>
+            <span>Summary</span>
+            <span>Highlights</span>
+            <span>Gallery</span>
+            <span>CTA</span>
+            <span>Footer</span>
+          </div>
+<pre><code>.layout {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 4vw, 2.5rem);
+}</code></pre>
+        </div>
+      </section>
+
+      <section class="doc-section">
+        <h2>Track Definitions</h2>
+        <p>Use <code>repeat()</code>, <code>minmax()</code>, and fractional units (<code>fr</code>) to describe flexible tracks. Combine with <code>auto-fit</code> or <code>auto-fill</code> for responsive galleries. <code>auto-fit</code> collapses empty tracks, while <code>auto-fill</code> keeps them reserved so content can flow into them later.</p>
+<pre><code>.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}</code></pre>
+        <p>Named lines (<code>[content-start]</code>) help you anchor items to semantic positions.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>Implicit Tracks And Alignment</h2>
+        <ul class="definition-list">
+          <li><strong>Implicit tracks:</strong> When content exceeds the explicit grid, the browser creates additional tracks. Tune their sizing with <code>grid-auto-rows</code> and <code>grid-auto-columns</code>.</li>
+          <li><strong>Auto placement:</strong> <code>grid-auto-flow</code> controls how new items fill the grid. Switch to <code>column</code> or <code>dense</code> to repack gaps.</li>
+          <li><strong>Alignment:</strong> <code>justify-items</code> and <code>align-items</code> align content within each cell, while <code>justify-content</code> and <code>align-content</code> adjust the entire grid inside its container.</li>
+        </ul>
+        <p>Named lines (<code>[main-start]</code>) and template areas keep placement readable and make large layouts easier to maintain.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>Placing Items</h2>
+        <p>Grid items can span multiple tracks. Use the <code>grid-column</code> and <code>grid-row</code> shorthands or the more descriptive <code>grid-area</code>. Items that are not explicitly positioned follow the <code>grid-auto-flow</code> algorithm, which defaults to filling rows before columns.</p>
+<pre><code>.hero {
+  grid-column: 1 / -1;
+}
+
+.sidebar {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 2;
+}</code></pre>
+        <p>Template areas provide a declarative approach:</p>
+<pre><code>.dashboard {
+  display: grid;
+  grid-template-areas:
+    "title title actions"
+    "nav   main   main"
+    "nav   footer footer";
+}</code></pre>
+      </section>
+
+      <section class="css-quiz" id="grid-quiz" aria-labelledby="grid-quiz-heading">
+        <h2 id="grid-quiz-heading">Mini Game: Grid Architect</h2>
+        <p class="note">Complete the grid layout by dragging tokens into each blank.</p>
+
+        <div class="quiz-stage" data-stage="tracks" tabindex="-1">
+          <h3>Stage 1 - Define The Tracks</h3>
+          <p>Fill in the CSS needed for a responsive three-column layout.</p>
+<pre><code>.dashboard {
+  <span class="drop-slot" data-accept="display-grid" data-placeholder="display: ?"></span>
+  <span class="drop-slot" data-accept="template-columns" data-placeholder="grid-template-columns: ?"></span>
+  <span class="drop-slot" data-accept="gap-line" data-placeholder="gap: ?"></span>
+}</code></pre>
+          <div class="token-bank">
+            <div class="drag-token" data-token="display-grid" data-display="<code>display: grid;</code>"><code>display: grid;</code></div>
+            <div class="drag-token" data-token="template-columns" data-display="<code>grid-template-columns: repeat(3, minmax(0, 1fr));</code>"><code>grid-template-columns: repeat(3, minmax(0, 1fr));</code></div>
+            <div class="drag-token" data-token="gap-line" data-display="<code>gap: clamp(1rem, 4vw, 2.5rem);</code>"><code>gap: clamp(1rem, 4vw, 2.5rem);</code></div>
+          </div>
+          <div class="quiz-score" data-role="score">Score: 0/3</div>
+          <div class="quiz-actions">
+            <button type="button" data-role="reset">Reset stage</button>
+          </div>
+          <p class="is-hidden" data-role="complete">Foundation set! The grid container is ready.</p>
+        </div>
+
+        <div class="quiz-stage is-hidden" data-stage="placement" tabindex="-1">
+          <h3>Stage 2 - Place The Content</h3>
+          <p>Match descriptive statements to the grid rules that achieve them.</p>
+          <ul class="definition-list">
+            <li><span class="drop-slot" data-accept="span-two" data-placeholder="Drop rule"></span> lets the hero banner stretch across all columns.</li>
+            <li><span class="drop-slot" data-accept="row-span" data-placeholder="Drop rule"></span> keeps the sidebar tall next to content.</li>
+            <li><span class="drop-slot" data-accept="template-areas" data-placeholder="Drop rule"></span> defines names you can assign with <code>grid-area</code>.</li>
+          </ul>
+          <div class="token-bank">
+            <div class="drag-token" data-token="span-two" data-display="<code>grid-column: 1 / -1;</code>"><code>grid-column: 1 / -1;</code></div>
+            <div class="drag-token" data-token="row-span" data-display="<code>grid-row: 2 / span 2;</code>"><code>grid-row: 2 / span 2;</code></div>
+            <div class="drag-token" data-token="template-areas" data-display="<code>grid-template-areas: &quot;header header header&quot;;</code>"><code>grid-template-areas: "header header header";</code></div>
+          </div>
+          <div class="quiz-score" data-role="score">Score: 0/3</div>
+          <div class="quiz-actions">
+            <button type="button" data-role="reset">Reset stage</button>
+          </div>
+          <p class="is-hidden" data-role="complete">Precision placement! Your grid flows elegantly.</p>
+        </div>
+
+        <div class="quiz-complete is-hidden" data-role="quiz-done" aria-hidden="true">
+          <h3>You architected the grid!</h3>
+          <p>Use these patterns to build dashboards, galleries, and landing pages.</p>
+          <button type="button" class="button" data-role="restart">Play again</button>
+        </div>
+      </section>
+
+      <!-- Comments Section -->
+      <div id="comments-section"></div>
+    </article>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

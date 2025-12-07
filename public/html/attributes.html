@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Master HTML attributes with comprehensive examples. Learn href, src, alt, title, lang, style attributes and best practices with interactive tutorials.">
+  <meta name="keywords" content="HTML attributes, href, src, alt, title, lang, style, HTML properties, attribute values">
+  <meta name="author" content="Co.Razer Documentation Team">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HTML Attributes - Master Element Properties">
+  <meta property="og:description" content="Master HTML attributes with comprehensive examples and interactive tutorials. Learn href, src, alt, title, and other essential attributes.">
+  <meta property="og:url" content="https://co-razer.com/html/attributes.html">
+  
+  <title>HTML Attributes - Master Element Properties | Co.Razer Docs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/basics.css">
+  <link rel="stylesheet" href="/assets/attributes.css">
+  <link rel="canonical" href="https://co-razer.com/html/attributes.html">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#6ee7ff',
+            accent: '#64f5a1',
+            'dark-bg': '#0b0d10',
+            'dark-panel': '#11151a',
+            'dark-border': '#1e2630',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "HTML Attributes - Master Element Properties",
+    "description": "Master HTML attributes with comprehensive examples and interactive tutorials",
+    "author": {
+      "@type": "Organization",
+      "name": "Co.Razer Documentation Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Co.Razer",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "/assets/logo.png"
+      }
+    },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://co-razer.com/html/attributes.html"
+    }
+  }
+  </script>
+  
+  <script defer src="/assets/app.js"></script>
+  <script defer src="/assets/comments.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main id="main-content" class="container docs">
+    <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false" aria-label="Toggle HTML documentation navigation">
+      <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+      <span class="sidebar-toggle__label">HTML Docs</span>
+    </button>
+
+    <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+      <h3 id="docs-nav-heading">HTML Tutorial</h3>
+      <nav aria-label="HTML tutorial navigation">
+        <a href="/html/introduction.html">Introduction</a>
+        <a href="/html/editors.html">Editors</a>
+        <a href="/html/basics.html">Basics</a>
+        <a href="/html/elements.html">Elements</a>
+        <a href="/html/attributes.html" class="active" aria-current="page">Attributes</a>
+        <a href="/html/headings.html">Headings</a>
+        <a href="/html/paragraphs.html">Paragraphs</a>
+        <a href="/html/styles.html">Styles</a>
+        <a href="/html/formatting.html">Formatting</a>
+        <a href="/html/comments.html">Comments</a>
+        <a href="/html/colors.html">Colors</a>
+        <a href="/html/colors/rgb.html">RGB &amp; RGBA</a>
+        <a href="/html/qua.html">Quotations</a>
+      </nav>
+    </aside>
+
+      <article class="article attr-article">
+        <h1>HTML Attributes</h1>
+        <p>HTML attributes provide additional information about HTML elements.</p>
+
+        <h2>HTML Attributes</h2>
+        <ul>
+          <li>All HTML elements can have attributes.</li>
+          <li>Attributes provide additional information about elements.</li>
+          <li>Attributes are always specified in the start tag.</li>
+          <li>Attributes usually come in name/value pairs like: <code>name="value"</code>.</li>
+        </ul>
+
+        <h2>The <code>href</code> Attribute</h2>
+        <p>The <code>&lt;a&gt;</code> tag defines a hyperlink. The <code>href</code> attribute specifies the URL of the page the link goes to:</p>
+        <h3>Example</h3>
+<pre><code>&lt;a href="https://www.w3schools.com"&gt;Visit W3Schools&lt;/a&gt;</code></pre>
+
+        <h2>The <code>src</code> Attribute</h2>
+        <p>The <code>&lt;img&gt;</code> tag is used to embed an image in an HTML page. The <code>src</code> attribute specifies the path to the image to be displayed:</p>
+        <h3>Example</h3>
+<pre><code>&lt;img src="img_girl.jpg"&gt;</code></pre>
+        <p>There are two ways to specify the URL in the <code>src</code> attribute:</p>
+        <ol>
+          <li><strong>Absolute URL</strong> – Links to an external image that is hosted on another website. Example: <code>src="https://www.w3schools.com/images/img_girl.jpg"</code>.<br>Note: External images might be under copyright and can be removed or changed without notice.</li>
+          <li><strong>Relative URL</strong> – Links to an image hosted within the same website. Example: <code>src="img_girl.jpg"</code> (relative to current page) or <code>src="/images/img_girl.jpg"</code> (relative to the domain).</li>
+        </ol>
+        <p><strong>Tip:</strong> It is almost always best to use relative URLs. They will not break if you change domain.</p>
+
+        <h2>The <code>width</code> and <code>height</code> Attributes</h2>
+        <p>The <code>&lt;img&gt;</code> tag should also contain the <code>width</code> and <code>height</code> attributes (in pixels):</p>
+        <h3>Example</h3>
+<pre><code>&lt;img src="img_girl.jpg" width="500" height="600"&gt;</code></pre>
+
+        <h2>The <code>alt</code> Attribute</h2>
+        <p>The required <code>alt</code> attribute for the <code>&lt;img&gt;</code> tag specifies alternate text for an image if the image cannot be displayed (network issues, wrong <code>src</code>, or for screen readers).</p>
+        <h3>Example</h3>
+<pre><code>&lt;img src="img_girl.jpg" alt="Girl with a jacket"&gt;</code></pre>
+        <h3>Example</h3>
+        <p>See what happens if we try to display an image that does not exist:</p>
+<pre><code>&lt;img src="img_typo.jpg" alt="Girl with a jacket"&gt;</code></pre>
+
+        <h2>The <code>style</code> Attribute</h2>
+        <p>The <code>style</code> attribute is used to add styles to an element, such as color, font, size, and more.</p>
+        <h3>Example</h3>
+<pre><code>&lt;p style="color:red;"&gt;This is a red paragraph.&lt;/p&gt;</code></pre>
+
+        <h2>The <code>lang</code> Attribute</h2>
+        <p>Always include the <code>lang</code> attribute on the <code>&lt;html&gt;</code> tag to declare the page language:</p>
+        <h3>Example</h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+...
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p>Country codes can be added to refine the locale:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en-US"&gt;
+&lt;body&gt;
+...
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h2>The <code>title</code> Attribute</h2>
+        <p>The <code>title</code> attribute defines extra information shown as a tooltip on mouse hover.</p>
+        <h3>Example</h3>
+<pre><code>&lt;p title="I'm a tooltip"&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+
+        <h2>Conventions</h2>
+        <h3>Always Use Lowercase Attributes</h3>
+        <p>HTML does not require lowercase attribute names, but W3C recommends lowercase in HTML (and requires it in XHTML).</p>
+        <h3>Always Quote Attribute Values</h3>
+        <p>HTML does not require quotes around attribute values, but W3C recommends quoting, and it is required in XHTML.</p>
+        <p><strong>Good:</strong></p>
+<pre><code>&lt;a href="https://www.w3schools.com/html/"&gt;Visit our HTML tutorial&lt;/a&gt;</code></pre>
+        <p><strong>Bad:</strong></p>
+<pre><code>&lt;a href=https://www.w3schools.com/html/&gt;Visit our HTML tutorial&lt;/a&gt;</code></pre>
+        <p>Sometimes you must use quotes because values contain spaces:</p>
+<pre><code>&lt;p title="Description of W3Schools"&gt;</code></pre>
+        <p><strong>Single or Double Quotes?</strong> Double quotes are most common, but single quotes are fine. Use the other quote type if the value itself contains quotes.</p>
+<pre><code>&lt;p title='John "ShotGun" Nelson'&gt;
+&lt;p title="John 'ShotGun' Nelson"&gt;</code></pre>
+
+        <h2>Chapter Summary</h2>
+        <ul>
+          <li>All HTML elements can have attributes.</li>
+          <li><code>href</code> of <code>&lt;a&gt;</code> sets the destination URL.</li>
+          <li><code>src</code> of <code>&lt;img&gt;</code> sets the image path.</li>
+          <li><code>width</code> and <code>height</code> of <code>&lt;img&gt;</code> provide size info.</li>
+          <li><code>alt</code> of <code>&lt;img&gt;</code> provides alternate text.</li>
+          <li><code>style</code> adds inline styles.</li>
+          <li><code>lang</code> on <code>&lt;html&gt;</code> declares the page language.</li>
+          <li><code>title</code> provides extra info (tooltip).</li>
+        </ul>
+
+        <hr>
+        <h2>Practice: HTML Attributes Game</h2>
+        <section id="attr-quiz-stage" class="quiz-stage">
+          <!-- Stage 1: DnD correct attribute syntax -->
+          <div id="aq1" class="quiz-screen">
+            <h3>Quick Quiz 1</h3>
+            <section id="attr-dnd" class="dnd-quiz" aria-live="polite">
+              <p class="note">Which of the following is a correct syntax for using an HTML attribute?</p>
+              <div class="dnd-choices" role="list">
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<img src='img_girl.jpg'>"><code>&lt;img src='img_girl.jpg'&gt;</code></div>
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<img src('img_girl.jpg')>"><code>&lt;img src('img_girl.jpg')&gt;</code></div>
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<img src:'img_girl.jpg'>"><code>&lt;img src:'img_girl.jpg'&gt;</code></div>
+              </div>
+              <div class="dnd-answer-wrap">
+                <div id="attr-drop" class="dnd-drop" tabindex="0" aria-label="Answer drop zone">Drop answer here</div>
+              </div>
+              <div id="attr-dnd-result" class="dnd-result" aria-live="polite"></div>
+            </section>
+          </div>
+
+          <!-- Stage 2: Add title tooltip attribute -->
+          <div id="aq2" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 2</h3>
+            <p class="note">Add a tooltip to the paragraph with the text "About W3Schools".</p>
+            <section id="title-quiz" class="tags-quiz" aria-live="polite">
+              <div class="tags-board">
+                <div class="code-line">&lt;p <span class="slot" tabindex="0" data-accept="title-about" aria-label="title attribute slot"></span>&gt;W3Schools is a web developer's site.&lt;/p&gt;</div>
+              </div>
+              <div class="tag-choices" role="list">
+                <div class="tag" role="listitem" draggable="true" data-token="title-about"><code>title="About W3Schools"</code></div>
+              </div>
+              <div id="title-score" class="tags-score" aria-live="polite">Score: 0/1</div>
+            </section>
+          </div>
+
+          <!-- Stage 3: Set width and height -->
+          <div id="aq3" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 3</h3>
+            <p class="note">Set the size of the image to 250 pixels wide and 400 pixels tall.</p>
+            <section id="size-quiz" class="tags-quiz" aria-live="polite">
+              <div class="tags-board">
+                <div class="code-line">&lt;img src="w3schools.jpg" <span class="slot" tabindex="0" data-accept="w-250" aria-label="width slot"></span> <span class="slot" tabindex="0" data-accept="h-400" aria-label="height slot"></span>&gt;</div>
+              </div>
+              <div class="tag-choices" role="list">
+                <div class="tag" role="listitem" draggable="true" data-token="w-250"><code>width="250"</code></div>
+                <div class="tag" role="listitem" draggable="true" data-token="h-400"><code>height="400"</code></div>
+              </div>
+              <div id="size-score" class="tags-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <!-- Stage 4: Make it a link with href -->
+          <div id="aq4" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 4</h3>
+            <p class="note">Make the element into a link that goes to "https://www.w3schools.com".</p>
+            <section id="href-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">&lt;a <span class="lslot" tabindex="0" data-accept="href-eq" aria-label="href slot"></span>"https://www.w3schools.com"&gt;This is a link&lt;/a&gt;</div>
+              </div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="href-eq"><code>href=</code></div>
+              </div>
+              <div id="href-score" class="link-score" aria-live="polite">Score: 0/1</div>
+            </section>
+          </div>
+
+          <!-- Stage 5: Add alt text -->
+          <div id="aq5" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 5</h3>
+            <p class="note">Specify alternate text for the image.</p>
+            <section id="alt-quiz" class="tags-quiz" aria-live="polite">
+              <div class="tags-board">
+                <div class="code-line">&lt;img src="w3schools.png" <span class="slot" tabindex="0" data-accept="alt-key" aria-label="alt slot"></span>="w3schools Logo"&gt;</div>
+              </div>
+              <div class="tag-choices" role="list">
+                <div class="tag" role="listitem" draggable="true" data-token="alt-key"><code>alt</code></div>
+              </div>
+              <div id="alt-score" class="tags-score" aria-live="polite">Score: 0/1</div>
+            </section>
+          </div>
+
+          <!-- Done screen -->
+          <div id="aq-done" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>All Quizzes Completed</h3>
+            <div class="done-card">
+              <p><strong>Great job!</strong> You passed all HTML attributes quizzes.</p>
+              <p><button type="button" class="button" id="aq-restart">Restart</button></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section video-section">
+          <h2>Video Tutorial</h2>
+          <p>Strengthen your understanding with <a href="https://www.youtube.com/watch?v=pQN-pnXPaVg" target="_blank" rel="noopener">freeCodeCamp.org's HTML Full Course</a>, especially the portion around 32 minutes highlighting attributes and global properties.</p>
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/pQN-pnXPaVg" title="HTML Full Course - Build a Website Tutorial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <script defer src="/assets/attributes-quiz.js"></script>
+
+        <!-- Comments Section -->
+        <div id="comments-section"></div>
+      </article>
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+</html>

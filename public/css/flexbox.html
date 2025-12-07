@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS - Flexbox | Co.Razer Docs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/css-docs.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#6ee7ff',
+            accent: '#64f5a1',
+            'dark-bg': '#0b0d10',
+            'dark-panel': '#11151a',
+            'dark-border': '#1e2630',
+          }
+        }
+      }
+    }
+  </script>
+  <script defer src="/assets/app.js"></script>
+  <script defer src="/assets/css-quiz.js"></script>
+  <script defer src="/assets/comments.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container docs">
+    <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false">
+      <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+      <span class="sidebar-toggle__label">CSS Docs</span>
+    </button>
+
+    <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+      <h3 id="docs-nav-heading">CSS Docs</h3>
+      <a href="/css/introduction.html">Introduction</a>
+      <a href="/css/selectors.html">Selectors</a>
+      <a href="/css/layout.html">Layout</a>
+      <a href="/css/box-model.html">Box Model</a>
+      <a href="/css/typography.html">Typography</a>
+      <a href="/css/flexbox.html">Flexbox</a>
+      <a href="/css/grid.html">Grid</a>
+      <a href="/css/variables.html">Custom Properties</a>
+    </aside>
+
+    <article class="article css-article">
+      <header>
+        <h1>CSS Flexbox</h1>
+        <p class="lead">Flexbox lays out elements along a single axis. It excels at nav bars, cards, toolbars, and any layout where space distribution matters.</p>
+      </header>
+
+      <section class="doc-section">
+        <h2>Flex Containers</h2>
+        <p>Once you declare <code>display: flex;</code>, the container gains a main axis (row by default) and a cross axis (column). Direct children become flex items that can shrink, grow, and align themselves. Use <code>flex-direction</code> to swap axes and <code>row-reverse</code> or <code>column-reverse</code> to flip ordering.</p>
+        <div class="flex-demo">
+          <div class="flex-preview">
+            <div class="flex-item">Alpha</div>
+            <div class="flex-item">Bravo</div>
+            <div class="flex-item">Charlie</div>
+          </div>
+<pre><code>.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}</code></pre>
+        </div>
+      </section>
+
+      <section class="doc-section">
+        <h2>Aligning Items</h2>
+        <p>Use <code>justify-content</code> to distribute space along the main axis and <code>align-items</code> for the cross axis. Combine with <code>gap</code> to space items evenly without margin hacks. When items wrap onto multiple lines, <code>align-content</code> controls how those lines distribute along the cross axis.</p>
+<pre><code>.pricing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: clamp(1rem, 4vw, 2.5rem);
+}</code></pre>
+        <p>Switch to columns with <code>flex-direction: column;</code> when stacking on smaller screens.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>Flexible Children</h2>
+        <p>The <code>flex</code> shorthand controls growth (<em>flex-grow</em>), shrink (<em>flex-shrink</em>), and basis (initial size). Giving each card <code>flex: 1 1 240px;</code> lets them wrap responsibly. Remember that <code>flex-basis</code> overrides <code>width</code>, and setting <code>min-width: 0</code> on flex children avoids unexpected overflow when content is wide.</p>
+<pre><code>.feature-card {
+  flex: 1 1 240px;
+  min-height: 200px;
+}</code></pre>
+        <p>Wrap items with <code>flex-wrap: wrap;</code> to prevent overflow. Individual items can override alignment with <code>align-self</code> or change visual order with <code>order</code>.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>Patterns And Tips</h2>
+        <ul class="definition-list">
+          <li><strong>Equal-height columns:</strong> Flex items stretch to the tallest sibling when <code>align-items: stretch;</code> (the default) is active.</li>
+          <li><strong>Spacing push:</strong> Add <code>margin-inline-start: auto;</code> to a flex item to push it to the far edge, a common trick for CTA buttons in nav bars.</li>
+          <li><strong>Vertical centering:</strong> In a column layout, <code>justify-content: center;</code> vertically centers items relative to the container height.</li>
+          <li><strong>Fallbacks:</strong> For very old browsers that lack flexbox, provide a simple stacked layout via the normal flow and enhance with flex when supported.</li>
+        </ul>
+        <p>Flexbox is efficient for UI controls and linear content. Reach for grid when alignment must occur in both dimensions.</p>
+      </section>
+
+      <section class="css-quiz" id="flexbox-quiz" aria-labelledby="flexbox-quiz-heading">
+        <h2 id="flexbox-quiz-heading">Mini Game: Flex Layout Coach</h2>
+        <p class="note">Drag tokens to finish the flexbox layout. Remember: Enter drops a focused token into the first valid slot.</p>
+
+        <div class="quiz-stage" data-stage="container" tabindex="-1">
+          <h3>Stage 1 - Configure The Container</h3>
+          <p>Fill in the essentials for a responsive row of cards.</p>
+<pre><code>.feature-row {
+  <span class="drop-slot" data-accept="display-flex" data-placeholder="display: ?"></span>
+  <span class="drop-slot" data-accept="gap-line" data-placeholder="gap: ?"></span>
+  <span class="drop-slot" data-accept="justify-line" data-placeholder="justify-content: ?"></span>
+  flex-wrap: wrap;
+}</code></pre>
+          <div class="token-bank">
+            <div class="drag-token" data-token="display-flex" data-display="<code>display: flex;</code>"><code>display: flex;</code></div>
+            <div class="drag-token" data-token="gap-line" data-display="<code>gap: clamp(1rem, 3vw, 2rem);</code>"><code>gap: clamp(1rem, 3vw, 2rem);</code></div>
+            <div class="drag-token" data-token="justify-line" data-display="<code>justify-content: space-between;</code>"><code>justify-content: space-between;</code></div>
+          </div>
+          <div class="quiz-score" data-role="score">Score: 0/3</div>
+          <div class="quiz-actions">
+            <button type="button" data-role="reset">Reset stage</button>
+          </div>
+          <p class="is-hidden" data-role="complete">Clean! The container is ready for flexible children.</p>
+        </div>
+
+        <div class="quiz-stage is-hidden" data-stage="items" tabindex="-1">
+          <h3>Stage 2 - Tune The Items</h3>
+          <p>Match each description to the property that achieves it.</p>
+          <ul class="definition-list">
+            <li><span class="drop-slot" data-accept="align-center" data-placeholder="Drop property"></span> vertically centers icons inside the toolbar.</li>
+            <li><span class="drop-slot" data-accept="flex-grow" data-placeholder="Drop property"></span> lets cards expand while respecting a minimum width.</li>
+            <li><span class="drop-slot" data-accept="column-direction" data-placeholder="Drop property"></span> stacks items on narrow screens.</li>
+          </ul>
+          <div class="token-bank">
+            <div class="drag-token" data-token="align-center" data-display="<code>align-items: center;</code>"><code>align-items: center;</code></div>
+            <div class="drag-token" data-token="flex-grow" data-display="<code>flex: 1 1 240px;</code>"><code>flex: 1 1 240px;</code></div>
+            <div class="drag-token" data-token="column-direction" data-display="<code>flex-direction: column;</code>"><code>flex-direction: column;</code></div>
+          </div>
+          <div class="quiz-score" data-role="score">Score: 0/3</div>
+          <div class="quiz-actions">
+            <button type="button" data-role="reset">Reset stage</button>
+          </div>
+          <p class="is-hidden" data-role="complete">Excellent flexibility! Your layout adapts gracefully.</p>
+        </div>
+
+        <div class="quiz-complete is-hidden" data-role="quiz-done" aria-hidden="true">
+          <h3>You coached the flex layout!</h3>
+          <p>Try combining these rules in your next UI.</p>
+          <button type="button" class="button" data-role="restart">Play again</button>
+        </div>
+      </section>
+
+      <!-- Comments Section -->
+      <div id="comments-section"></div>
+    </article>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

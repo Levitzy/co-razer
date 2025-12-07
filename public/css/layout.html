@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Master CSS layout with comprehensive tutorials. Learn normal flow, flexbox, CSS grid, positioning, and responsive design techniques with hands-on examples.">
+  <meta name="keywords" content="CSS layout, flexbox, CSS grid, normal flow, positioning, responsive design, CSS positioning, layout techniques">
+  <meta name="author" content="Co.Razer Documentation Team">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CSS Layout - Master Modern Layout Techniques">
+  <meta property="og:description" content="Master CSS layout with comprehensive tutorials. Learn flexbox, CSS grid, positioning, and responsive design techniques.">
+  <meta property="og:url" content="https://co-razer.com/css/layout.html">
+  
+  <title>CSS Layout - Master Modern Layout Techniques | Co.Razer Docs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/css-docs.css">
+  <link rel="canonical" href="https://co-razer.com/css/layout.html">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#6ee7ff',
+            accent: '#64f5a1',
+            'dark-bg': '#0b0d10',
+            'dark-panel': '#11151a',
+            'dark-border': '#1e2630',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "CSS Layout - Master Modern Layout Techniques",
+    "description": "Master CSS layout with comprehensive tutorials and modern techniques",
+    "author": {
+      "@type": "Organization",
+      "name": "Co.Razer Documentation Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Co.Razer",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "/assets/logo.png"
+      }
+    },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://co-razer.com/css/layout.html"
+    }
+  }
+  </script>
+  
+  <script defer src="/assets/app.js"></script>
+  <script defer src="/assets/comments.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main id="main-content" class="container docs">
+    <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false" aria-label="Toggle CSS documentation navigation">
+      <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+      <span class="sidebar-toggle__label">CSS Docs</span>
+    </button>
+
+    <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+      <h3 id="docs-nav-heading">CSS Documentation</h3>
+      <nav aria-label="CSS tutorial navigation">
+        <a href="/css/introduction.html">Introduction</a>
+        <a href="/css/selectors.html">Selectors</a>
+        <a href="/css/layout.html" class="active" aria-current="page">Layout</a>
+        <a href="/css/box-model.html">Box Model</a>
+        <a href="/css/typography.html">Typography</a>
+        <a href="/css/flexbox.html">Flexbox</a>
+        <a href="/css/grid.html">Grid</a>
+        <a href="/css/variables.html">Custom Properties</a>
+      </nav>
+    </aside>
+
+    <article class="article css-article">
+      <header>
+        <h1>CSS Layout Foundations</h1>
+        <p class="lead">Modern CSS provides powerful layout systems that replace brittle hacks. Understanding the document flow, flexbox, and grid allows you to build responsive interfaces with minimal code.</p>
+      </header>
+
+      <section class="doc-section">
+        <h2>Normal Flow</h2>
+        <p>Browsers position elements in two primary directions by default: block-level elements stack vertically, and inline elements flow horizontally inside each block. Managing flow is the first step before introducing advanced layout tools.</p>
+        <ul class="definition-list">
+          <li><strong>Block formatting context:</strong> Elements like <code>&lt;div&gt;</code>, <code>&lt;article&gt;</code>, and headings expand to fill available width and push subsequent blocks downward.</li>
+          <li><strong>Inline formatting context:</strong> Text, <code>&lt;span&gt;</code>, and inline links sit on the same line, wrapping automatically; line-height controls the vertical rhythm.</li>
+          <li><strong>Positioning adjustments:</strong> Margins collapse between block siblings, while paddings do not. Floating should be reserved for text wrap scenarios.</li>
+        </ul>
+      </section>
+
+      <section class="doc-section">
+        <h2>Flexbox for One-Dimensional Layouts</h2>
+        <p>Flexbox excels when you arrange items along a single axis (horizontal nav bars, vertical sidebars, button groups). It distributes space and aligns items without manual margins.</p>
+<pre><code>.toolbar {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.toolbar button:last-child {
+  margin-left: auto; /* pushes final button to the edge */
+}</code></pre>
+        <p>Use <code>flex-wrap</code> when items need to wrap and <code>flex</code> shorthand on the children to control how they grow or shrink.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>Grid for Two-Dimensional Layouts</h2>
+        <p>CSS Grid manages rows and columns simultaneously. Define tracks, then place items by line numbers, spans, or named areas.</p>
+<pre><code>.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+.dashboard .summary {
+  grid-column: 1 / -1; /* full width on large screens */
+}</code></pre>
+        <p>Grid pairs well with container queries and provides fine-grained control for responsive designs without complex media queries.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>When to Choose Which</h2>
+        <div class="concept-grid">
+          <div class="concept-card">
+            <h3>Flexbox</h3>
+            <p>Use for menus, toolbars, notification trays, card carousels, or aligning items in a single row or column.</p>
+          </div>
+          <div class="concept-card">
+            <h3>Grid</h3>
+            <p>Reach for grid when items need to align on both axes: dashboards, marketing sections, masonry-style galleries.</p>
+          </div>
+          <div class="concept-card">
+            <h3>Flow &amp; Positioning</h3>
+            <p>Sometimes the default document flow with margins is all you need. Combine it with CSS logical properties for internationalisation.</p>
+          </div>
+        </div>
+        <p>With these fundamentals in place, dive into specialized guides on <a href="/css/flexbox.html">Flexbox</a> and <a href="/css/grid.html">Grid</a> to explore practical patterns and interactive quizzes.</p>
+      </section>
+
+      <!-- Comments Section -->
+      <div id="comments-section"></div>
+    </article>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
+

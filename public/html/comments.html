@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML - Comments | Co.Razer Docs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="/assets/basics.css">
+    <link rel="stylesheet" href="/assets/comments.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: '#6ee7ff',
+              accent: '#64f5a1',
+              'dark-bg': '#0b0d10',
+              'dark-panel': '#11151a',
+              'dark-border': '#1e2630',
+            }
+          }
+        }
+      }
+    </script>
+      <script defer src="/assets/app.js"></script>
+      <script defer src="/assets/comments.js"></script>
+    </head>
+  <body>
+    <div id="site-header"></div>
+
+    <main class="container docs">
+      <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false">
+        <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+        <span class="sidebar-toggle__label">HTML Docs</span>
+      </button>
+
+      <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+        <h3 id="docs-nav-heading">HTML Tutorial</h3>
+        <a href="/html/introduction.html">Introduction</a>
+        <a href="/html/editors.html">Editors</a>
+        <a href="/html/basics.html">Basics</a>
+        <a href="/html/elements.html">Elements</a>
+        <a href="/html/attributes.html">Attributes</a>
+        <a href="/html/headings.html">Headings</a>
+        <a href="/html/paragraphs.html">Paragraphs</a>
+        <a href="/html/styles.html">Styles</a>
+        <a href="/html/formatting.html">Formatting</a>
+        <a href="/html/comments.html" class="active">Comments</a>
+        <a href="/html/colors.html">Colors</a>
+        <a href="/html/colors/rgb.html">RGB &amp; RGBA</a>
+        <a href="/html/qua.html">Quotations</a>
+      </aside>
+
+      <article class="article comments-article">
+        <h1>HTML Comments</h1>
+        <p>HTML comments are not displayed in the browser, but they can help document your HTML source code.</p>
+
+        <h2>HTML Comment Tag</h2>
+        <p>You can add comments to your HTML source by using the following syntax:</p>
+<pre><code>&lt;!-- Write your comments here --&gt;</code></pre>
+        <p>Notice that there is an exclamation point (<code>!</code>) in the start tag, but not in the end tag.</p>
+        <p class="note">Note: Comments are not displayed by the browser, but they can help document your HTML source code.</p>
+
+        <h2>Add Comments</h2>
+        <p>With comments you can place notifications and reminders in your HTML code:</p>
+        <h3>Example</h3>
+<pre><code>&lt;!-- This is a comment --&gt;
+
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;!-- Remember to add more information here --&gt;</code></pre>
+
+        <h2>Hide Content</h2>
+        <p>Comments can be used to hide content. This can be helpful if you hide content temporarily:</p>
+        <h3>Example</h3>
+<pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;!-- &lt;p&gt;This is another paragraph &lt;/p&gt; --&gt;
+
+&lt;p&gt;This is a paragraph too.&lt;/p&gt;</code></pre>
+        <p>You can also hide more than one line. Everything between the <code>&lt;!--</code> and the <code>--&gt;</code> will be hidden from the display.</p>
+        <h3>Example</h3>
+        <p>Hide a section of HTML code:</p>
+<pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;!--
+&lt;p&gt;Look at this cool image:&lt;/p&gt;
+&lt;img border="0" src="pic_trulli.jpg" alt="Trulli"&gt;
+--&gt;
+&lt;p&gt;This is a paragraph too.&lt;/p&gt;</code></pre>
+        <p>Comments are also great for debugging HTML, because you can comment out HTML lines of code, one at a time, to search for errors.</p>
+
+        <h2>Hide Inline Content</h2>
+        <p>Comments can be used to hide parts in the middle of the HTML code.</p>
+        <h3>Example</h3>
+        <p>Hide a part of a paragraph:</p>
+<pre><code>&lt;p&gt;This &lt;!-- great text --&gt; is a paragraph.&lt;/p&gt;</code></pre>
+
+        <hr>
+        <h2>Practice: HTML Comments Game</h2>
+        <section id="comments-quiz" class="comments-quiz quiz-stage">
+          <!-- Q1: Select correct syntax (no radio) -->
+          <div id="cq1" class="quiz-screen">
+            <h3>Quick Quiz 1</h3>
+            <p class="note">What is the correct syntax for adding a comment in HTML?</p>
+            <div class="q-choices" role="list">
+              <div class="c-choice" role="button" tabindex="0" aria-label="option" data-correct="false">&lt;-- This is a comment --&gt;</div>
+              <div class="c-choice" role="button" tabindex="0" aria-label="option" data-correct="false">&lt;## This is a comment ##&gt;</div>
+              <div class="c-choice" role="button" tabindex="0" aria-label="option" data-correct="false">&lt;--&gt; This is a comment &lt;/--&gt;</div>
+              <div class="c-choice" role="button" tabindex="0" aria-label="option" data-correct="true">&lt;!-- This is a comment --&gt;</div>
+            </div>
+            <div class="q-feedback" role="status" aria-live="polite"></div>
+          </div>
+
+          <!-- Q2: Comment out the line text only -->
+          <div id="cq2" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 2</h3>
+            <p class="note">Use the HTML comment tag to make a comment out of the "This is a comment" text.</p>
+            <section id="commentline-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">&lt;h1&gt;This is a heading&lt;/h1&gt;</div>
+                <div class="code-line"><span class="lslot" tabindex="0" data-accept="c-open" aria-label="comment open"></span> This is a comment <span class="lslot" tabindex="0" data-accept="c-close" aria-label="comment close"></span></div>
+                <div class="code-line">&lt;p&gt;This is a paragraph.&lt;/p&gt;</div>
+              </div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="c-open"><code>&lt;!--</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="c-close"><code>--&gt;</code></div>
+              </div>
+              <div id="cq2-score" class="link-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <!-- Q3: Comment the entire paragraph line -->
+          <div id="cq3" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 3</h3>
+            <p class="note">Add comment tags around the paragraph:</p>
+            <section id="commentpara-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line"><span class="lslot" tabindex="0" data-accept="c-open" aria-label="comment open"></span>&lt;p&gt;This is a paragraph.&lt;/p&gt;<span class="lslot" tabindex="0" data-accept="c-close" aria-label="comment close"></span></div>
+              </div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="c-open"><code>&lt;!--</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="c-close"><code>--&gt;</code></div>
+              </div>
+              <div id="cq3-score" class="link-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <div id="cq-done" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>All Quizzes Completed</h3>
+            <div class="done-card">
+              <p><strong>Well done!</strong> You passed HTML comments quizzes.</p>
+              <p><button type="button" class="button" id="cq-restart">Restart</button></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section video-section">
+          <h2>Video Tutorial</h2>
+          <p>Watch <a href="https://www.youtube.com/watch?v=pQN-pnXPaVg" target="_blank" rel="noopener">freeCodeCamp.org's HTML Full Course</a>—the comments discussion appears near the beginning when building the sample page.</p>
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/pQN-pnXPaVg" title="HTML Full Course - Build a Website Tutorial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <script defer src="/assets/comments-quiz.js"></script>
+
+        <!-- Comments Section -->
+        <div id="comments-section"></div>
+      </article>
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+ </html>

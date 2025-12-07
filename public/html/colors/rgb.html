@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML - RGB and RGBA Colors | Co.Razer Docs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="/assets/basics.css">
+    <link rel="stylesheet" href="/assets/colors.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: '#6ee7ff',
+              accent: '#64f5a1',
+              'dark-bg': '#0b0d10',
+              'dark-panel': '#11151a',
+              'dark-border': '#1e2630',
+            }
+          }
+        }
+      }
+    </script>
+      <script defer src="/assets/app.js"></script>
+      <script defer src="/assets/comments.js"></script>
+    </head>
+  <body>
+    <div id="site-header"></div>
+
+    <main class="container docs">
+      <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false">
+        <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+        <span class="sidebar-toggle__label">HTML Docs</span>
+      </button>
+
+      <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+        <h3 id="docs-nav-heading">HTML Tutorial</h3>
+        <a href="/html/introduction.html">Introduction</a>
+        <a href="/html/editors.html">Editors</a>
+        <a href="/html/basics.html">Basics</a>
+        <a href="/html/elements.html">Elements</a>
+        <a href="/html/attributes.html">Attributes</a>
+        <a href="/html/headings.html">Headings</a>
+        <a href="/html/paragraphs.html">Paragraphs</a>
+        <a href="/html/styles.html">Styles</a>
+        <a href="/html/formatting.html">Formatting</a>
+        <a href="/html/comments.html">Comments</a>
+        <a href="/html/colors.html">Colors</a>
+        <a href="/html/qua.html">Quotations</a>
+        <h3>HTML Colors</h3>
+        <a href="/html/colors/rgb.html" class="active">RGB &amp; RGBA</a>
+      </aside>
+
+      <article class="article colors-article">
+        <h1>HTML RGB and RGBA Colors</h1>
+        <p>An RGB color value represents <strong>RED</strong>, <strong>GREEN</strong>, and <strong>BLUE</strong> light sources.</p>
+        <p>An RGBA color value is an extension of RGB with an <strong>Alpha</strong> channel (opacity).</p>
+
+        <h2>RGB Color Values</h2>
+        <p>In HTML, a color can be specified as an RGB value, using this formula:</p>
+<pre><code>rgb(red, green, blue)</code></pre>
+        <p>Each parameter (red, green, and blue) defines the intensity of the color with a value between 0 and 255.</p>
+        <p>This means that there are <strong>256 x 256 x 256 = 16,777,216</strong> possible colors!</p>
+        <p>For example, <code>rgb(255, 0, 0)</code> is displayed as red, because red is set to its highest value (255), and the other two (green and blue) are set to 0.</p>
+        <p>Another example, <code>rgb(0, 255, 0)</code> is displayed as green, because green is set to its highest value (255), and the other two (red and blue) are set to 0.</p>
+        <p>To display black, set all color parameters to 0, like this: <code>rgb(0, 0, 0)</code>.</p>
+        <p>To display white, set all color parameters to 255, like this: <code>rgb(255, 255, 255)</code>.</p>
+
+        <h3>Example</h3>
+        <div class="live-demo" style="display:grid;gap:6px;">
+          <div style="background:rgb(255, 0, 0); padding:8px; border-radius:6px;">rgb(255, 0, 0)</div>
+          <div style="background:rgb(0, 0, 255); padding:8px; border-radius:6px;">rgb(0, 0, 255)</div>
+          <div style="background:rgb(60, 179, 113); padding:8px; border-radius:6px;">rgb(60, 179, 113)</div>
+          <div style="background:rgb(238, 130, 238); padding:8px; border-radius:6px;">rgb(238, 130, 238)</div>
+          <div style="background:rgb(255, 165, 0); padding:8px; border-radius:6px;">rgb(255, 165, 0)</div>
+          <div style="background:rgb(106, 90, 205); padding:8px; border-radius:6px;">rgb(106, 90, 205)</div>
+        </div>
+
+        <p>Experiment by mixing the RGB values below:</p>
+        <div class="live-demo" style="display:grid;gap:6px;">
+          <div style="background:rgb(255, 99, 71); padding:8px; border-radius:6px;">rgb(255, 99, 71)</div>
+        </div>
+
+        <h2>Shades of Gray</h2>
+        <p>Shades of gray are often defined using equal values for all three parameters:</p>
+        <h3>Example</h3>
+        <div class="live-demo" style="display:grid;gap:6px;">
+          <div style="background:rgb(60, 60, 60); padding:8px; border-radius:6px;">rgb(60, 60, 60)</div>
+          <div style="background:rgb(100, 100, 100); padding:8px; border-radius:6px;">rgb(100, 100, 100)</div>
+          <div style="background:rgb(140, 140, 140); padding:8px; border-radius:6px;">rgb(140, 140, 140)</div>
+          <div style="background:rgb(180, 180, 180); padding:8px; border-radius:6px;">rgb(180, 180, 180)</div>
+          <div style="background:rgb(200, 200, 200); padding:8px; border-radius:6px;">rgb(200, 200, 200)</div>
+          <div style="background:rgb(240, 240, 240); padding:8px; border-radius:6px;">rgb(240, 240, 240)</div>
+        </div>
+
+        <h2>RGBA Color Values</h2>
+        <p>RGBA color values are an extension of RGB color values with an Alpha channel – which specifies the opacity for a color.</p>
+        <p>An RGBA color value is specified with:</p>
+<pre><code>rgba(red, green, blue, alpha)</code></pre>
+        <p>The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all):</p>
+
+        <h3>Example</h3>
+        <div class="live-demo" style="display:grid;gap:6px;">
+          <div style="background:rgba(255, 99, 71, 0); padding:8px; border-radius:6px;">rgba(255, 99, 71, 0)</div>
+          <div style="background:rgba(255, 99, 71, 0.2); padding:8px; border-radius:6px;">rgba(255, 99, 71, 0.2)</div>
+          <div style="background:rgba(255, 99, 71, 0.4); padding:8px; border-radius:6px;">rgba(255, 99, 71, 0.4)</div>
+          <div style="background:rgba(255, 99, 71, 0.6); padding:8px; border-radius:6px;">rgba(255, 99, 71, 0.6)</div>
+          <div style="background:rgba(255, 99, 71, 0.8); padding:8px; border-radius:6px;">rgba(255, 99, 71, 0.8)</div>
+          <div style="background:rgba(255, 99, 71, 1); padding:8px; border-radius:6px;">rgba(255, 99, 71, 1)</div>
+        </div>
+
+        <hr>
+        <h2>Practice: RGB/RGBA Game</h2>
+        <section id="rgb-quiz" class="colors-quiz quiz-stage">
+          <!-- Q1: build rgb(255, 0, 0) -->
+          <div id="rq1" class="quiz-screen">
+            <h3>Quick Quiz 1</h3>
+            <p class="note">Complete the function to create pure red.</p>
+            <section id="rgb-red" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line"><span class="lslot" tabindex="0" data-accept="open" aria-label="open"></span><span class="lslot" tabindex="0" data-accept="r" aria-label="red"></span><span class="lslot" tabindex="0" data-accept="comma" aria-label="comma"></span><span class="lslot" tabindex="0" data-accept="g" aria-label="green"></span><span class="lslot" tabindex="0" data-accept="comma" aria-label="comma"></span><span class="lslot" tabindex="0" data-accept="b" aria-label="blue"></span><span class="lslot" tabindex="0" data-accept="close" aria-label="close"></span></div>
+              </div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="open"><code>rgb(</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="r"><code>255</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="comma"><code>, </code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="comma"><code>, </code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="g"><code>0</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="b"><code>0</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="close"><code>)</code></div>
+              </div>
+              <div id="rq1-score" class="link-score" aria-live="polite">Score: 0/6</div>
+            </section>
+          </div>
+
+          <!-- Q2: gray rgb(100, 100, 100) -->
+          <div id="rq2" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 2</h3>
+            <p class="note">Create a gray color using equal values.</p>
+            <section id="rgb-gray" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line"><span class="lslot" tabindex="0" data-accept="open" aria-label="open"></span><span class="lslot" tabindex="0" data-accept="a" aria-label="r"></span><span class="lslot" tabindex="0" data-accept="comma" aria-label="comma"></span><span class="lslot" tabindex="0" data-accept="b" aria-label="g"></span><span class="lslot" tabindex="0" data-accept="comma" aria-label="comma"></span><span class="lslot" tabindex="0" data-accept="c" aria-label="b"></span><span class="lslot" tabindex="0" data-accept="close" aria-label="close"></span></div>
+              </div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="open"><code>rgb(</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="a"><code>100</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="b"><code>100</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="c"><code>100</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="comma"><code>, </code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="comma"><code>, </code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="close"><code>)</code></div>
+              </div>
+              <div id="rq2-score" class="link-score" aria-live="polite">Score: 0/6</div>
+            </section>
+          </div>
+
+          <!-- Q3: rgba(255, 99, 71, 0.5) -->
+          <div id="rq3" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 3</h3>
+            <p class="note">Build the RGBA color with 50% opacity.</p>
+            <section id="rgba-demo" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line"><span class="lslot" tabindex="0" data-accept="open" aria-label="open"></span><span class="lslot" tabindex="0" data-accept="r" aria-label="r"></span><span class="lslot" tabindex="0" data-accept="comma" aria-label="comma"></span><span class="lslot" tabindex="0" data-accept="g" aria-label="g"></span><span class="lslot" tabindex="0" data-accept="comma" aria-label="comma"></span><span class="lslot" tabindex="0" data-accept="b" aria-label="b"></span><span class="lslot" tabindex="0" data-accept="comma" aria-label="comma"></span><span class="lslot" tabindex="0" data-accept="a" aria-label="a"></span><span class="lslot" tabindex="0" data-accept="close" aria-label="close"></span></div>
+              </div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="open"><code>rgba(</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="r"><code>255</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="g"><code>99</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="b"><code>71</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="a"><code>0.5</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="comma"><code>, </code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="comma"><code>, </code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="comma"><code>, </code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="close"><code>)</code></div>
+              </div>
+              <div id="rq3-score" class="link-score" aria-live="polite">Score: 0/8</div>
+            </section>
+          </div>
+
+          <div id="rq-done" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>All Quizzes Completed</h3>
+            <div class="done-card">
+              <p><strong>Nice!</strong> You built RGB and RGBA colors correctly.</p>
+              <p><button type="button" class="button" id="rq-restart">Restart</button></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section video-section">
+          <h2>Video Tutorial</h2>
+          <p>Review RGB and RGBA in <a href="https://www.youtube.com/watch?v=yfoY53QXEnI" target="_blank" rel="noopener">Traversy Media's CSS Crash Course for Absolute Beginners</a>, which demonstrates working with color channels and transparency.</p>
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/yfoY53QXEnI" title="CSS Crash Course for Absolute Beginners" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <script defer src="/assets/rgb-quiz.js"></script>
+
+        <!-- Comments Section -->
+        <div id="comments-section"></div>
+      </article>
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+</html>

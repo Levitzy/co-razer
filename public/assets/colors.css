@@ -1,0 +1,34 @@
+/* Colors page styles */
+.colors-article h1 { margin-bottom: 6px; }
+.colors-article h2 { margin-top: 24px; margin-bottom: 8px; }
+.colors-article h3 { margin-top: 14px; color: var(--muted); }
+.colors-article pre { margin: 12px 0 18px; }
+.colors-article .note { color: var(--muted); }
+
+/* Clickable choice cards (no radios) */
+.colors-quiz .k-choice { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border); background: rgba(0,0,0,0.15); cursor: pointer; user-select: none; transition: border-color .2s ease, background-color .2s ease, transform .05s ease; }
+.colors-quiz .k-choice:hover { border-color: var(--link); background: rgba(110,231,255,0.06); }
+.colors-quiz .k-choice:focus { outline: none; border-color: var(--link); box-shadow: 0 0 0 2px rgba(125,211,252,0.18) inset; }
+.colors-quiz .k-choice::before { content: ""; width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--border); background: rgba(255,255,255,0.04); display: inline-block; flex: none; }
+.colors-quiz .k-choice.selected.correct::before { border-color: rgba(100,245,161,0.8); box-shadow: 0 0 0 4px rgba(100,245,161,0.18) inset; background: rgba(100,245,161,0.25); }
+.colors-quiz .k-choice.selected.incorrect::before { border-color: rgba(248,113,113,0.8); box-shadow: 0 0 0 4px rgba(248,113,113,0.18) inset; background: rgba(248,113,113,0.25); }
+.colors-quiz .k-choice.correct { border-color: rgba(100,245,161,0.8); background: linear-gradient(180deg, rgba(100,245,161,0.12), rgba(100,245,161,0.05)); }
+.colors-quiz .k-choice.incorrect { border-color: rgba(248,113,113,0.8); background: linear-gradient(180deg, rgba(248,113,113,0.12), rgba(248,113,113,0.05)); }
+.colors-quiz .q-feedback { margin-top: 8px; min-height: 1.2em; color: var(--muted); }
+
+/* Color swatches */
+.swatch { width: 28px; height: 18px; border: 1px solid var(--border); border-radius: 4px; box-shadow: var(--shadow); }
+.sw-row { display: flex; gap: 6px; align-items: center; }
+
+/* Reuse link-quiz styles from basics */
+.link-quiz { display: grid; gap: 12px; }
+.link-board { border: 1px solid var(--border); background: var(--panel); border-radius: 12px; padding: 12px; box-shadow: var(--shadow); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; color: #e9f2fb; }
+.code-line { line-height: 1.5; white-space: pre; }
+.lslot { display: inline-flex; min-width: 44px; min-height: 22px; border: 1px dashed var(--border); border-radius: 8px; margin: 0 4px; vertical-align: middle; align-items: center; justify-content: center; padding: 0 6px; }
+.lslot.over { border-color: var(--link); background: rgba(110,231,255,0.06); }
+.lslot.correct { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(100,245,161,0.18) inset; }
+.lslot.incorrect { border-color: var(--danger); box-shadow: 0 0 0 2px rgba(248,113,113,0.18) inset; }
+.ltag-choices { display: flex; flex-wrap: wrap; gap: 10px; }
+.ltag { border: 1px solid var(--border); background: var(--panel); border-radius: 10px; padding: 6px 10px; cursor: grab; user-select: none; box-shadow: var(--shadow); }
+.ltag:active { cursor: grabbing; }
+

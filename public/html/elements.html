@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn HTML elements with comprehensive examples. Master opening tags, closing tags, nested elements, empty elements, and HTML structure with interactive tutorials.">
+  <meta name="keywords" content="HTML elements, HTML tags, opening tags, closing tags, nested elements, empty elements, HTML structure">
+  <meta name="author" content="Co.Razer Documentation Team">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HTML Elements - Learn HTML Structure">
+  <meta property="og:description" content="Master HTML elements with comprehensive examples and interactive tutorials. Learn opening tags, closing tags, and nested elements.">
+  <meta property="og:url" content="https://co-razer.com/html/elements.html">
+  
+  <title>HTML Elements - Learn HTML Structure | Co.Razer Docs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/basics.css">
+  <link rel="stylesheet" href="/assets/elements.css">
+  <link rel="canonical" href="https://co-razer.com/html/elements.html">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#6ee7ff',
+            accent: '#64f5a1',
+            'dark-bg': '#0b0d10',
+            'dark-panel': '#11151a',
+            'dark-border': '#1e2630',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "HTML Elements - Learn HTML Structure",
+    "description": "Master HTML elements with comprehensive examples and interactive tutorials",
+    "author": {
+      "@type": "Organization",
+      "name": "Co.Razer Documentation Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Co.Razer",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "/assets/logo.png"
+      }
+    },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://co-razer.com/html/elements.html"
+    }
+  }
+  </script>
+  
+  <script defer src="/assets/app.js"></script>
+  <script defer src="/assets/comments.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main id="main-content" class="container docs">
+    <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false" aria-label="Toggle HTML documentation navigation">
+      <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+      <span class="sidebar-toggle__label">HTML Docs</span>
+    </button>
+
+    <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+      <h3 id="docs-nav-heading">HTML Tutorial</h3>
+      <nav aria-label="HTML tutorial navigation">
+        <a href="/html/introduction.html">Introduction</a>
+        <a href="/html/editors.html">Editors</a>
+        <a href="/html/basics.html">Basics</a>
+        <a href="/html/elements.html" class="active" aria-current="page">Elements</a>
+        <a href="/html/attributes.html">Attributes</a>
+        <a href="/html/headings.html">Headings</a>
+        <a href="/html/paragraphs.html">Paragraphs</a>
+        <a href="/html/styles.html">Styles</a>
+        <a href="/html/formatting.html">Formatting</a>
+        <a href="/html/comments.html">Comments</a>
+        <a href="/html/colors.html">Colors</a>
+        <a href="/html/colors/rgb.html">RGB &amp; RGBA</a>
+        <a href="/html/qua.html">Quotations</a>
+      </nav>
+    </aside>
+
+      <article class="article elements-article">
+        <h1>HTML Elements</h1>
+        <p>The HTML element is everything from the start tag to the end tag:</p>
+<pre><code>&lt;tagname&gt;Content goes here...&lt;/tagname&gt;</code></pre>
+
+        <p>Examples of some HTML elements:</p>
+<pre><code>&lt;h1&gt;My First Heading&lt;/h1&gt;
+&lt;p&gt;My first paragraph.&lt;/p&gt;</code></pre>
+
+        <table class="mini-table" aria-label="Start tag and end tag examples">
+          <thead>
+            <tr><th>Start tag</th><th>Element content</th><th>End tag</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>&lt;h1&gt;</code></td><td>My First Heading</td><td><code>&lt;/h1&gt;</code></td></tr>
+            <tr><td><code>&lt;p&gt;</code></td><td>My first paragraph.</td><td><code>&lt;/p&gt;</code></td></tr>
+            <tr><td><code>&lt;br&gt;</code></td><td>none</td><td>none</td></tr>
+          </tbody>
+        </table>
+
+        <p class="note"><strong>Note:</strong> Some HTML elements have no content (like the <code>&lt;br&gt;</code> element). These elements are called <em>empty elements</em>. Empty elements do not have an end tag!</p>
+
+        <h2>Nested HTML Elements</h2>
+        <p>HTML elements can be nested (elements can contain other elements). All HTML documents consist of nested HTML elements.</p>
+        <p>The following example contains four HTML elements (<code>&lt;html&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code>):</p>
+
+        <h3>Example</h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;My First Heading&lt;/h1&gt;
+&lt;p&gt;My first paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h3>Example Explained</h3>
+        <ul>
+          <li>The <code>&lt;html&gt;</code> element is the root element and it defines the whole HTML document. It has a start tag <code>&lt;html&gt;</code> and an end tag <code>&lt;/html&gt;</code>.</li>
+          <li>Inside the <code>&lt;html&gt;</code> element there is a <code>&lt;body&gt;</code> element. The <code>&lt;body&gt;</code> element defines the document's body. It has a start tag <code>&lt;body&gt;</code> and an end tag <code>&lt;/body&gt;</code>.</li>
+          <li>Inside the <code>&lt;body&gt;</code> element there are two other elements: <code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code>. The <code>&lt;h1&gt;</code> element defines a heading and the <code>&lt;p&gt;</code> element defines a paragraph.</li>
+        </ul>
+
+        <h2>Never Skip the End Tag</h2>
+        <p>Some HTML elements will display correctly even if you forget the end tag, but you should never rely on this. Unexpected results and errors may occur if you forget the end tag!</p>
+
+        <h3>Example</h3>
+<pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;This is a paragraph
+&lt;p&gt;This is a paragraph
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h2>Empty HTML Elements</h2>
+        <p>HTML elements with no content are called <em>empty elements</em>. The <code>&lt;br&gt;</code> tag defines a line break and is an empty element without a closing tag:</p>
+
+        <h3>Example</h3>
+<pre><code>&lt;p&gt;This is a &lt;br&gt; paragraph with a line break.&lt;/p&gt;</code></pre>
+
+        <h2>HTML is Not Case Sensitive</h2>
+        <p>HTML tags are not case sensitive: <code>&lt;P&gt;</code> means the same as <code>&lt;p&gt;</code>.</p>
+        <p>The HTML standard does not require lowercase tags, but W3C recommends lowercase in HTML, and demands lowercase for stricter document types like XHTML.</p>
+
+        <h2>HTML Tag Reference</h2>
+        <p><strong>Co-Razer</strong> tag reference contains additional information about these tags and their attributes.</p>
+        <table class="mini-table" aria-label="Common tags">
+          <thead>
+            <tr><th>Tag</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>&lt;html&gt;</code></td><td>Defines the root of an HTML document</td></tr>
+            <tr><td><code>&lt;body&gt;</code></td><td>Defines the document's body</td></tr>
+            <tr><td><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></td><td>Defines HTML headings</td></tr>
+          </tbody>
+        </table>
+        <p>For a complete list of all available HTML tags, visit our HTML Tag Reference.</p>
+
+        <hr>
+        <h2>Practice: HTML Elements Game</h2>
+        <p>Interact with these quick quizzes. Drag-and-drop tags, place brackets, and complete a hyperlink—same format as our Basics page.</p>
+        <section id="quiz-stage" class="quiz-stage">
+          <div id="quiz1-screen" class="quiz-screen">
+            <h2>Quick Quiz 1</h2>
+            <section id="dnd-quiz" class="dnd-quiz" aria-live="polite">
+              <p class="note">Question: Which of these is an empty HTML element?</p>
+              <div class="dnd-choices" role="list">
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<br>"><code>&lt;br&gt;</code></div>
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<h1>"><code>&lt;h1&gt;</code></div>
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<p>"><code>&lt;p&gt;</code></div>
+              </div>
+              <div class="dnd-answer-wrap">
+                <div id="dnd-drop" class="dnd-drop" tabindex="0" aria-label="Answer drop zone">Drop answer here</div>
+              </div>
+              <div id="dnd-result" class="dnd-result" aria-live="polite"></div>
+              <div class="reveal-row">
+                <button type="button" class="button secondary" id="dq-reveal">Show Answer</button>
+                <button type="button" class="button secondary" id="dq-reset">Reset</button>
+              </div>
+            </section>
+          </div>
+
+          <div id="quiz2-screen" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h2 id="quiz2-heading">Quick Quiz 2</h2>
+            <p class="note">Place the start- and end-tags in the correct positions.</p>
+            <p class="hint">Hint: Drag each tag chip into a blank. Include a line break using <code>&lt;br&gt;</code> (no closing tag). Double-click a blank or press Backspace to clear.</p>
+            <section id="tags-quiz" class="tags-quiz" aria-live="polite">
+              <div class="tags-board" aria-label="Complete the HTML by placing tags into blanks">
+                <div class="code-line">&lt;!DOCTYPE html&gt;</div>
+                <div class="code-line"><span class="slot" tabindex="0" data-accept="html-open" aria-label="html open slot"></span></div>
+                <div class="code-line"><span class="slot" tabindex="0" data-accept="body-open" aria-label="body open slot"></span></div>
+                <div class="code-line">
+                  <span class="slot" tabindex="0" data-accept="h1-open" aria-label="h1 open slot"></span>
+                  <span> HTML Elements </span>
+                  <span class="slot" tabindex="0" data-accept="h1-close" aria-label="h1 close slot"></span>
+                </div>
+                <div class="code-line">
+                  <span class="slot" tabindex="0" data-accept="p-open" aria-label="p open slot"></span>
+                  <span> This is a paragraph. </span>
+                  <span class="slot" tabindex="0" data-accept="br" aria-label="line break slot"></span>
+                  <span> And a line break. </span>
+                  <span class="slot" tabindex="0" data-accept="p-close" aria-label="p close slot"></span>
+                </div>
+                <div class="code-line"><span class="slot" tabindex="0" data-accept="body-close" aria-label="body close slot"></span></div>
+                <div class="code-line"><span class="slot" tabindex="0" data-accept="html-close" aria-label="html close slot"></span></div>
+              </div>
+
+              <div class="tag-choices" role="list" aria-label="Drag these tags into the blanks">
+                <div class="tag" role="listitem" draggable="true" data-token="body-open"><code>&lt;body&gt;</code></div>
+                <div class="tag" role="listitem" draggable="true" data-token="h1-open"><code>&lt;h1&gt;</code></div>
+                <div class="tag" role="listitem" draggable="true" data-token="p-close"><code>&lt;/p&gt;</code></div>
+                <div class="tag" role="listitem" draggable="true" data-token="html-close"><code>&lt;/html&gt;</code></div>
+                <div class="tag" role="listitem" draggable="true" data-token="p-open"><code>&lt;p&gt;</code></div>
+                <div class="tag" role="listitem" draggable="true" data-token="br"><code>&lt;br&gt;</code></div>
+                <div class="tag" role="listitem" draggable="true" data-token="body-close"><code>&lt;/body&gt;</code></div>
+                <div class="tag" role="listitem" draggable="true" data-token="html-open"><code>&lt;html&gt;</code></div>
+                <div class="tag" role="listitem" draggable="true" data-token="h1-close"><code>&lt;/h1&gt;</code></div>
+              </div>
+
+              <div class="reveal-row">
+                <button type="button" class="button secondary" id="tq-reveal">Show Answer</button>
+                <button type="button" class="button secondary" id="tq-reset">Reset</button>
+              </div>
+              <div id="tags-score" class="tags-score" aria-live="polite">Score: 0/9</div>
+            </section>
+          </div>
+
+          <div id="quiz3-screen" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h2 id="quiz3-heading">Quick Quiz 3</h2>
+            <p class="note">HTML elements are surrounded by a specific type of brackets, which one?</p>
+            <p class="hint">Hint: Drag brackets into the blanks. Double-click a blank or press Backspace to clear.</p>
+            <section id="brackets-quiz" class="brackets-quiz" aria-live="polite">
+              <div class="brackets-board">
+                <div class="code-line">
+                  <span class="bslot" tabindex="0" data-accept="lt" aria-label="opening bracket slot"></span>
+                  <span>h1</span>
+                  <span class="bslot" tabindex="0" data-accept="gt" aria-label="closing bracket slot"></span>
+                  <span> Elements </span>
+                  <span class="bslot" tabindex="0" data-accept="lt-slash" aria-label="closing tag left slot"></span>
+                  <span>h1</span>
+                  <span class="bslot" tabindex="0" data-accept="gt" aria-label="closing tag right slot"></span>
+                </div>
+              </div>
+              <div class="reveal-row">
+                <button type="button" class="button secondary" id="bq-reveal">Show Answer</button>
+                <button type="button" class="button secondary" id="bq-reset">Reset</button>
+              </div>
+              <div class="btag-choices" role="list" aria-label="Drag brackets to the blanks">
+                <div class="btag" role="listitem" draggable="true" data-token="lt"><code>&lt;</code></div>
+                <div class="btag" role="listitem" draggable="true" data-token="gt"><code>&gt;</code></div>
+                <div class="btag" role="listitem" draggable="true" data-token="lt-slash"><code>&lt;/</code></div>
+                <div class="btag" role="listitem" draggable="true" data-token="gt"><code>&gt;</code></div>
+                <div class="btag" role="listitem" draggable="true" data-token="lt"><code>&lt;</code></div>
+              </div>
+              <div id="brackets-score" class="brackets-score" aria-live="polite">Score: 0/4</div>
+            </section>
+          </div>
+
+          <div id="quiz4-screen" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h2 id="quiz4-heading">Quick Quiz 4</h2>
+            <p class="note">Fill in the missing code to complete the markup of the HTML heading.</p>
+            <p class="hint">Hint: Drag the missing parts into the blanks. Double-click a blank or press Backspace to clear.</p>
+            <section id="link-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">
+                  <span class="lslot" tabindex="0" data-accept="h1-open" aria-label="h1 open slot"></span>
+                  <span>Elements</span>
+                  <span class="lslot" tabindex="0" data-accept="h1-close" aria-label="h1 close slot"></span>
+                </div>
+              </div>
+              <div class="reveal-row">
+                <button type="button" class="button secondary" id="aq-reveal">Show Answer</button>
+                <button type="button" class="button secondary" id="aq-reset">Reset</button>
+              </div>
+              <div class="ltag-choices" role="list" aria-label="Drag the missing parts to the blanks">
+                <div class="ltag" role="listitem" draggable="true" data-token="h1-open"><code>&lt;h1&gt;</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="h1-close"><code>&lt;/h1&gt;</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="h1-open"><code>&lt;h1&gt;</code></div>
+              </div>
+              <div id="link-score" class="link-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <div id="quiz-done" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h2>All Quiz Completed</h2>
+            <div class="done-card">
+              <p><strong>Congratulations!</strong> You passed all HTML elements quizzes.</p>
+              <p>Next up: explore more in <a href="/html/editors.html">Editors</a> or revisit the <a href="/html/introduction.html">Introduction</a>.</p>
+              <p><button type="button" class="button" id="quiz-restart">Restart Quiz</button></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section video-section">
+          <h2>Video Tutorial</h2>
+          <p>See elements in action with <a href="https://www.youtube.com/watch?v=pQN-pnXPaVg" target="_blank" rel="noopener">freeCodeCamp.org's HTML Full Course</a>. The walkthrough around 19:00 covers structural and semantic elements in depth.</p>
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/pQN-pnXPaVg" title="HTML Full Course - Build a Website Tutorial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <script defer src="/assets/elements-quiz.js"></script>
+
+        <!-- Comments Section -->
+        <div id="comments-section"></div>
+      </article>
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+</html>

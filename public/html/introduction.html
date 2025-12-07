@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn HTML fundamentals with comprehensive examples. Master semantic HTML5, accessibility, forms, and modern web development practices with interactive tutorials.">
+  <meta name="keywords" content="HTML tutorial, HTML5, semantic HTML, web development, markup language, accessibility, forms, HTML elements">
+  <meta name="author" content="Co.Razer Documentation Team">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HTML Introduction - Learn HTML Fundamentals">
+  <meta property="og:description" content="Master HTML fundamentals with comprehensive examples and interactive tutorials. Learn semantic HTML5, accessibility, and modern web development.">
+  <meta property="og:url" content="https://co-razer.com/html/introduction.html">
+  
+  <title>HTML Introduction - Learn HTML Fundamentals | Co.Razer Docs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/introduction.css">
+  <link rel="canonical" href="https://co-razer.com/html/introduction.html">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#6ee7ff',
+            accent: '#64f5a1',
+            'dark-bg': '#0b0d10',
+            'dark-panel': '#11151a',
+            'dark-border': '#1e2630',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "HTML Introduction - Learn HTML Fundamentals",
+    "description": "Master HTML fundamentals with comprehensive examples and interactive tutorials",
+    "author": {
+      "@type": "Organization",
+      "name": "Co.Razer Documentation Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Co.Razer",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "/assets/logo.png"
+      }
+    },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://co-razer.com/html/introduction.html"
+    }
+  }
+  </script>
+  
+  <script defer src="/assets/app.js"></script>
+  <script defer src="/assets/comments.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main id="main-content" class="container docs">
+    <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false" aria-label="Toggle HTML documentation navigation">
+      <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+      <span class="sidebar-toggle__label">HTML Docs</span>
+    </button>
+
+    <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+      <h3 id="docs-nav-heading">HTML Tutorial</h3>
+      <nav aria-label="HTML tutorial navigation">
+        <a href="/html/introduction.html" class="active" aria-current="page">Introduction</a>
+        <a href="/html/editors.html">Editors</a>
+        <a href="/html/basics.html">Basics</a>
+        <a href="/html/elements.html">Elements</a>
+        <a href="/html/attributes.html">Attributes</a>
+        <a href="/html/headings.html">Headings</a>
+        <a href="/html/paragraphs.html">Paragraphs</a>
+        <a href="/html/styles.html">Styles</a>
+        <a href="/html/formatting.html">Formatting</a>
+        <a href="/html/comments.html">Comments</a>
+        <a href="/html/colors.html">Colors</a>
+        <a href="/html/colors/rgb.html">RGB &amp; RGBA</a>
+        <a href="/html/qua.html">Quotations</a>
+      </nav>
+    </aside>
+
+    <article class="article intro-article">
+      <header>
+        <h1>HTML: Introduction</h1>
+        <p class="lead">HTML (HyperText Markup Language) is the foundation of web development. Learn how to create semantic, accessible, and modern web pages using HTML5 elements and best practices.</p>
+      </header>
+
+        <h2>What Is HTML?</h2>
+        <ul>
+          <li>Defines the structure and meaning (semantics) of content.</li>
+          <li>Consists of <em>elements</em> written with tags like <code>&lt;p&gt;</code> and <code>&lt;a&gt;</code>.</li>
+          <li>Browsers parse HTML and render the content; tags themselves are not shown.</li>
+        </ul>
+
+        <h2>Basic Page Structure</h2>
+  <pre><code>&lt;!DOCTYPE html&gt;
+  &lt;html lang="en"&gt;
+    &lt;head&gt;
+      &lt;meta charset="utf-8" /&gt;
+      &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+      &lt;title&gt;Hello&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;h1&gt;Hello, Co.Razer!&lt;/h1&gt;
+      &lt;p&gt;This is your first HTML page.&lt;/p&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+        <p><strong>Example explained:</strong></p>
+        <ul>
+          <li><code>&lt;!DOCTYPE html&gt;</code> declares HTML5.</li>
+          <li><code>&lt;html&gt;</code> is the root element; <code>lang</code> helps accessibility/SEO.</li>
+          <li><code>&lt;head&gt;</code> contains metadata (not shown on the page), including <code>&lt;title&gt;</code>.</li>
+          <li><code>&lt;body&gt;</code> contains the visible content.</li>
+        </ul>
+
+        <h2>Elements and Tags</h2>
+        <p>An HTML element usually has an opening tag, content, and a closing tag:</p>
+  <pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+  &lt;a href="#"&gt;This is a link&lt;/a&gt;</code></pre>
+        <ul>
+          <li><strong>Void elements</strong> have no closing tag (e.g., <code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;meta&gt;</code>).</li>
+          <li><strong>Nesting</strong> matters: elements must be properly nested and closed.</li>
+          <li><strong>Block vs. inline:</strong> block elements (e.g., <code>&lt;div&gt;</code>, <code>&lt;section&gt;</code>) start on a new line; inline elements (e.g., <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>) flow within a line.</li>
+        </ul>
+
+        <h2>Attributes</h2>
+        <p>Attributes provide extra information about elements. They go inside the start tag as <code>name="value"</code>.</p>
+  <pre><code>&lt;a href="https://example.com" title="Visit example"&gt;Example Link&lt;/a&gt;
+  &lt;img src="/assets/logo.png" alt="Co.Razer logo" width="120" /&gt;</code></pre>
+        <ul>
+          <li><code>href</code> for links, <code>src</code>/<code>alt</code> for images.</li>
+          <li><code>id</code> (unique) and <code>class</code> (reusable) for styling and scripting.</li>
+          <li><code>lang</code> on <code>&lt;html&gt;</code> and <code>title</code> on many elements improve accessibility.</li>
+        </ul>
+
+        <h2>Common Elements</h2>
+    <pre><code>&lt;h1&gt;Heading 1&lt;/h1&gt;
+    &lt;p&gt;A short paragraph.&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Unordered list item&lt;/li&gt;
+      &lt;li&gt;Another item&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ol&gt;
+      &lt;li&gt;First&lt;/li&gt;
+      &lt;li&gt;Second&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;a href="/html/basics.html"&gt;A page link&lt;/a&gt;
+    &lt;img src="/assets/logo.png" alt="Logo" /&gt;</code></pre>
+
+        <h2>Semantic HTML</h2>
+        <p>Use semantic elements to describe purpose, not appearance. This improves accessibility and SEO.</p>
+  <pre><code>&lt;header&gt;...site header...&lt;/header&gt;
+  &lt;nav&gt;...main navigation...&lt;/nav&gt;
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;h1&gt;Article title&lt;/h1&gt;
+      &lt;section&gt;Content section&lt;/section&gt;
+    &lt;/article&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;...site footer...&lt;/footer&gt;</code></pre>
+
+        <h2>Comments</h2>
+  <pre><code>&lt;!-- This is a comment. It won't be rendered. --&gt;</code></pre>
+
+        <h2>Best Practices</h2>
+        <ul>
+          <li>Use lowercase tag/attribute names and quote attribute values.</li>
+          <li>Always include <code>alt</code> text for images and labels for form inputs.</li>
+          <li>Keep structure semantic; avoid using HTML for visual layout (use CSS).</li>
+          <li>Set <code>&lt;meta charset="utf-8"&gt;</code> and a responsive viewport.</li>
+        </ul>
+
+        <h2>Head vs. Body</h2>
+        <p>The <code>&lt;head&gt;</code> contains metadata and links to resources; the <code>&lt;body&gt;</code> contains what users see and interact with.</p>
+  <pre><code>&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Page title&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/styles.css&quot;&gt;
+    &lt;script defer src=&quot;/assets/app.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main&gt;Visible content here&lt;/main&gt;
+  &lt;/body&gt;</code></pre>
+
+        <h2>File Paths</h2>
+        <p>Use correct paths when linking to other files. A path starting with <code>/</code> is from the site root; otherwise it’s relative to the current file.</p>
+  <pre><code>&lt;!-- Absolute-from-root path --&gt;
+  &lt;img src=&quot;/assets/logo.png&quot; alt=&quot;Logo&quot;&gt;
+
+  &lt;!-- Relative to current folder --&gt;
+  &lt;img src=&quot;images/photo.jpg&quot; alt=&quot;Photo&quot;&gt;
+
+  &lt;!-- Go up one folder --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;../shared/base.css&quot;&gt;</code></pre>
+
+        <h2>Character Entities</h2>
+        <p>Some characters are reserved in HTML and must be escaped using entities:</p>
+  <pre><code>&amp;lt;  &amp;mdash;  &amp;copy;  &amp;amp;
+  &lt;p&gt;Use &amp;amp;lt; to display a literal &amp;lt; sign.&lt;/p&gt;</code></pre>
+
+        <h2>Accessibility Basics</h2>
+        <ul>
+          <li>Provide meaningful <code>alt</code> text for images.</li>
+          <li>Use a logical heading order (<code>h1</code> → <code>h2</code> → <code>h3</code>...).</li>
+          <li>Associate form inputs with <code>&lt;label&gt;</code> elements.</li>
+          <li>Use semantic elements (<code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>) for structure.</li>
+        </ul>
+
+        <h2>Validate and Debug</h2>
+        <ul>
+          <li>Validate markup with the W3C HTML Validator (validator.w3.org).</li>
+          <li>Use browser DevTools (Elements/Inspector) to inspect and edit the DOM.</li>
+        </ul>
+
+        <section class="doc-section video-section">
+          <h2>Video Tutorial</h2>
+          <p>Prefer to watch a walkthrough? Check out <a href="https://www.youtube.com/watch?v=UB1O30fR-EE" target="_blank" rel="noopener">HTML Crash Course for Absolute Beginners by Traversy Media</a>.</p>
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/UB1O30fR-EE" title="HTML Crash Course for Absolute Beginners" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </section>
+
+          <h2>Next Steps</h2>
+          <p>Start with <a href="/html/editors.html">HTML editors</a> to set up your tooling, then continue with the <a href="/html/basics.html">HTML basics</a>.</p>
+
+        <hr>
+        <h2>Quick Quiz</h2>
+        <p>Answer each question. After you choose, the next question appears. Your score shows at the end.</p>
+        <section id="quiz-root" class="intro-quiz" aria-live="polite"></section>
+
+        <script>
+        (() => {
+          const escapeHtml = (s) => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+          const QUESTIONS = [
+            {
+              id: 'q1',
+              prompt: 'What does <!DOCTYPE html> do?',
+              options: [
+                { key: 'a', label: 'It loads an external CSS file.' },
+                { key: 'b', label: 'It declares the document as HTML5.' },
+                { key: 'c', label: 'It creates the root HTML element.' }
+              ],
+              answer: 'b'
+            },
+            {
+              id: 'q2',
+              prompt: 'Where should metadata like <title> and <meta> go?',
+              options: [
+                { key: 'a', label: 'Inside the <body>' },
+                { key: 'b', label: 'Anywhere in the document' },
+                { key: 'c', label: 'Inside the <head>' }
+              ],
+              answer: 'c'
+            },
+            {
+              id: 'q3',
+              prompt: 'Which attribute provides alternative text for images?',
+              options: [
+                { key: 'a', label: 'title' },
+                { key: 'b', label: 'aria-label' },
+                { key: 'c', label: 'alt' }
+              ],
+              answer: 'c'
+            },
+            {
+              id: 'q4',
+              prompt: 'Which element represents the main content of a page?',
+              options: [
+                { key: 'a', label: '<section>' },
+                { key: 'b', label: '<main>' },
+                { key: 'c', label: '<div>' }
+              ],
+              answer: 'b'
+            },
+            {
+              id: 'q5',
+              prompt: 'Which of these is a void (self-closing) element?',
+              options: [
+                { key: 'a', label: '<p>' },
+                { key: 'b', label: '<img>' },
+                { key: 'c', label: '<span>' }
+              ],
+              answer: 'b'
+            }
+          ];
+
+          const root = document.getElementById('quiz-root');
+          let index = 0;
+          let score = 0;
+
+          function progressBar(i, total) {
+            const pct = Math.round((i / total) * 100);
+            return `
+              <div class="q-header">
+                <div class="q-steps">Question ${Math.min(i+1, total)} of ${total}</div>
+                <div class="q-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}">
+                  <div class="q-progress-bar" style="width:${pct}%"></div>
+                </div>
+              </div>
+            `;
+          }
+
+          function renderQuestion(i) {
+            const total = QUESTIONS.length;
+            const q = QUESTIONS[i];
+            root.innerHTML = `
+              ${progressBar(i, total)}
+              <div class="q-card">
+                <fieldset>
+                  <legend>${escapeHtml(q.prompt)}</legend>
+                  <div class="q-choices">
+                    ${q.options.map(opt => `
+                      <label class="q-choice" data-key="${opt.key}">
+                        <input type="radio" name="${q.id}" value="${opt.key}">
+                        <span class="q-choice-text">${escapeHtml(opt.label)}</span>
+                      </label>
+                    `).join('')}
+                  </div>
+                  <div class="q-feedback" role="status" aria-live="polite"></div>
+                </fieldset>
+              </div>
+            `;
+
+            const inputs = root.querySelectorAll('input[type="radio"]');
+            const feedback = root.querySelector('.q-feedback');
+            inputs.forEach(r => {
+              r.addEventListener('change', () => {
+                const val = r.value;
+                const isCorrect = val === q.answer;
+                if (isCorrect) score++;
+
+                // disable all inputs
+                inputs.forEach(inp => inp.disabled = true);
+
+                // mark selected choice
+                root.querySelectorAll('.q-choice').forEach(lbl => lbl.classList.remove('selected','correct','incorrect'));
+                const chosenLabel = r.closest('.q-choice');
+                chosenLabel?.classList.add('selected', isCorrect ? 'correct' : 'incorrect');
+                feedback.textContent = isCorrect ? 'Correct!' : 'Incorrect';
+
+                // advance automatically or show results
+                setTimeout(() => {
+          const escapeHtml = (s) => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+                  index++;
+                  if (index < total) renderQuestion(index);
+                  else renderSummary();
+                  root.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 700);
+              });
+            });
+          }
+
+          function renderSummary() {
+            const total = QUESTIONS.length;
+            const pct = Math.round((score / total) * 100);
+            root.innerHTML = `
+              ${progressBar(total, total)}
+              <div class="q-summary">
+                <h3>Your Score</h3>
+                <div class="q-badge ${pct >= 80 ? 'good' : pct >= 50 ? 'mid' : 'bad'}">${score}/${total} (${pct}%)</div>
+                  <p>Great job! You can retake the quiz or continue to <a href="/html/basics.html">HTML basics</a>.</p>
+                <div class="q-actions">
+                  <button type="button" class="button" id="q-restart">Retake Quiz</button>
+                </div>
+              </div>
+            `;
+            document.getElementById('q-restart')?.addEventListener('click', () => {
+              index = 0; score = 0; renderQuestion(index);
+            });
+          }
+
+          renderQuestion(index);
+        })();
+        </script>
+
+        <!-- Comments Section -->
+        <div id="comments-section"></div>
+      </article>
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+  </html>

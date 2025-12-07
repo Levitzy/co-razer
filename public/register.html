@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register for Co.Razer - Start your HTML & CSS learning journey today">
+    <meta name="theme-color" content="#6ee7ff">
+    <title>Register - Co.Razer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#6ee7ff',
+                        accent: '#64f5a1',
+                        'dark-bg': '#0b0d10',
+                        'dark-panel': '#11151a',
+                        'dark-border': '#1e2630',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-bg min-h-screen flex items-center justify-center p-4 py-8">
+    <!-- Animated background gradient -->
+    <div class="fixed inset-0 bg-gradient-to-br from-accent/5 via-dark-bg to-brand/5 pointer-events-none"></div>
+    
+    <div class="relative z-10 w-full max-w-md">
+        <!-- Auth Container -->
+        <div class="bg-dark-panel border-2 border-dark-border rounded-3xl p-8 sm:p-10 shadow-2xl backdrop-blur-xl">
+            <!-- Logo Section -->
+            <div class="text-center mb-8">
+                <a href="/" class="inline-block mb-4 transition-transform hover:scale-105">
+                    <img src="/assets/logo.png" alt="Co.Razer logo" class="w-16 h-16 mx-auto rounded-2xl shadow-lg ring-2 ring-accent/30 hover:ring-accent transition-all duration-300" onerror="this.style.display='none'">
+                </a>
+                <h1 class="text-3xl font-bold bg-gradient-to-r from-accent via-white to-brand bg-clip-text text-transparent mb-2">
+                    Create Account
+                </h1>
+                <p class="text-gray-400 text-sm">Start your learning journey today</p>
+            </div>
+
+            <!-- Alert Container -->
+            <div id="alertContainer" class="mb-6"></div>
+
+            <!-- Register Form -->
+            <form id="registerForm" class="space-y-4">
+                <div>
+                    <label for="fullName" class="block text-sm font-semibold text-gray-300 mb-2">
+                        Full Name <span class="text-gray-500 font-normal">(Optional)</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="fullName" 
+                        name="fullName" 
+                        autocomplete="name"
+                        class="w-full px-4 py-3 bg-dark-bg border-2 border-dark-border rounded-xl text-white placeholder-gray-500 transition-all duration-300 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 hover:border-accent/50"
+                        placeholder="Enter your full name"
+                    >
+                </div>
+
+                <div>
+                    <label for="username" class="block text-sm font-semibold text-gray-300 mb-2">
+                        Username
+                    </label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        required 
+                        autocomplete="username"
+                        class="w-full px-4 py-3 bg-dark-bg border-2 border-dark-border rounded-xl text-white placeholder-gray-500 transition-all duration-300 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 hover:border-accent/50"
+                        placeholder="Choose a username"
+                    >
+                    <p class="mt-1.5 text-xs text-gray-500">Minimum 3 characters</p>
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-semibold text-gray-300 mb-2">
+                        Email
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        autocomplete="email"
+                        class="w-full px-4 py-3 bg-dark-bg border-2 border-dark-border rounded-xl text-white placeholder-gray-500 transition-all duration-300 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 hover:border-accent/50"
+                        placeholder="Enter your email"
+                    >
+                </div>
+
+                <div>
+                    <label for="password" class="block text-sm font-semibold text-gray-300 mb-2">
+                        Password
+                    </label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        required 
+                        autocomplete="new-password"
+                        class="w-full px-4 py-3 bg-dark-bg border-2 border-dark-border rounded-xl text-white placeholder-gray-500 transition-all duration-300 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 hover:border-accent/50"
+                        placeholder="Create a password"
+                    >
+                    <p class="mt-1.5 text-xs text-gray-500">Minimum 6 characters</p>
+                </div>
+
+                <div>
+                    <label for="confirmPassword" class="block text-sm font-semibold text-gray-300 mb-2">
+                        Confirm Password
+                    </label>
+                    <input 
+                        type="password" 
+                        id="confirmPassword" 
+                        name="confirmPassword" 
+                        required 
+                        autocomplete="new-password"
+                        class="w-full px-4 py-3 bg-dark-bg border-2 border-dark-border rounded-xl text-white placeholder-gray-500 transition-all duration-300 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 hover:border-accent/50"
+                        placeholder="Confirm your password"
+                    >
+                </div>
+
+                <button 
+                    type="submit" 
+                    id="registerBtn"
+                    class="w-full py-3.5 bg-gradient-to-r from-accent to-brand text-dark-bg font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-accent/50 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-dark-panel disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 mt-6"
+                >
+                    <span class="inline-flex items-center justify-center gap-2">
+                        <span>✨</span>
+                        <span>Create Account</span>
+                    </span>
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="relative my-8">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-dark-border"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-4 bg-dark-panel text-gray-500 font-medium">OR</span>
+                </div>
+            </div>
+
+            <!-- Login Link -->
+            <div class="text-center space-y-4">
+                <p class="text-gray-400 text-sm">
+                    Already have an account? 
+                    <a href="/login.html" class="text-accent font-semibold hover:text-brand transition-colors duration-300 hover:underline">
+                        Login here
+                    </a>
+                </p>
+                
+                <a href="/" class="inline-flex items-center gap-2 text-gray-500 text-sm hover:text-accent transition-colors duration-300 group">
+                    <span class="group-hover:-translate-x-1 transition-transform">←</span>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="mt-6 text-center">
+            <p class="text-gray-500 text-xs">
+                By signing up, you agree to our 
+                <a href="#" class="text-accent hover:text-brand transition-colors">Terms</a> and 
+                <a href="#" class="text-accent hover:text-brand transition-colors">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const registerForm = document.getElementById('registerForm');
+        const registerBtn = document.getElementById('registerBtn');
+        const alertContainer = document.getElementById('alertContainer');
+
+        // Check if already logged in
+        async function checkAuthAndRedirect() {
+            try {
+                const response = await fetch('/api/auth/me');
+                const data = await response.json();
+                if (data.success && data.user) {
+                    window.location.href = '/dashboard.html';
+                }
+            } catch (error) {
+                // Not logged in, stay on register page
+            }
+        }
+
+        checkAuthAndRedirect();
+
+        function showAlert(message, type = 'error') {
+            const bgColor = type === 'error' ? 'bg-red-500/10' : 'bg-accent/10';
+            const borderColor = type === 'error' ? 'border-red-500/50' : 'border-accent/50';
+            const textColor = type === 'error' ? 'text-red-400' : 'text-accent';
+            const icon = type === 'error' ? '❌' : '✅';
+            
+            alertContainer.innerHTML = `
+                <div class="${bgColor} ${borderColor} ${textColor} border-2 rounded-xl p-4 flex items-start gap-3 animate-pulse">
+                    <span class="text-lg flex-shrink-0">${icon}</span>
+                    <span class="text-sm font-medium">${message}</span>
+                </div>
+            `;
+            setTimeout(() => {
+                alertContainer.innerHTML = '';
+            }, 5000);
+        }
+
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const fullName = document.getElementById('fullName').value;
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Validate passwords match
+            if (password !== confirmPassword) {
+                showAlert('Passwords do not match');
+                return;
+            }
+
+            // Validate password length
+            if (password.length < 6) {
+                showAlert('Password must be at least 6 characters long');
+                return;
+            }
+
+            // Validate username length
+            if (username.length < 3) {
+                showAlert('Username must be at least 3 characters long');
+                return;
+            }
+
+            // Disable button and update text
+            registerBtn.disabled = true;
+            registerBtn.innerHTML = `
+                <span class="inline-flex items-center justify-center gap-2">
+                    <svg class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span>Creating account...</span>
+                </span>
+            `;
+
+            try {
+                const response = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ fullName, username, email, password })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showAlert('Registration successful! Redirecting...', 'success');
+                    setTimeout(() => {
+                        window.location.href = '/dashboard.html';
+                    }, 1000);
+                } else {
+                    showAlert(data.error || 'Registration failed');
+                    registerBtn.disabled = false;
+                    registerBtn.innerHTML = `
+                        <span class="inline-flex items-center justify-center gap-2">
+                            <span>✨</span>
+                            <span>Create Account</span>
+                        </span>
+                    `;
+                }
+            } catch (error) {
+                console.error('Registration error:', error);
+                showAlert('An error occurred. Please try again.');
+                registerBtn.disabled = false;
+                registerBtn.innerHTML = `
+                    <span class="inline-flex items-center justify-center gap-2">
+                        <span>✨</span>
+                        <span>Create Account</span>
+                    </span>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
+

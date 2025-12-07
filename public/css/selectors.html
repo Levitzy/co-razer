@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Master CSS selectors with comprehensive examples. Learn type selectors, class selectors, ID selectors, attribute selectors, pseudo-classes, and combinators with interactive tutorials.">
+  <meta name="keywords" content="CSS selectors, type selectors, class selectors, ID selectors, attribute selectors, pseudo-classes, combinators, CSS targeting">
+  <meta name="author" content="Co.Razer Documentation Team">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CSS Selectors - Master Element Targeting">
+  <meta property="og:description" content="Master CSS selectors with comprehensive examples and interactive tutorials. Learn how to target elements precisely with various selector types.">
+  <meta property="og:url" content="https://co-razer.com/css/selectors.html">
+  
+  <title>CSS Selectors - Master Element Targeting | Co.Razer Docs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/css-docs.css">
+  <link rel="canonical" href="https://co-razer.com/css/selectors.html">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#6ee7ff',
+            accent: '#64f5a1',
+            'dark-bg': '#0b0d10',
+            'dark-panel': '#11151a',
+            'dark-border': '#1e2630',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "CSS Selectors - Master Element Targeting",
+    "description": "Master CSS selectors with comprehensive examples and interactive tutorials",
+    "author": {
+      "@type": "Organization",
+      "name": "Co.Razer Documentation Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Co.Razer",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "/assets/logo.png"
+      }
+    },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://co-razer.com/css/selectors.html"
+    }
+  }
+  </script>
+  
+  <script defer src="/assets/app.js"></script>
+  <script defer src="/assets/comments.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main id="main-content" class="container docs">
+    <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false" aria-label="Toggle CSS documentation navigation">
+      <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+      <span class="sidebar-toggle__label">CSS Docs</span>
+    </button>
+
+    <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+      <h3 id="docs-nav-heading">CSS Documentation</h3>
+      <nav aria-label="CSS tutorial navigation">
+        <a href="/css/introduction.html">Introduction</a>
+        <a href="/css/selectors.html" class="active" aria-current="page">Selectors</a>
+        <a href="/css/layout.html">Layout</a>
+        <a href="/css/box-model.html">Box Model</a>
+        <a href="/css/typography.html">Typography</a>
+        <a href="/css/flexbox.html">Flexbox</a>
+        <a href="/css/grid.html">Grid</a>
+        <a href="/css/variables.html">Custom Properties</a>
+      </nav>
+    </aside>
+
+    <article class="article css-article">
+      <header>
+        <h1>CSS Selectors</h1>
+        <p class="lead">Selectors are the hook between HTML and styling. They allow you to target exactly the elements you want to restyle&mdash;nothing more, nothing less.</p>
+      </header>
+
+      <section class="doc-section">
+        <h2>Core Selector Types</h2>
+        <p>These selectors cover most day-to-day styling needs. Combine them to describe elements unambiguously.</p>
+<pre><code>/* Type selector targets elements by tag name */
+article { max-width: 70ch; }
+
+/* Class selector targets elements with .warning class */
+.warning { background: color-mix(in srgb, #f87171 50%, transparent); }
+
+/* ID selector targets unique #app root */
+#app { min-height: 100vh; }</code></pre>
+        <p>Prefer classes over IDs for styling. Classes can be reused and chain together without bumping specificity unnecessarily.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>Attributes and Pseudo-Classes</h2>
+        <p>Attribute selectors narrow results based on the presence or value of an attribute. Pseudo-classes react to state and position.</p>
+        <div class="concept-grid">
+          <div class="concept-card">
+            <h3>Attribute Selectors</h3>
+<pre><code>input[type="email"] {
+  border-color: #38bdf8;
+}</code></pre>
+            <p>Use <code>^=</code>, <code>$=</code>, or <code>*=</code> to match prefixes, suffixes, or substrings.</p>
+          </div>
+          <div class="concept-card">
+            <h3>Stateful Pseudo-Classes</h3>
+<pre><code>button:hover { transform: translateY(-1px); }
+input:focus-visible { outline: 2px solid #38ef7d; }</code></pre>
+            <p>Pseudo-classes keep interactive states accessible without JavaScript.</p>
+          </div>
+          <div class="concept-card">
+            <h3>Structural Pseudo-Classes</h3>
+<pre><code>li:nth-child(odd) { opacity: 0.75; }
+section:last-of-type { border-bottom: none; }</code></pre>
+            <p>Target elements based on their position in the DOM tree.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="doc-section">
+        <h2>Combinators &amp; Selector Lists</h2>
+        <ul class="definition-list">
+          <li><strong>Descendant (<code>A B</code>):</strong> matches <code>B</code> elements anywhere inside <code>A</code>. Useful for utility classes applied to wrappers.</li>
+          <li><strong>Child (<code>A &gt; B</code>):</strong> targets direct children. Use it to avoid selecting nested descendants unintentionally.</li>
+          <li><strong>Adjacent sibling (<code>A + B</code>):</strong> matches the first <code>B</code> immediately following <code>A</code>. Perfect for spacing content blocks.</li>
+          <li><strong>General sibling (<code>A ~ B</code>):</strong> matches siblings that appear later in the DOM, regardless of distance.</li>
+        </ul>
+<pre><code>.card > h2 + p {
+  margin-top: 0.5rem;
+}</code></pre>
+        <p>Group selectors with commas to apply the same declarations to multiple targets. Next, learn how those selectors translate into real layouts in the <a href="/css/layout.html">layout guide</a>.</p>
+      </section>
+
+      <!-- Comments Section -->
+      <div id="comments-section"></div>
+    </article>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
+

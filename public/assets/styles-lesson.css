@@ -1,0 +1,7 @@
+/* Styles page tweaks */
+.styles-article h1 { margin-bottom: 6px; }
+.styles-article h2 { margin-top: 24px; margin-bottom: 8px; }
+.styles-article h3 { margin-top: 14px; color: var(--muted); }
+.styles-article pre { margin: 12px 0 18px; }
+.styles-article .note { color: var(--muted); }
+

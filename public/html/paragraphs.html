@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Master HTML paragraphs with comprehensive examples. Learn p tags, line breaks, horizontal rules, preformatted text, and text formatting with interactive tutorials.">
+  <meta name="keywords" content="HTML paragraphs, p tag, line breaks, br tag, horizontal rules, hr tag, preformatted text, pre tag, text formatting">
+  <meta name="author" content="Co.Razer Documentation Team">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HTML Paragraphs - Master Text Structure">
+  <meta property="og:description" content="Master HTML paragraphs with comprehensive examples and interactive tutorials. Learn p tags, line breaks, and text formatting.">
+  <meta property="og:url" content="https://co-razer.com/html/paragraphs.html">
+  
+  <title>HTML Paragraphs - Master Text Structure | Co.Razer Docs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/basics.css">
+  <link rel="stylesheet" href="/assets/introduction.css">
+  <link rel="stylesheet" href="/assets/paragraphs.css">
+  <link rel="canonical" href="https://co-razer.com/html/paragraphs.html">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#6ee7ff',
+            accent: '#64f5a1',
+            'dark-bg': '#0b0d10',
+            'dark-panel': '#11151a',
+            'dark-border': '#1e2630',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "HTML Paragraphs - Master Text Structure",
+    "description": "Master HTML paragraphs with comprehensive examples and interactive tutorials",
+    "author": {
+      "@type": "Organization",
+      "name": "Co.Razer Documentation Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Co.Razer",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "/assets/logo.png"
+      }
+    },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://co-razer.com/html/paragraphs.html"
+    }
+  }
+  </script>
+  
+  <script defer src="/assets/app.js"></script>
+  <script defer src="/assets/comments.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main id="main-content" class="container docs">
+    <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false" aria-label="Toggle HTML documentation navigation">
+      <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+      <span class="sidebar-toggle__label">HTML Docs</span>
+    </button>
+
+    <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+      <h3 id="docs-nav-heading">HTML Tutorial</h3>
+      <nav aria-label="HTML tutorial navigation">
+        <a href="/html/introduction.html">Introduction</a>
+        <a href="/html/editors.html">Editors</a>
+        <a href="/html/basics.html">Basics</a>
+        <a href="/html/elements.html">Elements</a>
+        <a href="/html/attributes.html">Attributes</a>
+        <a href="/html/headings.html">Headings</a>
+        <a href="/html/paragraphs.html" class="active" aria-current="page">Paragraphs</a>
+        <a href="/html/styles.html">Styles</a>
+        <a href="/html/formatting.html">Formatting</a>
+        <a href="/html/comments.html">Comments</a>
+        <a href="/html/colors.html">Colors</a>
+        <a href="/html/colors/rgb.html">RGB &amp; RGBA</a>
+        <a href="/html/qua.html">Quotations</a>
+      </nav>
+    </aside>
+
+      <article class="article para-article">
+        <h1>HTML Paragraphs</h1>
+        <p>The HTML <code>&lt;p&gt;</code> element defines a paragraph.</p>
+        <p>A paragraph always starts on a new line, and browsers automatically add some white space (a margin) before and after a paragraph.</p>
+
+        <h2>Example</h2>
+<pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;</code></pre>
+
+        <h2>HTML Display</h2>
+        <p>You cannot be sure how HTML will be displayed. Large or small screens, and resized windows create different results.</p>
+        <p>With HTML, you cannot change the display by adding extra spaces or extra lines in your HTML code. The browser will automatically collapse extra spaces and ignore extra line breaks.</p>
+
+        <h3>Example</h3>
+<pre><code>&lt;p&gt;
+This paragraph
+contains a lot of lines
+in the source code,
+but the browser
+ignores it.
+&lt;/p&gt;
+
+&lt;p&gt;
+This paragraph
+contains         a lot of spaces
+in the source         code,
+but the        browser
+ignores it.
+&lt;/p&gt;</code></pre>
+
+        <h2>HTML Horizontal Rules</h2>
+        <p>The <code>&lt;hr&gt;</code> tag defines a thematic break in an HTML page, often shown as a horizontal rule. It separates content or introduces a change of topic.</p>
+
+        <h3>Example</h3>
+<pre><code>&lt;h1&gt;This is heading 1&lt;/h1&gt;
+&lt;p&gt;This is some text.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;This is heading 2&lt;/h2&gt;
+&lt;p&gt;This is some other text.&lt;/p&gt;
+&lt;hr&gt;</code></pre>
+        <p>The <code>&lt;hr&gt;</code> tag is an empty element (no closing tag).</p>
+
+        <h2>HTML Line Breaks</h2>
+        <p>The HTML <code>&lt;br&gt;</code> element defines a line break. Use it for a new line without starting a new paragraph.</p>
+
+        <h3>Example</h3>
+<pre><code>&lt;p&gt;This is&lt;br&gt;a paragraph&lt;br&gt;with line breaks.&lt;/p&gt;</code></pre>
+        <p>The <code>&lt;br&gt;</code> tag is an empty element (no closing tag).</p>
+
+        <h2>The Poem Problem</h2>
+        <p>This poem will display on a single line if written inside a normal paragraph, because the browser collapses whitespace.</p>
+
+        <h3>Solution — The HTML <code>&lt;pre&gt;</code> Element</h3>
+        <p>The HTML <code>&lt;pre&gt;</code> element defines preformatted text, preserving spaces and line breaks and using a fixed-width font.</p>
+
+        <h3>Example</h3>
+<pre><code>&lt;pre&gt;
+  My Bonnie lies over the ocean.
+
+  My Bonnie lies over the sea.
+
+  My Bonnie lies over the ocean.
+
+  Oh, bring back my Bonnie to me.
+&lt;/pre&gt;</code></pre>
+
+        <h2>HTML Tag Reference</h2>
+        <table class="mini-table" aria-label="Paragraph-related tags">
+          <thead><tr><th>Tag</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>&lt;p&gt;</code></td><td>Defines a paragraph</td></tr>
+            <tr><td><code>&lt;hr&gt;</code></td><td>Defines a thematic change</td></tr>
+            <tr><td><code>&lt;br&gt;</code></td><td>Inserts a single line break</td></tr>
+            <tr><td><code>&lt;pre&gt;</code></td><td>Defines pre-formatted text</td></tr>
+          </tbody>
+        </table>
+
+        <hr>
+        <h2>Practice: HTML Paragraphs Game</h2>
+        <section id="para-quiz" class="quiz-stage">
+          <!-- Q1: True/False -->
+          <div id="pq1" class="quiz-screen">
+            <h3>Quick Quiz 1</h3>
+            <div class="intro-quiz" aria-live="polite">
+              <div class="q-card">
+                <fieldset>
+                  <legend>True or False. HTML paragraphs always start on a new line.</legend>
+                  <div class="q-choices">
+                    <label class="q-choice"><input type="radio" name="pq1" value="true"> <span>True</span></label>
+                    <label class="q-choice"><input type="radio" name="pq1" value="false"> <span>False</span></label>
+                  </div>
+                  <div class="q-feedback" role="status" aria-live="polite"></div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2: Add a paragraph Hello World! -->
+          <div id="pq2" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 2</h3>
+            <p class="note">Use the correct HTML tag to add a paragraph with the text "Hello World!".</p>
+            <section id="phello-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">&lt;html&gt;</div>
+                <div class="code-line">&lt;body&gt;</div>
+                <div class="code-line"><span class="lslot" tabindex="0" data-accept="p-line" aria-label="p line"></span></div>
+                <div class="code-line">&lt;/body&gt;</div>
+                <div class="code-line">&lt;/html&gt;</div>
+              </div>
+              <div class="reveal-row">
+                <button type="button" class="button secondary" id="pq2-reveal">Show Answer</button>
+                <button type="button" class="button secondary" id="pq2-reset">Reset</button>
+              </div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="p-line"><code>&lt;p&gt;Hello World!&lt;/p&gt;</code></div>
+              </div>
+              <div id="pq2-score" class="link-score" aria-live="polite">Score: 0/1</div>
+            </section>
+          </div>
+
+          <!-- Q3: Cleanup with end tags -->
+          <div id="pq3" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 3</h3>
+            <p class="note">Clean up this document with proper end tags.</p>
+            <section id="cleanup-quiz" class="tags-quiz" aria-live="polite">
+              <div class="tags-board">
+                <div class="code-line">&lt;h1&gt;This is a Heading<span class="lslot" tabindex="0" data-accept="h1-close" aria-label="h1 close"></span></div>
+                <div class="code-line">&lt;p&gt;This is a paragraph.<span class="lslot" tabindex="0" data-accept="p-close" aria-label="p close"></span></div>
+              </div>
+              <div class="reveal-row">
+                <button type="button" class="button secondary" id="pq3-reveal">Show Answer</button>
+                <button type="button" class="button secondary" id="pq3-reset">Reset</button>
+              </div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="h1-close"><code>&lt;/h1&gt;</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="p-close"><code>&lt;/p&gt;</code></div>
+              </div>
+              <div id="pq3-score" class="link-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <!-- Q4: Add <hr> between heading and paragraph -->
+          <div id="pq4" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 4</h3>
+            <p class="note">Add a horizontal rule between the heading and the paragraph.</p>
+            <section id="hr-quiz" class="tags-quiz" aria-live="polite">
+              <div class="tags-board">
+                <div class="code-line">&lt;h1&gt;London&lt;/h1&gt;</div>
+                <div class="code-line"><span class="slot" tabindex="0" data-accept="hr" aria-label="hr slot"></span></div>
+                <div class="code-line">&lt;p&gt;London is the capital city of England.&lt;/p&gt;</div>
+              </div>
+              <div class="reveal-row">
+                <button type="button" class="button secondary" id="pq4-reveal">Show Answer</button>
+                <button type="button" class="button secondary" id="pq4-reset">Reset</button>
+              </div>
+              <div class="tag-choices" role="list">
+                <div class="tag" role="listitem" draggable="true" data-token="hr"><code>&lt;hr&gt;</code></div>
+              </div>
+              <div id="pq4-score" class="tags-score" aria-live="polite">Score: 0/1</div>
+            </section>
+          </div>
+
+          <!-- Q5: Add a line break -->
+          <div id="pq5" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 5</h3>
+            <p class="note">Add a line break in the middle of the paragraph:</p>
+            <section id="br-quiz" class="tags-quiz" aria-live="polite">
+              <div class="tags-board">
+                <div class="code-line">&lt;p&gt;My Bonnie lies <span class="slot" tabindex="0" data-accept="br" aria-label="br slot"></span> over the ocean.&lt;/p&gt;</div>
+              </div>
+              <div class="reveal-row">
+                <button type="button" class="button secondary" id="pq5-reveal">Show Answer</button>
+                <button type="button" class="button secondary" id="pq5-reset">Reset</button>
+              </div>
+              <div class="tag-choices" role="list">
+                <div class="tag" role="listitem" draggable="true" data-token="br"><code>&lt;br&gt;</code></div>
+              </div>
+              <div id="pq5-score" class="tags-score" aria-live="polite">Score: 0/1</div>
+            </section>
+          </div>
+
+          <!-- Done screen -->
+          <div id="pq-done" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>All Quizzes Completed</h3>
+            <div class="done-card">
+              <p><strong>Great!</strong> You passed all HTML paragraphs quizzes.</p>
+              <p><button type="button" class="button" id="pq-restart">Restart</button></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section video-section">
+          <h2>Video Tutorial</h2>
+          <p>See paragraphs, line breaks, and text flow explained in <a href="https://www.youtube.com/watch?v=pQN-pnXPaVg" target="_blank" rel="noopener">freeCodeCamp.org's HTML Full Course</a>—jump to about 30 minutes for the relevant chapter.</p>
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/pQN-pnXPaVg" title="HTML Full Course - Build a Website Tutorial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <script defer src="/assets/paragraphs-quiz.js"></script>
+
+        <!-- Comments Section -->
+        <div id="comments-section"></div>
+      </article>
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+</html>

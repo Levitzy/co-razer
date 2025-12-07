@@ -1,0 +1,102 @@
+﻿<header class="sticky top-0 z-50 w-full bg-dark-panel/80 backdrop-blur-lg border-b border-dark-border" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <!-- Brand Logo -->
+      <a class="flex items-center gap-3 hover:opacity-80 transition-opacity group" href="/" aria-label="Co.Razer - Home">
+        <img class="w-8 h-8 lg:w-10 lg:h-10 rounded-full shadow-lg ring-2 ring-brand/20 group-hover:ring-brand/50 transition-all" src="/assets/logo.png" alt="Co.Razer logo - Modern web development learning platform" onerror="this.style.display='none'" width="40" height="40" loading="eager">
+        <span class="text-lg lg:text-xl font-bold bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">Co.Razer</span>
+      </a>
+
+      <!-- Mobile Menu Toggle & Auth -->
+      <div class="lg:hidden flex items-center gap-2">
+        <a id="mobileAuthBtn" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl bg-gradient-to-r from-brand to-accent text-dark-bg font-bold text-sm hover:scale-105 transition-all" href="/login.html" aria-label="Login">
+          <span aria-hidden="true">🔑</span>
+          <span>Login</span>
+        </a>
+        
+        <a id="mobileUserBtn" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl border border-dark-border text-white font-semibold text-sm hover:border-brand transition-all" href="/dashboard.html" aria-label="Account" style="display: none;">
+          <span aria-hidden="true">👤</span>
+        </a>
+        
+        <button class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-dark-panel border border-dark-border text-white hover:border-brand transition-all" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+          <span class="text-xl" aria-hidden="true">☰</span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-4" aria-label="Main navigation" id="main-nav">
+        <div class="flex items-center gap-2 px-4 py-2 rounded-2xl bg-gradient-to-br from-brand/5 to-accent/5 border border-dark-border">
+          <a class="group inline-flex items-center gap-2 px-4 py-2 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all" href="/html/introduction.html" data-nav="HTML" aria-label="Learn HTML fundamentals">
+            <span class="text-xl group-hover:scale-110 transition-transform" aria-hidden="true">📝</span>
+            <span class="font-semibold">HTML</span>
+          </a>
+          
+          <a class="group inline-flex items-center gap-2 px-4 py-2 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all" href="/css/introduction.html" data-nav="CSS" aria-label="Learn CSS styling">
+            <span class="text-xl group-hover:scale-110 transition-transform" aria-hidden="true">🎨</span>
+            <span class="font-semibold">CSS</span>
+          </a>
+          
+          <a class="group inline-flex items-center gap-2 px-4 py-2 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all" href="/ai/index.html" data-nav="AI" aria-label="AI-powered coding assistant">
+            <span class="text-xl group-hover:scale-110 transition-transform" aria-hidden="true">🤖</span>
+            <span class="font-semibold">AI</span>
+          </a>
+          
+          <a class="group inline-flex items-center gap-2 px-4 py-2 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all" href="/playground/index.html" data-nav="Playground" aria-label="Interactive code playground">
+            <span class="text-xl group-hover:scale-110 transition-transform" aria-hidden="true">⚡</span>
+            <span class="font-semibold">Playground</span>
+          </a>
+        </div>
+
+        <!-- Auth Buttons (show when not logged in) -->
+        <div id="authButtons" class="flex items-center gap-3">
+          <a class="inline-flex items-center gap-2 px-5 py-2 rounded-xl text-white font-semibold border-2 border-dark-border hover:border-brand transition-all hover:bg-white/5" href="/login.html" aria-label="Login to your account">
+            <span aria-hidden="true">🔑</span>
+            <span>Login</span>
+          </a>
+          
+          <a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand to-accent text-dark-bg font-bold transition-all hover:scale-105 hover:shadow-lg hover:shadow-brand/50" href="/register.html" aria-label="Create new account">
+            <span aria-hidden="true">✨</span>
+            <span>Sign Up</span>
+          </a>
+        </div>
+
+        <!-- User Menu (show when logged in) -->
+        <div id="userMenu" class="flex items-center gap-3" style="display: none !important;">
+          <!-- Notification Bell -->
+          <div class="relative">
+            <button id="notificationBell" class="inline-flex items-center gap-2 px-3 py-2 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all relative" aria-label="View notifications">
+              <span aria-hidden="true" style="font-size: 1.25rem;">🔔</span>
+              <span id="notificationCount" class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold rounded-full px-1.5 py-0.5 min-w-[1.25rem] text-center" style="display: none; font-size: 0.625rem;">0</span>
+            </button>
+            <!-- Notification Dropdown -->
+            <div id="notificationDropdown" class="absolute right-0 mt-2 w-80 bg-dark-panel border-2 border-dark-border rounded-xl shadow-2xl z-50" style="display: none; max-height: 400px; overflow-y: auto;">
+              <div class="p-4 border-b border-dark-border flex justify-between items-center">
+                <h3 class="font-bold text-white">Notifications</h3>
+                <button id="markAllRead" class="text-xs text-brand hover:text-accent transition-colors">Mark all read</button>
+              </div>
+              <div id="notificationList" class="py-2">
+                <!-- Notifications will be loaded here -->
+              </div>
+            </div>
+          </div>
+
+          <a class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all" href="/dashboard.html" aria-label="View your dashboard">
+            <div id="headerProfilePicture" style="width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #6ee7ff 0%, #64f5a1 100%); display: flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: bold; color: #0b0d10; overflow: hidden;">👤</div>
+            <span class="font-semibold" id="headerUsername">Account</span>
+          </a>
+          
+          <button onclick="handleLogout()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-gray-300 hover:text-white hover:bg-red-500/10 hover:border-red-500/50 border-2 border-dark-border transition-all" aria-label="Logout">
+            <span aria-hidden="true">🚪</span>
+            <span class="font-semibold">Logout</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+
+
+

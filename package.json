@@ -1,0 +1,29 @@
+{
+  "name": "co-razer-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Co.Razer — HTML & CSS documentation site scaffold (Node.js + Express)",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "npm run build:css && node server.js",
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./public/assets/tailwind.css --minify",
+    "watch:css": "npx tailwindcss -i ./src/input.css -o ./public/assets/tailwind.css --watch"
+  },
+  "dependencies": {
+    "@google/genai": "^1.23.0",
+    "bcrypt": "^6.0.0",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^17.2.3",
+    "express": "^4.19.2",
+    "express-session": "^1.18.2",
+    "marked": "^16.4.0",
+    "mongodb": "^6.20.0",
+    "multer": "^2.0.2",
+    "sharp": "^0.34.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.16"
+  }
+}

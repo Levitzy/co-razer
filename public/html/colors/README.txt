@@ -1,0 +1,1 @@
+Reserved for future HTML Colors subpages (e.g., names, values).

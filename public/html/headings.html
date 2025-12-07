@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Master HTML headings with comprehensive examples. Learn h1-h6 tags, semantic structure, accessibility, and SEO best practices with interactive tutorials.">
+  <meta name="keywords" content="HTML headings, h1, h2, h3, h4, h5, h6, semantic HTML, accessibility, SEO, heading hierarchy">
+  <meta name="author" content="Co.Razer Documentation Team">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HTML Headings - Master Semantic Structure">
+  <meta property="og:description" content="Master HTML headings with comprehensive examples and interactive tutorials. Learn h1-h6 tags, semantic structure, and accessibility.">
+  <meta property="og:url" content="https://co-razer.com/html/headings.html">
+  
+  <title>HTML Headings - Master Semantic Structure | Co.Razer Docs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/basics.css">
+  <link rel="stylesheet" href="/assets/headings.css">
+  <link rel="canonical" href="https://co-razer.com/html/headings.html">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#6ee7ff',
+            accent: '#64f5a1',
+            'dark-bg': '#0b0d10',
+            'dark-panel': '#11151a',
+            'dark-border': '#1e2630',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "HTML Headings - Master Semantic Structure",
+    "description": "Master HTML headings with comprehensive examples and interactive tutorials",
+    "author": {
+      "@type": "Organization",
+      "name": "Co.Razer Documentation Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Co.Razer",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "/assets/logo.png"
+      }
+    },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://co-razer.com/html/headings.html"
+    }
+  }
+  </script>
+  
+  <script defer src="/assets/app.js"></script>
+  <script defer src="/assets/comments.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main id="main-content" class="container docs">
+    <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false" aria-label="Toggle HTML documentation navigation">
+      <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+      <span class="sidebar-toggle__label">HTML Docs</span>
+    </button>
+
+    <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+      <h3 id="docs-nav-heading">HTML Tutorial</h3>
+      <nav aria-label="HTML tutorial navigation">
+        <a href="/html/introduction.html">Introduction</a>
+        <a href="/html/editors.html">Editors</a>
+        <a href="/html/basics.html">Basics</a>
+        <a href="/html/elements.html">Elements</a>
+        <a href="/html/attributes.html">Attributes</a>
+        <a href="/html/headings.html" class="active" aria-current="page">Headings</a>
+        <a href="/html/paragraphs.html">Paragraphs</a>
+        <a href="/html/styles.html">Styles</a>
+        <a href="/html/formatting.html">Formatting</a>
+        <a href="/html/comments.html">Comments</a>
+        <a href="/html/colors.html">Colors</a>
+        <a href="/html/colors/rgb.html">RGB &amp; RGBA</a>
+        <a href="/html/qua.html">Quotations</a>
+      </nav>
+    </aside>
+
+      <article class="article headings-article">
+        <h1>HTML Headings</h1>
+        <p>HTML headings are titles or subtitles that you want to display on a webpage.</p>
+
+        <h2>Example</h2>
+<pre><code>Heading 1
+Heading 2
+Heading 3
+Heading 4
+Heading 5
+Heading 6</code></pre>
+
+        <h2>HTML Headings</h2>
+        <p>HTML headings are defined with the <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> tags.</p>
+        <p><code>&lt;h1&gt;</code> defines the most important heading. <code>&lt;h6&gt;</code> defines the least important heading.</p>
+
+        <h3>Example</h3>
+<pre><code>&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;</code></pre>
+        <p class="note">Browsers automatically add some white space (a margin) before and after a heading.</p>
+
+        <h2>Headings Are Important</h2>
+        <p>Search engines use the headings to index the structure and content of your web pages.</p>
+        <p>Users often skim a page by its headings. It is important to use headings to show the document structure.</p>
+        <p><code>&lt;h1&gt;</code> headings should be used for main headings, followed by <code>&lt;h2&gt;</code> headings, then the less important <code>&lt;h3&gt;</code>, and so on.</p>
+        <p class="note">Use HTML headings for headings only. Don't use headings to make text BIG or bold.</p>
+
+        <h2>Bigger Headings</h2>
+        <p>Each HTML heading has a default size. However, you can specify the size for any heading with the <code>style</code> attribute, using the CSS <code>font-size</code> property:</p>
+        <h3>Example</h3>
+<pre><code>&lt;h1 style="font-size:60px;"&gt;Heading 1&lt;/h1&gt;</code></pre>
+
+        <hr>
+        <h2>Practice: HTML Headings Game</h2>
+        <section id="headings-quiz" class="quiz-stage">
+          <!-- Q1: Largest heading selection (DnD) -->
+          <div id="hq1" class="quiz-screen">
+            <h3>Quick Quiz 1</h3>
+            <section class="dnd-quiz" aria-live="polite">
+              <p class="note">Which of the following headers is the largest and most important header?</p>
+              <div class="dnd-choices" role="list">
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<h1>"><code>&lt;h1&gt;</code></div>
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<h2>"><code>&lt;h2&gt;</code></div>
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<h3>"><code>&lt;h3&gt;</code></div>
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<h4>"><code>&lt;h4&gt;</code></div>
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<h5>"><code>&lt;h5&gt;</code></div>
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<h6>"><code>&lt;h6&gt;</code></div>
+              </div>
+              <div class="dnd-answer-wrap">
+                <div id="hq1-drop" class="dnd-drop" tabindex="0" aria-label="Answer drop zone">Drop answer here</div>
+              </div>
+              <div id="hq1-result" class="dnd-result" aria-live="polite"></div>
+              <div class="reveal-row">
+                <button type="button" class="button secondary" id="hq1-reveal">Show Answer</button>
+                <button type="button" class="button secondary" id="hq1-reset">Reset</button>
+              </div>
+            </section>
+          </div>
+
+          <!-- Q2: Add heading London (drag h1 open/close) -->
+          <div id="hq2" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 2</h3>
+            <p class="note">Use the correct HTML tag to add a heading with the text "London".</p>
+            <section id="london-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">
+                  <span class="lslot" tabindex="0" data-accept="h1-open" aria-label="h1 open slot"></span>
+                  <span>London</span>
+                  <span class="lslot" tabindex="0" data-accept="h1-close" aria-label="h1 close slot"></span>
+                </div>
+                <div class="code-line">&lt;p&gt;London is the capital city of England.&lt;/p&gt;</div>
+              </div>
+              <div class="reveal-row">
+                <button type="button" class="button secondary" id="hq2-reveal">Show Answer</button>
+                <button type="button" class="button secondary" id="hq2-reset">Reset</button>
+              </div>
+              <div class="ltag-choices" role="list" aria-label="Drag the missing parts to the blanks">
+                <div class="ltag" role="listitem" draggable="true" data-token="h1-open"><code>&lt;h1&gt;</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="h1-close"><code>&lt;/h1&gt;</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="h2-open"><code>&lt;h2&gt;</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="h2-close"><code>&lt;/h2&gt;</code></div>
+              </div>
+              <div id="hq2-score" class="link-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <!-- Q3: Add six headings Hello (ordered h1..h6) -->
+          <div id="hq3" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 3</h3>
+            <p class="note">Add six headings to the document with the text "Hello". Start with the most important heading (the largest) and end with the least important heading (the smallest).</p>
+            <section id="six-quiz" class="tags-quiz" aria-live="polite">
+              <div class="tags-board">
+                <div class="code-line">&lt;html&gt;</div>
+                <div class="code-line">&lt;body&gt;</div>
+                <div class="code-line"><span class="slot" tabindex="0" data-accept="h1-line" aria-label="h1 line"></span></div>
+                <div class="code-line"><span class="slot" tabindex="0" data-accept="h2-line" aria-label="h2 line"></span></div>
+                <div class="code-line"><span class="slot" tabindex="0" data-accept="h3-line" aria-label="h3 line"></span></div>
+                <div class="code-line"><span class="slot" tabindex="0" data-accept="h4-line" aria-label="h4 line"></span></div>
+                <div class="code-line"><span class="slot" tabindex="0" data-accept="h5-line" aria-label="h5 line"></span></div>
+                <div class="code-line"><span class="slot" tabindex="0" data-accept="h6-line" aria-label="h6 line"></span></div>
+                <div class="code-line">&lt;/body&gt;</div>
+                <div class="code-line">&lt;/html&gt;</div>
+              </div>
+              <div class="reveal-row">
+                <button type="button" class="button secondary" id="hq3-reveal">Show Answer</button>
+                <button type="button" class="button secondary" id="hq3-reset">Reset</button>
+              </div>
+              <div class="tag-choices" role="list" aria-label="Drag these headings into the blanks">
+                <div class="tag" role="listitem" draggable="true" data-token="h1-line"><code>&lt;h1&gt;Hello&lt;/h1&gt;</code></div>
+                <div class="tag" role="listitem" draggable="true" data-token="h2-line"><code>&lt;h2&gt;Hello&lt;/h2&gt;</code></div>
+                <div class="tag" role="listitem" draggable="true" data-token="h3-line"><code>&lt;h3&gt;Hello&lt;/h3&gt;</code></div>
+                <div class="tag" role="listitem" draggable="true" data-token="h4-line"><code>&lt;h4&gt;Hello&lt;/h4&gt;</code></div>
+                <div class="tag" role="listitem" draggable="true" data-token="h5-line"><code>&lt;h5&gt;Hello&lt;/h5&gt;</code></div>
+                <div class="tag" role="listitem" draggable="true" data-token="h6-line"><code>&lt;h6&gt;Hello&lt;/h6&gt;</code></div>
+              </div>
+              <div id="hq3-score" class="tags-score" aria-live="polite">Score: 0/6</div>
+            </section>
+          </div>
+
+          <div id="hq-done" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>All Quizzes Completed</h3>
+            <div class="done-card">
+              <p><strong>Nice!</strong> You passed all HTML headings quizzes.</p>
+              <p><button type="button" class="button" id="hq-restart">Restart</button></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section video-section">
+          <h2>Video Tutorial</h2>
+          <p>Revisit heading structure with <a href="https://www.youtube.com/watch?v=pQN-pnXPaVg" target="_blank" rel="noopener">freeCodeCamp.org's HTML Full Course</a>; around 26 minutes in you'll see a practical demo of headings and semantic hierarchy.</p>
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/pQN-pnXPaVg" title="HTML Full Course - Build a Website Tutorial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <script defer src="/assets/headings-quiz.js"></script>
+
+        <!-- Comments Section -->
+        <div id="comments-section"></div>
+      </article>
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+</html>

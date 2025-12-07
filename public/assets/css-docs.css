@@ -1,0 +1,372 @@
+:root {
+  --css-panel: rgba(15, 20, 28, 0.82);
+  --css-border: rgba(92, 130, 180, 0.28);
+}
+
+.css-article {
+  display: grid;
+  gap: clamp(18px, 1.8vw, 28px);
+}
+
+.css-article .doc-section {
+  border-radius: clamp(16px, 2vw, 22px);
+  background:
+    radial-gradient(120% 120% at 15% -10%, rgba(110, 231, 255, 0.08), transparent 65%),
+    radial-gradient(120% 120% at 100% 0%, rgba(100, 245, 161, 0.08), transparent 60%),
+    var(--css-panel);
+  box-shadow:
+    0 18px 40px rgba(4, 10, 18, 0.45),
+    inset 0 0 0 1px rgba(125, 211, 252, 0.14);
+  padding: clamp(16px, 2.6vw, 26px);
+  display: grid;
+  gap: clamp(12px, 1.5vw, 18px);
+}
+
+.css-article .doc-section h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.6vw, 1.6rem);
+}
+
+.css-article .lead {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.css-article .concept-grid {
+  display: grid;
+  gap: clamp(14px, 2vw, 22px);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.css-article .concept-card {
+  border-radius: 16px;
+  padding: clamp(14px, 2vw, 20px);
+  background: rgba(15, 25, 36, 0.55);
+  box-shadow:
+    0 14px 30px rgba(5, 10, 18, 0.42),
+    inset 0 0 0 1px rgba(110, 231, 255, 0.12);
+}
+
+.css-article .concept-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.css-article .definition-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.css-article .definition-list li {
+  position: relative;
+  padding-left: 18px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.css-article .definition-list li::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  left: 0;
+  top: 10px;
+  background: var(--link);
+  opacity: 0.75;
+}
+
+.box-model-diagram {
+  display: grid;
+  place-items: center;
+  background: rgba(12, 18, 26, 0.65);
+  border-radius: 18px;
+  box-shadow:
+    inset 0 0 0 1px rgba(125, 211, 252, 0.18),
+    inset 0 0 0 1px rgba(100, 245, 161, 0.06),
+    0 14px 26px rgba(2, 8, 16, 0.55);
+  padding: 22px;
+}
+
+.box-model-diagram .layer {
+  display: grid;
+  place-items: center;
+  border: 2px solid;
+  border-radius: 14px;
+  padding: 18px;
+  width: min(100%, 340px);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.box-model-diagram .layer + .layer {
+  margin-top: 14px;
+}
+
+.box-model-diagram .layer--content { border-color: #38bdf8; color: #38bdf8; }
+.box-model-diagram .layer--padding { border-color: #22d3ee; color: #22d3ee; }
+.box-model-diagram .layer--border { border-color: #38ef7d; color: #38ef7d; }
+.box-model-diagram .layer--margin { border-color: #fbbf24; color: #fbbf24; }
+
+.typography-showcase {
+  display: grid;
+  gap: 12px;
+  padding: clamp(16px, 2vw, 22px);
+  border-radius: 18px;
+  background: rgba(15, 25, 36, 0.45);
+  box-shadow:
+    inset 0 0 0 1px rgba(110, 231, 255, 0.12),
+    0 14px 28px rgba(5, 12, 20, 0.46);
+}
+
+.typography-showcase h3 {
+  margin: 0;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+}
+
+.flex-demo,
+.grid-demo {
+  display: grid;
+  gap: 10px;
+  padding: clamp(14px, 2vw, 20px);
+  border: 1px dashed rgba(125, 211, 252, 0.35);
+  border-radius: 16px;
+  background: rgba(14, 20, 28, 0.55);
+}
+
+.flex-demo .flex-preview {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(110, 231, 255, 0.08);
+}
+
+.flex-demo .flex-item {
+  flex: 1;
+  text-align: center;
+  padding: 12px 10px;
+  border-radius: 10px;
+  background: rgba(100, 245, 161, 0.15);
+  box-shadow: inset 0 0 0 1px rgba(100, 245, 161, 0.25);
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.grid-demo .grid-preview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(110, 231, 255, 0.08);
+}
+
+.grid-demo .grid-preview span {
+  padding: 16px 12px;
+  text-align: center;
+  border-radius: 10px;
+  background: rgba(125, 211, 252, 0.18);
+  box-shadow: inset 0 0 0 1px rgba(125, 211, 252, 0.3);
+  font-weight: 600;
+}
+
+.variables-preview {
+  display: grid;
+  gap: 10px;
+  border-radius: 16px;
+  background: rgba(15, 24, 35, 0.55);
+  padding: clamp(14px, 2vw, 20px);
+  box-shadow:
+    inset 0 0 0 1px rgba(110, 231, 255, 0.12),
+    0 12px 24px rgba(5, 12, 20, 0.45);
+}
+
+.variables-preview .swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(125, 211, 252, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(125, 211, 252, 0.28);
+}
+
+.css-quiz {
+  border-radius: clamp(18px, 2.6vw, 24px);
+  padding: clamp(18px, 2.8vw, 28px);
+  background:
+    radial-gradient(140% 140% at 10% -10%, rgba(110, 231, 255, 0.12), transparent 70%),
+    radial-gradient(120% 130% at 100% 0%, rgba(100, 245, 161, 0.12), transparent 70%),
+    rgba(11, 17, 25, 0.88);
+  box-shadow:
+    0 24px 48px rgba(2, 8, 16, 0.6),
+    inset 0 0 0 1px rgba(110, 231, 255, 0.12);
+  display: grid;
+  gap: clamp(16px, 2vw, 24px);
+  position: relative;
+}
+
+.css-quiz h2 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+}
+
+.css-quiz .note {
+  margin: 0;
+  color: var(--muted);
+}
+
+.css-quiz .quiz-stage {
+  display: grid;
+  gap: clamp(12px, 1.8vw, 18px);
+}
+
+.css-quiz .quiz-stage.is-hidden {
+  display: none;
+}
+
+.css-quiz .token-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.css-quiz .drag-token {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(14, 23, 34, 0.8);
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  box-shadow: inset 0 0 0 1px rgba(125, 211, 252, 0.35);
+}
+
+.css-quiz .drag-token:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+.css-quiz .drag-token.dragging {
+  opacity: 0.6;
+  transform: scale(1.02);
+}
+
+.css-quiz .drag-token.token-used {
+  opacity: 0.45;
+}
+
+.css-quiz .drag-token code {
+  font-weight: 600;
+  color: #bae6fd;
+}
+
+.css-quiz .drop-slot {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 2px dashed rgba(125, 211, 252, 0.35);
+  background: rgba(14, 22, 34, 0.55);
+  color: var(--text);
+  text-align: center;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.18s ease;
+}
+
+.css-quiz .drop-slot.over {
+  border-color: rgba(110, 231, 255, 0.75);
+  background: rgba(110, 231, 255, 0.14);
+  transform: scale(1.02);
+}
+
+.css-quiz .drop-slot.correct {
+  border-color: rgba(100, 245, 161, 0.8);
+  background: rgba(100, 245, 161, 0.14);
+}
+
+.css-quiz .drop-slot.incorrect {
+  border-color: rgba(248, 113, 113, 0.75);
+  background: rgba(248, 113, 113, 0.14);
+}
+
+.css-quiz .quiz-score {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.css-quiz [data-role="complete"] {
+  font-weight: 600;
+  color: rgba(100, 245, 161, 0.95);
+}
+
+.css-quiz [data-role="complete"].is-hidden {
+  display: none;
+}
+
+.css-quiz .quiz-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.css-quiz .quiz-actions button {
+  border-radius: 10px;
+  background: rgba(14, 23, 34, 0.75);
+  color: var(--text);
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  box-shadow: inset 0 0 0 1px rgba(125, 211, 252, 0.36);
+}
+
+.css-quiz .quiz-actions button:hover,
+.css-quiz .quiz-actions button:focus-visible {
+  outline: none;
+  background: rgba(125, 211, 252, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(125, 211, 252, 0.72);
+}
+
+.css-quiz [data-role="quiz-done"] {
+  text-align: center;
+  display: grid;
+  gap: 10px;
+}
+
+.css-quiz [data-role="quiz-done"].is-hidden {
+  display: none;
+}
+
+.css-quiz .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+@media (max-width: 680px) {
+  .css-article .doc-section {
+    padding: 16px;
+  }
+  .css-quiz {
+    padding: 18px;
+  }
+  .css-quiz .drop-slot {
+    width: 100%;
+  }
+}

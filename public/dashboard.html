@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Co.Razer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#6ee7ff',
+                        accent: '#64f5a1',
+                        'dark-bg': '#0b0d10',
+                        'dark-panel': '#11151a',
+                        'dark-border': '#1e2630',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0b0d10;
+            color: white;
+            min-height: 100vh;
+        }
+    </style>
+    <script defer src="/assets/app.js"></script>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Loading State -->
+        <div id="loadingSection" class="text-center py-20">
+            <div class="inline-block animate-pulse">
+                <div class="w-16 h-16 bg-gradient-to-r from-brand to-accent rounded-full mx-auto mb-4 opacity-50"></div>
+                <p class="text-xl text-gray-400">Loading your dashboard...</p>
+            </div>
+        </div>
+
+        <!-- Error State -->
+        <div id="errorSection" style="display: none;"></div>
+
+        <!-- Dashboard Content -->
+        <div id="dashboardContent" style="display: none;">
+            <!-- Welcome Hero Section -->
+            <section class="relative overflow-hidden bg-gradient-to-br from-brand/10 via-dark-panel to-accent/5 border border-dark-border rounded-3xl p-8 sm:p-12 mb-8 shadow-2xl">
+                <div class="absolute inset-0 bg-gradient-to-r from-brand/5 to-accent/5 opacity-50 blur-3xl"></div>
+                
+                <div class="relative z-10 text-center">
+                    <div id="profilePictureDisplay" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full mx-auto mb-6 bg-gradient-to-br from-brand to-accent shadow-2xl ring-4 ring-brand/30 hover:ring-brand transition-all duration-300 hover:scale-105 flex items-center justify-center overflow-hidden text-5xl font-bold text-dark-bg"></div>
+                    
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 bg-gradient-to-r from-brand via-white to-accent bg-clip-text text-transparent">
+                        Welcome back, <span id="welcomeName">User</span>! 👋
+                    </h1>
+                    
+                    <p class="text-lg text-gray-300 mb-6">Manage your account and track your learning progress</p>
+                    
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <a href="/html/introduction.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 backdrop-blur-md text-white font-semibold rounded-xl border-2 border-dark-border transition-all duration-300 hover:bg-white/10 hover:border-brand hover:scale-105">
+                            <span>📝</span>
+                            <span>Continue Learning</span>
+                        </a>
+                        <a href="/playground/index.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-brand to-accent text-dark-bg font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-brand/50">
+                            <span>⚡</span>
+                            <span>Open Playground</span>
+                        </a>
+                        <button onclick="handleDashboardLogout()" class="inline-flex items-center gap-2 px-5 py-2.5 bg-red-500/10 backdrop-blur-md text-red-400 font-semibold rounded-xl border-2 border-red-500/50 transition-all duration-300 hover:bg-red-500/20 hover:border-red-500 hover:scale-105">
+                            <span>🚪</span>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Picture Card -->
+            <div class="bg-dark-panel border-2 border-dark-border rounded-2xl p-6 sm:p-8 mb-6 shadow-xl transition-all duration-300 hover:border-brand/50">
+                <h2 class="text-2xl font-bold mb-6 bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent flex items-center gap-3">
+                    <span class="text-3xl">📷</span>
+                    Profile Picture
+                </h2>
+                
+                <div class="text-center">
+                    <div id="profilePicturePreview" class="w-36 h-36 sm:w-40 sm:h-40 rounded-full mx-auto mb-6 bg-gradient-to-br from-brand to-accent shadow-2xl flex items-center justify-center overflow-hidden text-6xl font-bold text-dark-bg transition-all duration-300 hover:scale-105"></div>
+                    
+                    <input type="file" id="profilePictureInput" accept="image/*" class="hidden">
+                    
+                    <div class="flex flex-wrap justify-center gap-3 mb-3">
+                        <button onclick="document.getElementById('profilePictureInput').click()" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-brand to-accent text-dark-bg font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-brand/50">
+                            <span>📷</span>
+                            <span>Upload Photo</span>
+                        </button>
+                        <button id="removeProfilePictureBtn" style="display: none;" class="inline-flex items-center gap-2 px-6 py-3 bg-white/5 backdrop-blur-md text-white font-semibold rounded-xl border-2 border-dark-border transition-all duration-300 hover:bg-red-500/10 hover:border-red-500/50 hover:scale-105">
+                            <span>❌</span>
+                            <span>Remove Photo</span>
+                        </button>
+                    </div>
+                    
+                    <p class="text-gray-400 text-sm">Max 5MB • JPG, PNG, GIF, or WebP</p>
+                    <div id="uploadError" class="mt-4"></div>
+                </div>
+            </div>
+
+            <!-- Account Information Card -->
+            <div class="bg-dark-panel border-2 border-dark-border rounded-2xl p-6 sm:p-8 mb-6 shadow-xl transition-all duration-300 hover:border-accent/50">
+                <h2 class="text-2xl font-bold mb-6 bg-gradient-to-r from-accent to-brand bg-clip-text text-transparent flex items-center gap-3">
+                    <span class="text-3xl">👤</span>
+                    Account Information
+                </h2>
+                
+                <div class="space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-dark-border/50 transition-all duration-300 hover:bg-white/10">
+                        <div class="text-brand font-semibold mb-1 sm:mb-0 sm:min-w-[180px]">Username:</div>
+                        <div class="text-gray-200" id="userUsername">-</div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row sm:items-center p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-dark-border/50 transition-all duration-300 hover:bg-white/10">
+                        <div class="text-brand font-semibold mb-1 sm:mb-0 sm:min-w-[180px]">Email:</div>
+                        <div class="text-gray-200" id="userEmail">-</div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row sm:items-center p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-dark-border/50 transition-all duration-300 hover:bg-white/10">
+                        <div class="text-brand font-semibold mb-1 sm:mb-0 sm:min-w-[180px]">Full Name:</div>
+                        <div class="text-gray-200" id="userFullName">-</div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row sm:items-center p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-dark-border/50 transition-all duration-300 hover:bg-white/10">
+                        <div class="text-brand font-semibold mb-1 sm:mb-0 sm:min-w-[180px]">Account Created:</div>
+                        <div class="text-gray-200" id="userCreated">-</div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row sm:items-center p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-dark-border/50 transition-all duration-300 hover:bg-white/10">
+                        <div class="text-brand font-semibold mb-1 sm:mb-0 sm:min-w-[180px]">Last Login:</div>
+                        <div class="text-gray-200" id="userLastLogin">-</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My Comments Card -->
+            <div class="bg-dark-panel border-2 border-dark-border rounded-2xl p-6 sm:p-8 mb-6 shadow-xl transition-all duration-300 hover:border-brand/50">
+                <h2 class="text-2xl font-bold mb-6 bg-gradient-to-r from-brand to-purple-500 bg-clip-text text-transparent flex items-center gap-3">
+                    <span class="text-3xl">💬</span>
+                    My Comments
+                </h2>
+                
+                <div id="userComments" class="space-y-4">
+                    <p class="text-gray-400 text-center py-8">Loading your comments...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script>
+        let currentUser = null;
+
+        async function loadUserData() {
+            try {
+                const response = await fetch('/api/auth/me');
+                const data = await response.json();
+
+                if (data.success) {
+                    currentUser = data.user;
+                    const user = data.user;
+                    
+                    // Update welcome
+                    const welcomeNameEl = document.getElementById('welcomeName');
+                    if (welcomeNameEl) {
+                        welcomeNameEl.textContent = user.fullName || user.username;
+                    }
+                    
+                    // Update profile pictures
+                    updateProfilePicture(user);
+                    
+                    // Update user info
+                    const userUsernameEl = document.getElementById('userUsername');
+                    const userEmailEl = document.getElementById('userEmail');
+                    const userFullNameEl = document.getElementById('userFullName');
+                    const userCreatedEl = document.getElementById('userCreated');
+                    const userLastLoginEl = document.getElementById('userLastLogin');
+                    
+                    if (userUsernameEl) userUsernameEl.textContent = user.username;
+                    if (userEmailEl) userEmailEl.textContent = user.email;
+                    if (userFullNameEl) userFullNameEl.textContent = user.fullName || 'Not provided';
+                    if (userCreatedEl) userCreatedEl.textContent = new Date(user.createdAt).toLocaleString();
+                    if (userLastLoginEl) {
+                        userLastLoginEl.textContent = user.lastLogin 
+                            ? new Date(user.lastLogin).toLocaleString() 
+                            : 'First login';
+                    }
+                    
+                    // Show dashboard
+                    const loadingSection = document.getElementById('loadingSection');
+                    const dashboardContent = document.getElementById('dashboardContent');
+                    if (loadingSection) loadingSection.style.display = 'none';
+                    if (dashboardContent) dashboardContent.style.display = 'block';
+                    
+                    // Load user's comments
+                    loadUserComments(user.id);
+                } else {
+                    throw new Error(data.error || 'Failed to load user data');
+                }
+            } catch (error) {
+                console.error('Error loading user data:', error);
+                const loadingSection = document.getElementById('loadingSection');
+                const errorSection = document.getElementById('errorSection');
+                
+                if (loadingSection) loadingSection.style.display = 'none';
+                if (errorSection) {
+                    errorSection.innerHTML = `
+                        <div class="bg-red-500/10 border-2 border-red-500/50 rounded-2xl p-6 text-center">
+                            <div class="text-4xl mb-3">⚠️</div>
+                            <p class="text-red-400 mb-4">${error.message}</p>
+                            <a href="/login.html" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-brand to-accent text-dark-bg font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                                <span>🔑</span>
+                                <span>Please Login</span>
+                            </a>
+                        </div>
+                    `;
+                    errorSection.style.display = 'block';
+                }
+            }
+        }
+
+        function updateProfilePicture(user) {
+            const displayDiv = document.getElementById('profilePictureDisplay');
+            const previewDiv = document.getElementById('profilePicturePreview');
+            const removeBtn = document.getElementById('removeProfilePictureBtn');
+            
+            if (user.profilePicture) {
+                if (displayDiv) displayDiv.innerHTML = `<img src="${user.profilePicture}" style="width: 100%; height: 100%; object-fit: cover;" alt="${user.username}">`;
+                if (previewDiv) previewDiv.innerHTML = `<img src="${user.profilePicture}" style="width: 100%; height: 100%; object-fit: cover;" alt="${user.username}">`;
+                if (removeBtn) removeBtn.style.display = 'inline-block';
+            } else {
+                const initial = user.username.charAt(0).toUpperCase();
+                if (displayDiv) displayDiv.textContent = initial;
+                if (previewDiv) previewDiv.textContent = initial;
+                if (removeBtn) removeBtn.style.display = 'none';
+            }
+        }
+
+        async function loadUserComments(userId) {
+            try {
+                const response = await fetch(`/api/comments/user/${userId}`);
+                const data = await response.json();
+                
+                const commentsDiv = document.getElementById('userComments');
+                
+                if (data.success && data.comments.length > 0) {
+                    commentsDiv.innerHTML = data.comments.map(comment => `
+                        <div class="group p-5 bg-white/5 backdrop-blur-sm border-2 border-dark-border rounded-xl transition-all duration-300 hover:bg-white/10 hover:border-brand/50 hover:shadow-lg">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
+                                <span class="text-brand font-semibold text-sm">${comment.pageUrl}</span>
+                                <span class="text-gray-400 text-xs">${formatDate(comment.createdAt)}</span>
+                            </div>
+                            <div class="text-gray-200 mb-3 leading-relaxed">${escapeHtml(comment.content)}</div>
+                            <div class="flex items-center gap-4 text-gray-400 text-sm">
+                                <span class="flex items-center gap-1 hover:text-brand transition-colors">
+                                    <span>❤️</span>
+                                    <span>${comment.likes.length}</span>
+                                </span>
+                                <span class="flex items-center gap-1 hover:text-accent transition-colors">
+                                    <span>💬</span>
+                                    <span>${comment.replies.length} replies</span>
+                                </span>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    commentsDiv.innerHTML = '<div class="text-center py-12 text-gray-400"><div class="text-5xl mb-4">💭</div><p>You haven\'t made any comments yet.</p><p class="text-sm mt-2">Start engaging with the community!</p></div>';
+                }
+            } catch (error) {
+                console.error('Error loading comments:', error);
+                const userComments = document.getElementById('userComments');
+                if (userComments) {
+                    userComments.innerHTML = '<div class="bg-red-500/10 border border-red-500/50 rounded-xl p-4 text-center text-red-400">Failed to load comments</div>';
+                }
+            }
+        }
+
+        // Profile picture upload
+        const profilePictureInput = document.getElementById('profilePictureInput');
+        if (profilePictureInput) {
+            profilePictureInput.addEventListener('change', async (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                const uploadError = document.getElementById('uploadError');
+                if (uploadError) uploadError.innerHTML = '';
+
+                // Validate file
+                if (file.size > 5 * 1024 * 1024) {
+                    if (uploadError) uploadError.innerHTML = '<div class="bg-red-500/10 border border-red-500/50 rounded-xl p-3 text-center text-red-400 text-sm">File size must be less than 5MB</div>';
+                    return;
+                }
+
+                const formData = new FormData();
+                formData.append('profilePicture', file);
+
+                try {
+                    if (uploadError) uploadError.innerHTML = '<div class="bg-brand/10 border border-brand/50 rounded-xl p-3 text-center text-brand text-sm animate-pulse">Uploading...</div>';
+                    
+                    const response = await fetch('/api/auth/upload-profile-picture', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        if (uploadError) uploadError.innerHTML = '<div class="bg-accent/10 border border-accent/50 rounded-xl p-3 text-center text-accent text-sm">✓ Profile picture updated successfully!</div>';
+                        // Reload user data to update profile picture
+                        await loadUserData();
+                        setTimeout(() => { if (uploadError) uploadError.innerHTML = ''; }, 3000);
+                    } else {
+                        if (uploadError) uploadError.innerHTML = `<div class="bg-red-500/10 border border-red-500/50 rounded-xl p-3 text-center text-red-400 text-sm">${data.error}</div>`;
+                    }
+                } catch (error) {
+                    console.error('Upload error:', error);
+                    if (uploadError) uploadError.innerHTML = '<div class="bg-red-500/10 border border-red-500/50 rounded-xl p-3 text-center text-red-400 text-sm">Failed to upload image. Please try again.</div>';
+                }
+            });
+        }
+
+        // Remove profile picture
+        const removeProfilePictureBtn = document.getElementById('removeProfilePictureBtn');
+        if (removeProfilePictureBtn) {
+            removeProfilePictureBtn.addEventListener('click', async () => {
+                if (!confirm('Are you sure you want to remove your profile picture?')) {
+                    return;
+                }
+
+                try {
+                    const response = await fetch('/api/auth/profile-picture', {
+                        method: 'DELETE'
+                    });
+
+                    const data = await response.json();
+                    const uploadError = document.getElementById('uploadError');
+
+                    if (data.success) {
+                        await loadUserData();
+                        if (uploadError) uploadError.innerHTML = '<div class="bg-accent/10 border border-accent/50 rounded-xl p-3 text-center text-accent text-sm">✓ Profile picture removed successfully!</div>';
+                        setTimeout(() => { if (uploadError) uploadError.innerHTML = ''; }, 3000);
+                    } else {
+                        if (uploadError) uploadError.innerHTML = `<div class="bg-red-500/10 border border-red-500/50 rounded-xl p-3 text-center text-red-400 text-sm">Failed to remove profile picture: ${data.error}</div>`;
+                    }
+                } catch (error) {
+                    console.error('Remove error:', error);
+                    const uploadError = document.getElementById('uploadError');
+                    if (uploadError) uploadError.innerHTML = '<div class="bg-red-500/10 border border-red-500/50 rounded-xl p-3 text-center text-red-400 text-sm">Failed to remove profile picture</div>';
+                }
+            });
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString();
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        async function logout() {
+            // This function is handled by the header's handleLogout function
+            // Keeping it here for backward compatibility if called directly
+            if (typeof handleLogout === 'function') {
+                handleLogout();
+            } else {
+                if (!confirm('Are you sure you want to logout?')) {
+                    return;
+                }
+
+                try {
+                    const response = await fetch('/api/auth/logout', {
+                        method: 'POST'
+                    });
+                    const data = await response.json();
+
+                    if (data.success) {
+                        window.location.href = '/login.html';
+                    } else {
+                        alert('Logout failed: ' + data.error);
+                    }
+                } catch (error) {
+                    console.error('Logout error:', error);
+                    alert('Logout failed. Please try again.');
+                }
+            }
+        }
+
+        // Dashboard-specific logout function
+        async function handleDashboardLogout() {
+            if (!confirm('Are you sure you want to logout?')) {
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/auth/logout', {
+                    method: 'POST'
+                });
+                const data = await response.json();
+
+                if (data.success) {
+                    window.location.href = '/login.html';
+                } else {
+                    alert('Logout failed: ' + data.error);
+                }
+            } catch (error) {
+                console.error('Logout error:', error);
+                alert('Logout failed. Please try again.');
+            }
+        }
+
+        // Load user data when page loads
+        loadUserData();
+    </script>
+</body>
+</html>
+

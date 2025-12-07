@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Master CSS box model with comprehensive tutorials. Learn content, padding, border, margin, box-sizing, and spacing techniques with interactive examples.">
+  <meta name="keywords" content="CSS box model, padding, border, margin, box-sizing, content area, spacing, CSS layout">
+  <meta name="author" content="Co.Razer Documentation Team">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CSS Box Model - Master Element Spacing">
+  <meta property="og:description" content="Master CSS box model with comprehensive tutorials. Learn content, padding, border, margin, and box-sizing techniques.">
+  <meta property="og:url" content="https://co-razer.com/css/box-model.html">
+  
+  <title>CSS Box Model - Master Element Spacing | Co.Razer Docs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/css-docs.css">
+  <link rel="canonical" href="https://co-razer.com/css/box-model.html">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#6ee7ff',
+            accent: '#64f5a1',
+            'dark-bg': '#0b0d10',
+            'dark-panel': '#11151a',
+            'dark-border': '#1e2630',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "CSS Box Model - Master Element Spacing",
+    "description": "Master CSS box model with comprehensive tutorials and interactive examples",
+    "author": {
+      "@type": "Organization",
+      "name": "Co.Razer Documentation Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Co.Razer",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "/assets/logo.png"
+      }
+    },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://co-razer.com/css/box-model.html"
+    }
+  }
+  </script>
+  
+  <script defer src="/assets/app.js"></script>
+  <script defer src="/assets/css-quiz.js"></script>
+  <script defer src="/assets/comments.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main id="main-content" class="container docs">
+    <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false" aria-label="Toggle CSS documentation navigation">
+      <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+      <span class="sidebar-toggle__label">CSS Docs</span>
+    </button>
+
+    <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+      <h3 id="docs-nav-heading">CSS Documentation</h3>
+      <nav aria-label="CSS tutorial navigation">
+        <a href="/css/introduction.html">Introduction</a>
+        <a href="/css/selectors.html">Selectors</a>
+        <a href="/css/layout.html">Layout</a>
+        <a href="/css/box-model.html" class="active" aria-current="page">Box Model</a>
+        <a href="/css/typography.html">Typography</a>
+        <a href="/css/flexbox.html">Flexbox</a>
+        <a href="/css/grid.html">Grid</a>
+        <a href="/css/variables.html">Custom Properties</a>
+      </nav>
+    </aside>
+
+    <article class="article css-article">
+      <header>
+        <h1>CSS Box Model</h1>
+        <p class="lead">Every element on the page renders as a rectangular box. Understanding the layers of that box lets you control spacing with confidence.</p>
+      </header>
+
+      <section class="doc-section">
+        <h2>The Four Layers</h2>
+        <p>The CSS box model is composed of four concentric layers. When you add padding, borders, or margins you are growing a specific layer of the box. Adjacent vertical margins can collapse into a single value, so mind the order of your blocks.</p>
+        <div class="box-model-diagram">
+          <div class="layer layer--content">Content</div>
+          <div class="layer layer--padding">Padding</div>
+          <div class="layer layer--border">Border</div>
+          <div class="layer layer--margin">Margin</div>
+        </div>
+        <ul class="definition-list">
+          <li><strong>Content</strong> is the text, image, or interactive elements inside the box.</li>
+          <li><strong>Padding</strong> adds interior breathing room between content and the border.</li>
+          <li><strong>Border</strong> draws a visible outline around the padding.</li>
+          <li><strong>Margin</strong> creates external spacing that pushes other elements away.</li>
+        </ul>
+      </section>
+
+      <section class="doc-section">
+        <h2>Controlling Size With <code>box-sizing</code></h2>
+        <p>By default, width and height are applied to the content box. Switching to <code>box-sizing: border-box;</code> tells the browser to include padding and border in those measurements, which makes sizing more predictable.</p>
+<pre><code>*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.card {
+  width: 320px;
+  padding: 1.5rem;
+  border: 2px solid #38ef7d;
+  margin: 1rem auto;
+}</code></pre>
+        <p>With <code>border-box</code> the total rendered width of <code>.card</code> remains 320&nbsp;px even after you add padding or borders.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>Debugging The Box</h2>
+        <p>Browsers include tools to help you see the active box model for any element. Inspect an element and look for a layered preview of content, padding, border, and margin. When you are experimenting, temporary helper styles can also illuminate the layers:</p>
+<pre><code>/* Outline every layout container */
+.layout > * {
+  outline: 1px dashed rgba(125, 211, 252, 0.6);
+  outline-offset: 4px;
+}</code></pre>
+        <p>Outlining content during development makes hidden margins or uneven padding immediately noticeable. Chrome, Edge, and Firefox DevTools also reveal when margins are collapsing by shading them with a single color.</p>
+      </section>
+
+      <section class="css-quiz" id="box-model-quiz" aria-labelledby="box-model-quiz-heading">
+        <h2 id="box-model-quiz-heading">Mini Game: Build The Box</h2>
+        <p class="note">Drag each token to the matching blank. Use keyboard&nbsp;Enter to place a focused token into the first available slot.</p>
+
+        <div class="quiz-stage" data-stage="layers" tabindex="-1">
+          <h3>Stage 1 - Name The Parts</h3>
+          <p>Match the description to the correct layer of the box model.</p>
+          <ul class="definition-list">
+            <li><span class="drop-slot" data-accept="content" data-placeholder="Drop part"></span> Holds the text, images, and interactive elements.</li>
+            <li><span class="drop-slot" data-accept="padding" data-placeholder="Drop part"></span> Adds breathing room between content and the border.</li>
+            <li><span class="drop-slot" data-accept="border" data-placeholder="Drop part"></span> Draws the visual outline of the element.</li>
+            <li><span class="drop-slot" data-accept="margin" data-placeholder="Drop part"></span> Pushes surrounding elements away from the box.</li>
+          </ul>
+          <div class="token-bank">
+            <div class="drag-token" data-token="margin" data-display="<code>margin</code>"><code>margin</code> &mdash; outer spacing</div>
+            <div class="drag-token" data-token="padding" data-display="<code>padding</code>"><code>padding</code> &mdash; inner spacing</div>
+            <div class="drag-token" data-token="border" data-display="<code>border</code>"><code>border</code> &mdash; outline</div>
+            <div class="drag-token" data-token="content" data-display="<code>content</code>"><code>content</code> &mdash; core element</div>
+          </div>
+          <div class="quiz-score" data-role="score">Score: 0/4</div>
+          <div class="quiz-actions">
+            <button type="button" data-role="reset">Reset stage</button>
+          </div>
+          <p class="is-hidden" data-role="complete">Great! You identified every layer.</p>
+        </div>
+
+        <div class="quiz-stage is-hidden" data-stage="css" tabindex="-1">
+          <h3>Stage 2 - Apply The Measurements</h3>
+          <p>Complete the CSS so the total width stays consistent with <code>box-sizing: border-box;</code>.</p>
+<pre><code>.card {
+  <span class="drop-slot" data-accept="padding-line" data-placeholder="padding: ?"></span>
+  <span class="drop-slot" data-accept="border-line" data-placeholder="border: ?"></span>
+  <span class="drop-slot" data-accept="margin-line" data-placeholder="margin: ?"></span>
+  box-sizing: border-box;
+}</code></pre>
+          <div class="token-bank">
+            <div class="drag-token" data-token="padding-line" data-display="<code>padding: 1.5rem;</code>"><code>padding: 1.5rem;</code></div>
+            <div class="drag-token" data-token="margin-line" data-display="<code>margin: 1rem auto;</code>"><code>margin: 1rem auto;</code></div>
+            <div class="drag-token" data-token="border-line" data-display="<code>border: 2px solid #38ef7d;</code>"><code>border: 2px solid #38ef7d;</code></div>
+          </div>
+          <div class="quiz-score" data-role="score">Score: 0/3</div>
+          <div class="quiz-actions">
+            <button type="button" data-role="reset">Reset stage</button>
+          </div>
+          <p class="is-hidden" data-role="complete">Nice spacing! The box renders exactly as intended.</p>
+        </div>
+
+        <div class="quiz-complete is-hidden" data-role="quiz-done" aria-hidden="true">
+          <h3>You built a polished box!</h3>
+          <p>Replay the game to reinforce the concepts or move on to the next topic.</p>
+          <button type="button" class="button" data-role="restart">Play again</button>
+        </div>
+      </section>
+
+      <!-- Comments Section -->
+      <div id="comments-section"></div>
+    </article>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

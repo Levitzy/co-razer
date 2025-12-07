@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML - Text Formatting | Co.Razer Docs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="/assets/basics.css">
+    <link rel="stylesheet" href="/assets/introduction.css">
+    <link rel="stylesheet" href="/assets/formatting.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: '#6ee7ff',
+              accent: '#64f5a1',
+              'dark-bg': '#0b0d10',
+              'dark-panel': '#11151a',
+              'dark-border': '#1e2630',
+            }
+          }
+        }
+      }
+    </script>
+      <script defer src="/assets/app.js"></script>
+      <script defer src="/assets/comments.js"></script>
+    </head>
+  <body>
+    <div id="site-header"></div>
+
+    <main class="container docs">
+      <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false">
+        <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+        <span class="sidebar-toggle__label">HTML Docs</span>
+      </button>
+
+      <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+        <h3 id="docs-nav-heading">HTML Tutorial</h3>
+        <a href="/html/introduction.html">Introduction</a>
+        <a href="/html/editors.html">Editors</a>
+        <a href="/html/basics.html">Basics</a>
+        <a href="/html/elements.html">Elements</a>
+        <a href="/html/attributes.html">Attributes</a>
+        <a href="/html/headings.html">Headings</a>
+        <a href="/html/paragraphs.html">Paragraphs</a>
+        <a href="/html/styles.html">Styles</a>
+        <a href="/html/formatting.html" class="active">Formatting</a>
+        <a href="/html/comments.html">Comments</a>
+        <a href="/html/colors.html">Colors</a>
+        <a href="/html/colors/rgb.html">RGB &amp; RGBA</a>
+        <a href="/html/qua.html">Quotations</a>
+      </aside>
+
+      <article class="article format-article">
+        <h1>HTML Text Formatting</h1>
+        <p>HTML contains several elements for defining text with a special meaning.</p>
+
+        <h2>Example</h2>
+        <div class="live-demo">
+          <p><b>This text is bold</b></p>
+          <p><i>This text is italic</i></p>
+          <p>This is <sub>subscript</sub> and <sup>superscript</sup></p>
+        </div>
+
+        <h2>HTML Formatting Elements</h2>
+        <p>Formatting elements were designed to display special types of text:</p>
+        <ul>
+          <li><code>&lt;b&gt;</code> - Bold text</li>
+          <li><code>&lt;strong&gt;</code> - Important text</li>
+          <li><code>&lt;i&gt;</code> - Italic text</li>
+          <li><code>&lt;em&gt;</code> - Emphasized text</li>
+          <li><code>&lt;mark&gt;</code> - Marked text</li>
+          <li><code>&lt;small&gt;</code> - Smaller text</li>
+          <li><code>&lt;del&gt;</code> - Deleted text</li>
+          <li><code>&lt;ins&gt;</code> - Inserted text</li>
+          <li><code>&lt;sub&gt;</code> - Subscript text</li>
+          <li><code>&lt;sup&gt;</code> - Superscript text</li>
+        </ul>
+
+        <h2>HTML &lt;b&gt; and &lt;strong&gt; Elements</h2>
+        <p>The HTML <code>&lt;b&gt;</code> element defines bold text, without any extra importance.</p>
+        <h3>Example</h3>
+<pre><code>&lt;b&gt;This text is bold&lt;/b&gt;</code></pre>
+        <p>The HTML <code>&lt;strong&gt;</code> element defines text with strong importance. The content inside is typically displayed in bold.</p>
+        <h3>Example</h3>
+<pre><code>&lt;strong&gt;This text is important!&lt;/strong&gt;</code></pre>
+
+        <h2>HTML &lt;i&gt; and &lt;em&gt; Elements</h2>
+        <p>The HTML <code>&lt;i&gt;</code> element defines a part of text in an alternate voice or mood. The content inside is typically displayed in italic.</p>
+        <p class="note">Tip: The <code>&lt;i&gt;</code> tag is often used to indicate a technical term, a phrase from another language, a thought, a ship name, etc.</p>
+        <h3>Example</h3>
+<pre><code>&lt;i&gt;This text is italic&lt;/i&gt;</code></pre>
+        <p>The HTML <code>&lt;em&gt;</code> element defines emphasized text. The content inside is typically displayed in italic.</p>
+        <p class="note">Tip: A screen reader will pronounce the words in <code>&lt;em&gt;</code> with an emphasis, using verbal stress.</p>
+        <h3>Example</h3>
+<pre><code>&lt;em&gt;This text is emphasized&lt;/em&gt;</code></pre>
+
+        <h2>HTML &lt;small&gt; Element</h2>
+        <p>The HTML <code>&lt;small&gt;</code> element defines smaller text:</p>
+        <h3>Example</h3>
+<pre><code>&lt;small&gt;This is some smaller text.&lt;/small&gt;</code></pre>
+
+        <h2>HTML &lt;mark&gt; Element</h2>
+        <p>The HTML <code>&lt;mark&gt;</code> element defines text that should be marked or highlighted:</p>
+        <h3>Example</h3>
+<pre><code>&lt;p&gt;Do not forget to buy &lt;mark&gt;milk&lt;/mark&gt; today.&lt;/p&gt;</code></pre>
+
+        <h2>HTML &lt;del&gt; and &lt;ins&gt; Elements</h2>
+        <p>The HTML <code>&lt;del&gt;</code> element defines text that has been deleted from a document. Browsers will usually strike a line through deleted text:</p>
+        <h3>Example</h3>
+<pre><code>&lt;p&gt;My favorite color is &lt;del&gt;blue&lt;/del&gt; red.&lt;/p&gt;</code></pre>
+        <p>The HTML <code>&lt;ins&gt;</code> element defines text that has been inserted into a document. Browsers will usually underline inserted text:</p>
+        <h3>Example</h3>
+<pre><code>&lt;p&gt;My favorite color is &lt;del&gt;blue&lt;/del&gt; &lt;ins&gt;red&lt;/ins&gt;.&lt;/p&gt;</code></pre>
+
+        <h2>HTML &lt;sub&gt; and &lt;sup&gt; Elements</h2>
+        <p>The HTML <code>&lt;sub&gt;</code> element defines subscript text. Subscript text can be used for chemical formulas, like H<sub>2</sub>O.</p>
+        <h3>Example</h3>
+<pre><code>&lt;p&gt;This is &lt;sub&gt;subscripted&lt;/sub&gt; text.&lt;/p&gt;</code></pre>
+        <p>The HTML <code>&lt;sup&gt;</code> element defines superscript text. Superscript text can be used for footnotes, like WWW<sup>[1]</sup>.</p>
+        <h3>Example</h3>
+<pre><code>&lt;p&gt;This is &lt;sup&gt;superscripted&lt;/sup&gt; text.&lt;/p&gt;</code></pre>
+
+        <h2>HTML Text Formatting Elements</h2>
+        <table class="mini-table" aria-label="Formatting tags">
+          <thead><tr><th>Tag</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>&lt;b&gt;</code></td><td>Defines bold text</td></tr>
+            <tr><td><code>&lt;em&gt;</code></td><td>Defines emphasized text</td></tr>
+            <tr><td><code>&lt;i&gt;</code></td><td>Alternate voice or mood (italic)</td></tr>
+            <tr><td><code>&lt;small&gt;</code></td><td>Defines smaller text</td></tr>
+            <tr><td><code>&lt;strong&gt;</code></td><td>Defines important text</td></tr>
+            <tr><td><code>&lt;sub&gt;</code></td><td>Defines subscripted text</td></tr>
+            <tr><td><code>&lt;sup&gt;</code></td><td>Defines superscripted text</td></tr>
+            <tr><td><code>&lt;ins&gt;</code></td><td>Defines inserted text</td></tr>
+            <tr><td><code>&lt;del&gt;</code></td><td>Defines deleted text</td></tr>
+            <tr><td><code>&lt;mark&gt;</code></td><td>Defines marked/highlighted text</td></tr>
+          </tbody>
+        </table>
+
+        <hr>
+        <h2>Practice: Text Formatting Game</h2>
+        <section id="fmt-quiz" class="quiz-stage">
+          <!-- Q1 DnD -->
+          <div id="fq1" class="quiz-screen">
+            <h3>Quick Quiz 1</h3>
+            <section class="dnd-quiz" aria-live="polite">
+              <p class="note">Question: Two of the following HTML elements makes the text bold, which two?</p>
+              <div class="dnd-choices" role="list">
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<em> and <b>"><code>&lt;em&gt; and &lt;b&gt;</code></div>
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<strong> and <b>"><code>&lt;strong&gt; and &lt;b&gt;</code></div>
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<big> and <b>"><code>&lt;big&gt; and &lt;b&gt;</code></div>
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<mark> and <b>"><code>&lt;mark&gt; and &lt;b&gt;</code></div>
+              </div>
+              <div class="dnd-answer-wrap">
+                <div id="fq1-drop" class="dnd-drop" tabindex="0" aria-label="Answer drop zone">Drop answer here</div>
+              </div>
+              <div id="fq1-result" class="dnd-result" aria-live="polite"></div>
+            </section>
+          </div>
+
+          <!-- Q2: strong around degradation -->
+          <div id="fq2" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 2</h3>
+            <p class="note">Add extra importance to the word "degradation" in the paragraph below.</p>
+            <section id="degrade-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">&lt;p&gt;</div>
+                <div class="code-line">WWF's mission is to stop the <span class="lslot" tabindex="0" data-accept="strong-open" aria-label="strong open"></span>degradation<span class="lslot" tabindex="0" data-accept="strong-close" aria-label="strong close"></span> of our</div>
+                <div class="code-line">planet's natural environment.</div>
+                <div class="code-line">&lt;/p&gt;</div>
+              </div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="strong-open"><code>&lt;strong&gt;</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="strong-close"><code>&lt;/strong&gt;</code></div>
+              </div>
+              <div id="fq2-score" class="link-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <!-- Q3: emphasize metropolitan -->
+          <div id="fq3" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 3</h3>
+            <p class="note">Emphasize the word "metropolitan" in the text below.</p>
+            <section id="metro-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">&lt;h1&gt;Tokyo&lt;/h1&gt;</div>
+                <div class="code-line">&lt;p&gt;</div>
+                <div class="code-line">Tokyo is the capital of Japan,</div>
+                <div class="code-line">the most populous <span class="lslot" tabindex="0" data-accept="em-open" aria-label="em open"></span>metropolitan<span class="lslot" tabindex="0" data-accept="em-close" aria-label="em close"></span></div>
+                <div class="code-line">area in the world.</div>
+                <div class="code-line">&lt;/p&gt;</div>
+              </div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="em-open"><code>&lt;em&gt;</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="em-close"><code>&lt;/em&gt;</code></div>
+              </div>
+              <div id="fq3-score" class="link-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <!-- Q4: highlight FUN -->
+          <div id="fq4" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 4</h3>
+            <p class="note">Highlight the word "FUN" in the text below.</p>
+            <section id="mark-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">&lt;p&gt;</div>
+                <div class="code-line">HTML is <span class="lslot" tabindex="0" data-accept="mark-open" aria-label="mark open"></span>FUN<span class="lslot" tabindex="0" data-accept="mark-close" aria-label="mark close"></span> to learn!</div>
+                <div class="code-line">&lt;/p&gt;</div>
+              </div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="mark-open"><code>&lt;mark&gt;</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="mark-close"><code>&lt;/mark&gt;</code></div>
+              </div>
+              <div id="fq4-score" class="link-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <!-- Q5: subscript 2 in H2O -->
+          <div id="fq5" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 5</h3>
+            <p class="note">Apply subscript formatting to the number "2" in the text below.</p>
+            <section id="sub-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">&lt;p&gt;</div>
+                <div class="code-line">H<span class="lslot" tabindex="0" data-accept="sub-open" aria-label="sub open"></span>2<span class="lslot" tabindex="0" data-accept="sub-close" aria-label="sub close"></span>O is the scientific term for water.</div>
+                <div class="code-line">&lt;/p&gt;</div>
+              </div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="sub-open"><code>&lt;sub&gt;</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="sub-close"><code>&lt;/sub&gt;</code></div>
+              </div>
+              <div id="fq5-score" class="link-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <!-- Q6: delete blue -->
+          <div id="fq6" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 6</h3>
+            <p class="note">Add a line through (strikeout) the letters "blue" in the text below.</p>
+            <section id="del-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">&lt;p&gt;</div>
+                <div class="code-line">My favorite color is <span class="lslot" tabindex="0" data-accept="del-open" aria-label="del open"></span>blue<span class="lslot" tabindex="0" data-accept="del-close" aria-label="del close"></span> red.</div>
+                <div class="code-line">&lt;/p&gt;</div>
+              </div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="del-open"><code>&lt;del&gt;</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="del-close"><code>&lt;/del&gt;</code></div>
+              </div>
+              <div id="fq6-score" class="link-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <div id="fq-done" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>All Quizzes Completed</h3>
+            <div class="done-card">
+              <p><strong>Well done!</strong> You passed all HTML formatting quizzes.</p>
+              <p><button type="button" class="button" id="fq-restart">Restart</button></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section video-section">
+          <h2>Video Tutorial</h2>
+          <p>Dive deeper into emphasis, strong text, and inline semantics with <a href="https://www.youtube.com/watch?v=pQN-pnXPaVg" target="_blank" rel="noopener">freeCodeCamp.org's HTML Full Course</a>—the formatting segment appears around the 35-minute mark.</p>
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/pQN-pnXPaVg" title="HTML Full Course - Build a Website Tutorial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <script defer src="/assets/formatting-quiz.js"></script>
+
+        <!-- Comments Section -->
+        <div id="comments-section"></div>
+      </article>
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+  </html>

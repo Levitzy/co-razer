@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Master HTML & CSS with comprehensive, interactive tutorials. Learn modern web development with hands-on examples, quizzes, and AI-powered assistance. Perfect for beginners and experienced developers.">
+  <meta name="keywords" content="HTML tutorial, CSS tutorial, web development, frontend, coding, programming, HTML5, CSS3, responsive design, web design">
+  <meta name="author" content="Co.Razer Documentation Team">
+  <meta name="theme-color" content="#6ee7ff">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://co-razer.com/">
+  <meta property="og:title" content="Co.Razer - HTML & CSS Documentation">
+  <meta property="og:description" content="Master HTML & CSS with comprehensive, interactive tutorials. Learn modern web development with hands-on examples and AI assistance.">
+  <meta property="og:image" content="/assets/logo.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://co-razer.com/">
+  <meta property="twitter:title" content="Co.Razer - HTML & CSS Documentation">
+  <meta property="twitter:description" content="Master HTML & CSS with comprehensive, interactive tutorials. Learn modern web development with hands-on examples and AI assistance.">
+  <meta property="twitter:image" content="/assets/logo.png">
+
+  <title>Co.Razer - HTML & CSS Documentation | Learn Web Development</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="preload" href="/assets/logo.png" as="image">
+  <link rel="canonical" href="https://co-razer.com/">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#6ee7ff',
+            accent: '#64f5a1',
+            'dark-bg': '#0b0d10',
+            'dark-panel': '#11151a',
+            'dark-border': '#1e2630',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Co.Razer",
+    "description": "HTML & CSS Documentation and Learning Platform",
+    "url": "https://co-razer.com",
+    "logo": "/assets/logo.png",
+    "sameAs": [
+      "https://www.w3schools.com",
+      "https://gemini.google.com"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Free HTML and CSS tutorials"
+    }
+  }
+  </script>
+  
+  <script defer src="/assets/app.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main id="main-content" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <section class="hero relative overflow-hidden bg-gradient-to-br from-brand/10 via-dark-panel to-accent/5 border border-dark-border rounded-3xl p-8 sm:p-12 lg:p-16 my-8 shadow-2xl" role="banner">
+      <!-- Animated background effect -->
+      <div class="absolute inset-0 bg-gradient-to-r from-brand/5 to-accent/5 opacity-50 blur-3xl"></div>
+      
+      <div class="relative z-10 text-center">
+        <img class="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-3xl mx-auto mb-6 shadow-2xl ring-2 ring-brand/30 hover:ring-brand transition-all duration-300 hover:scale-105" src="/assets/logo.png" alt="Co.Razer logo - Modern web development learning platform" onerror="this.style.display='none'" loading="eager" width="120" height="120">
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-brand via-white to-accent bg-clip-text text-transparent animate-pulse">
+          Co.Razer Documentation
+        </h1>
+        
+        <p class="text-lg sm:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+          Master HTML & CSS with comprehensive, interactive tutorials. Learn modern web development with hands-on examples, quizzes, and AI-powered assistance.
+        </p>
+        
+        <nav class="flex flex-wrap justify-center gap-4" aria-label="Learning paths navigation">
+          <a class="group inline-flex items-center gap-3 px-6 py-3.5 bg-gradient-to-r from-brand to-accent text-dark-bg font-bold rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-brand/50 border-2 border-transparent" href="/html/introduction.html" aria-label="Start learning HTML fundamentals">
+            <span class="text-2xl group-hover:scale-110 transition-transform" aria-hidden="true">📝</span>
+            <span>Start HTML</span>
+          </a>
+          
+          <a class="group inline-flex items-center gap-3 px-6 py-3.5 bg-gradient-to-r from-accent to-brand text-dark-bg font-bold rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-accent/50 border-2 border-transparent" href="/css/introduction.html" aria-label="Start learning CSS styling">
+            <span class="text-2xl group-hover:scale-110 transition-transform" aria-hidden="true">🎨</span>
+            <span>Start CSS</span>
+          </a>
+          
+          <a class="group inline-flex items-center gap-3 px-6 py-3.5 bg-white/5 backdrop-blur-md text-white font-semibold rounded-2xl border-2 border-dark-border transition-all duration-300 hover:bg-white/10 hover:border-brand hover:scale-105 hover:shadow-lg" href="/ai/index.html" aria-label="Open AI-powered coding assistant">
+            <span class="text-2xl group-hover:scale-110 transition-transform" aria-hidden="true">🤖</span>
+            <span>AI Guide</span>
+          </a>
+          
+          <a class="group inline-flex items-center gap-3 px-6 py-3.5 bg-white/5 backdrop-blur-md text-white font-semibold rounded-2xl border-2 border-dark-border transition-all duration-300 hover:bg-white/10 hover:border-accent hover:scale-105 hover:shadow-lg" href="/playground/index.html" aria-label="Open interactive code playground">
+            <span class="text-2xl group-hover:scale-110 transition-transform" aria-hidden="true">⚡</span>
+            <span>Playground</span>
+          </a>
+        </nav>
+
+      </div>
+    </section>
+
+    <section class="my-16" aria-labelledby="features-heading">
+      <h2 id="features-heading" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">
+        What You'll Learn
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8" role="list">
+        <article class="group relative bg-dark-panel border-2 border-dark-border rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 overflow-hidden" role="listitem">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand to-accent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="text-5xl mb-6" aria-hidden="true">📄</div>
+          
+          <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-brand transition-colors">HTML Fundamentals</h3>
+          
+          <p class="text-gray-400 mb-6 leading-relaxed">Master semantic HTML5 elements, forms, accessibility, and modern markup patterns. Build solid foundations for responsive web development with hands-on examples and interactive quizzes.</p>
+          
+          <ul class="space-y-3 mb-8 text-gray-300">
+            <li class="flex items-center gap-3">
+              <span class="text-brand">✓</span>
+              <span>Semantic HTML5 elements</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-brand">✓</span>
+              <span>Forms and validation</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-brand">✓</span>
+              <span>Accessibility best practices</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-brand">✓</span>
+              <span>SEO optimization</span>
+            </li>
+          </ul>
+          
+          <a class="inline-flex items-center gap-2 text-brand font-semibold group-hover:gap-4 transition-all" href="/html/introduction.html" aria-label="Explore comprehensive HTML tutorials">
+            <span>Explore HTML</span>
+            <span class="text-xl">→</span>
+          </a>
+        </article>
+        
+        <article class="group relative bg-dark-panel border-2 border-dark-border rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:border-accent hover:shadow-2xl hover:shadow-accent/20 overflow-hidden" role="listitem">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-brand opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="text-5xl mb-6" aria-hidden="true">🎨</div>
+          
+          <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-accent transition-colors">CSS Mastery</h3>
+          
+          <p class="text-gray-400 mb-6 leading-relaxed">Create stunning layouts with Flexbox, Grid, and modern CSS techniques. Learn responsive design, animations, and performance optimization with practical examples.</p>
+          
+          <ul class="space-y-3 mb-8 text-gray-300">
+            <li class="flex items-center gap-3">
+              <span class="text-accent">✓</span>
+              <span>Flexbox & CSS Grid</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-accent">✓</span>
+              <span>Responsive design</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-accent">✓</span>
+              <span>CSS animations</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-accent">✓</span>
+              <span>Performance optimization</span>
+            </li>
+          </ul>
+          
+          <a class="inline-flex items-center gap-2 text-accent font-semibold group-hover:gap-4 transition-all" href="/css/introduction.html" aria-label="Explore comprehensive CSS tutorials">
+            <span>Explore CSS</span>
+            <span class="text-xl">→</span>
+          </a>
+        </article>
+        
+        <article class="group relative bg-dark-panel border-2 border-dark-border rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 overflow-hidden" role="listitem">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="text-5xl mb-6" aria-hidden="true">🤖</div>
+          
+          <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-brand transition-colors">AI-Powered Learning</h3>
+          
+          <p class="text-gray-400 mb-6 leading-relaxed">Get instant, personalized help with our AI Coding Assistant. Ask specific questions about HTML and CSS and receive detailed, runnable code examples and explanations.</p>
+          
+          <ul class="space-y-3 mb-8 text-gray-300">
+            <li class="flex items-center gap-3">
+              <span class="text-brand">✓</span>
+              <span>Instant code help</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-brand">✓</span>
+              <span>Personalized explanations</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-brand">✓</span>
+              <span>Code debugging assistance</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-brand">✓</span>
+              <span>Best practice recommendations</span>
+            </li>
+          </ul>
+          
+          <a class="inline-flex items-center gap-2 text-brand font-semibold group-hover:gap-4 transition-all" href="/ai/index.html" aria-label="Open AI-powered coding assistant">
+            <span>Open AI Guide</span>
+            <span class="text-xl">→</span>
+          </a>
+        </article>
+        
+        <article class="group relative bg-dark-panel border-2 border-dark-border rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:border-accent hover:shadow-2xl hover:shadow-accent/20 overflow-hidden" role="listitem">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-400 to-accent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="text-5xl mb-6" aria-hidden="true">⚡</div>
+          
+          <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-accent transition-colors">Interactive Playground</h3>
+          
+          <p class="text-gray-400 mb-6 leading-relaxed">Practice coding in real-time with our interactive playground. Experiment with HTML and CSS, see instant results, and build projects without leaving your browser.</p>
+          
+          <ul class="space-y-3 mb-8 text-gray-300">
+            <li class="flex items-center gap-3">
+              <span class="text-accent">✓</span>
+              <span>Live code editor</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-accent">✓</span>
+              <span>Instant preview</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-accent">✓</span>
+              <span>Project templates</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-accent">✓</span>
+              <span>Code sharing</span>
+            </li>
+          </ul>
+          
+          <a class="inline-flex items-center gap-2 text-accent font-semibold group-hover:gap-4 transition-all" href="/playground/index.html" aria-label="Open interactive code playground">
+            <span>Open Playground</span>
+            <span class="text-xl">→</span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="my-20 p-8 lg:p-12 bg-gradient-to-br from-brand/5 via-dark-panel to-accent/5 border-2 border-dark-border rounded-3xl text-center" aria-labelledby="partnership-heading">
+      <h2 id="partnership-heading" class="text-3xl sm:text-4xl font-bold mb-8 bg-gradient-to-r from-white via-brand to-accent bg-clip-text text-transparent">
+        Powered by Industry Leaders
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto" role="list">
+        <div class="group p-6 bg-dark-panel/50 backdrop-blur-md border-2 border-dark-border rounded-2xl transition-all duration-300 hover:border-brand hover:bg-dark-panel hover:shadow-lg hover:shadow-brand/10" role="listitem">
+          <div class="text-2xl font-bold text-brand mb-3 group-hover:scale-110 transition-transform">W3Schools</div>
+          <p class="text-gray-400">Comprehensive web development tutorials and references</p>
+        </div>
+        
+        <div class="group p-6 bg-dark-panel/50 backdrop-blur-md border-2 border-dark-border rounded-2xl transition-all duration-300 hover:border-accent hover:bg-dark-panel hover:shadow-lg hover:shadow-accent/10" role="listitem">
+          <div class="text-2xl font-bold text-accent mb-3 group-hover:scale-110 transition-transform">Gemini AI</div>
+          <p class="text-gray-400">Advanced AI assistance for coding questions and solutions</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
+
+
+
+

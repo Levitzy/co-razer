@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Master CSS fundamentals with comprehensive tutorials. Learn selectors, cascade, specificity, modern layout techniques, and responsive design with hands-on examples.">
+  <meta name="keywords" content="CSS tutorial, CSS3, cascading style sheets, web design, responsive design, flexbox, grid, selectors, specificity">
+  <meta name="author" content="Co.Razer Documentation Team">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CSS Introduction - Learn CSS Fundamentals">
+  <meta property="og:description" content="Master CSS fundamentals with comprehensive tutorials. Learn selectors, cascade, specificity, and modern layout techniques.">
+  <meta property="og:url" content="https://co-razer.com/css/introduction.html">
+  
+  <title>CSS Introduction - Learn CSS Fundamentals | Co.Razer Docs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/css-docs.css">
+  <link rel="canonical" href="https://co-razer.com/css/introduction.html">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#6ee7ff',
+            accent: '#64f5a1',
+            'dark-bg': '#0b0d10',
+            'dark-panel': '#11151a',
+            'dark-border': '#1e2630',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "CSS Introduction - Learn CSS Fundamentals",
+    "description": "Master CSS fundamentals with comprehensive tutorials and modern techniques",
+    "author": {
+      "@type": "Organization",
+      "name": "Co.Razer Documentation Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Co.Razer",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "/assets/logo.png"
+      }
+    },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://co-razer.com/css/introduction.html"
+    }
+  }
+  </script>
+  
+  <script defer src="/assets/app.js"></script>
+  <script defer src="/assets/comments.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main id="main-content" class="container docs">
+    <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false" aria-label="Toggle CSS documentation navigation">
+      <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+      <span class="sidebar-toggle__label">CSS Docs</span>
+    </button>
+
+    <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+      <h3 id="docs-nav-heading">CSS Documentation</h3>
+      <nav aria-label="CSS tutorial navigation">
+        <a href="/css/introduction.html" class="active" aria-current="page">Introduction</a>
+        <a href="/css/selectors.html">Selectors</a>
+        <a href="/css/layout.html">Layout</a>
+        <a href="/css/box-model.html">Box Model</a>
+        <a href="/css/typography.html">Typography</a>
+        <a href="/css/flexbox.html">Flexbox</a>
+        <a href="/css/grid.html">Grid</a>
+        <a href="/css/variables.html">Custom Properties</a>
+      </nav>
+    </aside>
+
+    <article class="article css-article">
+      <header>
+        <h1>Getting Started with CSS</h1>
+        <p class="lead">Cascading Style Sheets (CSS) describe how elements render in the browser. Every color, layout, typeface, and animation you see on the web is ultimately driven by a cascade of CSS rules.</p>
+      </header>
+
+      <section class="doc-section">
+        <h2>Rules, Selectors, and Declarations</h2>
+        <p>A CSS rule matches elements with a selector and changes their presentation with declarations. Declarations are property/value pairs wrapped in curly braces.</p>
+<pre><code>/* A basic rule */
+button.primary {
+  background: #2563eb;
+  color: #f8fafc;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+}</code></pre>
+        <p>Keep related rules in dedicated files. Naming files after components&mdash;<code>buttons.css</code>, <code>navigation.css</code>, <code>forms.css</code>&mdash;helps you reason about growing projects.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>Understanding the Cascade</h2>
+        <p>The “cascade” in CSS resolves conflicts when multiple rules target the same element. The browser evaluates three pillars:</p>
+        <div class="concept-grid">
+          <div class="concept-card">
+            <h3>Specificity</h3>
+            <p>More specific selectors win. Inline styles outrank IDs, IDs outrank classes, and classes outrank type selectors.</p>
+          </div>
+          <div class="concept-card">
+            <h3>Source Order</h3>
+            <p>If specificity is tied, the rule that appears last in the stylesheet wins. Keep overrides near the code they adjust.</p>
+          </div>
+          <div class="concept-card">
+            <h3>Importance</h3>
+            <p><code>!important</code> beats specificity, but use it sparingly. Well-structured CSS rarely needs it.</p>
+          </div>
+        </div>
+        <p>Properties such as <code>color</code> and <code>font-family</code> are inherited. Layout properties like <code>margin</code> and <code>padding</code> are not. Knowing what inherits prevents unnecessary repetition.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>Authoring Workflow</h2>
+        <ul class="definition-list">
+          <li><strong>Organize modules:</strong> Split styles into focused files and import them in a predictable order.</li>
+          <li><strong>Use the browser inspector:</strong> DevTools exposes the cascade, computed values, and layout overlays, which are invaluable for debugging.</li>
+          <li><strong>Favor modern units:</strong> Relative units such as <code>rem</code>, <code>vw</code>, and <code>ch</code> adapt to user settings and different devices.</li>
+          <li><strong>Keep accessibility in mind:</strong> Check color contrast, respect prefers-reduced-motion, and leverage semantic HTML before styling.</li>
+        </ul>
+        <p>Now that you know the anatomy of a CSS rule and the rules of the cascade, continue with <a href="/css/selectors.html">selectors</a> to learn how to target elements precisely.</p>
+      </section>
+
+      <!-- Comments Section -->
+      <div id="comments-section"></div>
+    </article>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

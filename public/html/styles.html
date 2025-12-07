@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML - Styles | Co.Razer Docs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="/assets/basics.css">
+    <link rel="stylesheet" href="/assets/introduction.css">
+    <link rel="stylesheet" href="/assets/styles-lesson.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: '#6ee7ff',
+              accent: '#64f5a1',
+              'dark-bg': '#0b0d10',
+              'dark-panel': '#11151a',
+              'dark-border': '#1e2630',
+            }
+          }
+        }
+      }
+    </script>
+      <script defer src="/assets/app.js"></script>
+      <script defer src="/assets/comments.js"></script>
+    </head>
+  <body>
+    <div id="site-header"></div>
+
+    <main class="container docs">
+      <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false">
+        <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+        <span class="sidebar-toggle__label">HTML Docs</span>
+      </button>
+
+      <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+        <h3 id="docs-nav-heading">HTML Tutorial</h3>
+        <a href="/html/introduction.html">Introduction</a>
+        <a href="/html/editors.html">Editors</a>
+        <a href="/html/basics.html">Basics</a>
+        <a href="/html/elements.html">Elements</a>
+        <a href="/html/attributes.html">Attributes</a>
+        <a href="/html/headings.html">Headings</a>
+        <a href="/html/paragraphs.html">Paragraphs</a>
+        <a href="/html/styles.html" class="active">Styles</a>
+        <a href="/html/formatting.html">Formatting</a>
+        <a href="/html/comments.html">Comments</a>
+        <a href="/html/colors.html">Colors</a>
+        <a href="/html/colors/rgb.html">RGB &amp; RGBA</a>
+        <a href="/html/qua.html">Quotations</a>
+      </aside>
+
+      <article class="article styles-article">
+        <h1>HTML Styles</h1>
+        <p>The HTML <code>style</code> attribute is used to add styles to an element, such as color, font, size, and more.</p>
+
+        <h2>Example</h2>
+        <div class="live-demo">
+          <p style="color:red;">I am Red</p>
+          <p style="color:blue;">I am Blue</p>
+          <p style="font-size: 200%;">I am Big</p>
+        </div>
+<pre><code>&lt;p style="color:red;"&gt;I am Red&lt;/p&gt;
+&lt;p style="color:blue;"&gt;I am Blue&lt;/p&gt;
+&lt;p style="font-size:200%;"&gt;I am Big&lt;/p&gt;</code></pre>
+
+        <h2>The HTML Style Attribute</h2>
+        <p>Setting the style of an HTML element can be done with the <code>style</code> attribute.</p>
+        <p>The HTML <code>style</code> attribute has the following syntax:</p>
+<pre><code>&lt;tagname style="property:value;"&gt;</code></pre>
+        <p>The property is a CSS property. The value is a CSS value. You will learn more about CSS later in this tutorial.</p>
+
+        <h2>Background Color</h2>
+        <p>The CSS <code>background-color</code> property defines the background color for an HTML element.</p>
+        <h3>Example</h3>
+        <p>Set the background color for a page to powderblue:</p>
+<pre><code>&lt;body style="background-color:powderblue;"&gt;
+
+&lt;h1&gt;This is a heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;/body&gt;</code></pre>
+        <h3>Example</h3>
+        <p>Set background color for two different elements:</p>
+<pre><code>&lt;body&gt;
+
+&lt;h1 style="background-color:powderblue;"&gt;This is a heading&lt;/h1&gt;
+&lt;p style="background-color:tomato;"&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;/body&gt;</code></pre>
+
+        <h2>Text Color</h2>
+        <p>The CSS <code>color</code> property defines the text color for an HTML element:</p>
+<pre><code>&lt;h1 style="color:blue;"&gt;This is a heading&lt;/h1&gt;
+&lt;p style="color:red;"&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+
+        <h2>Fonts</h2>
+        <p>The CSS <code>font-family</code> property defines the font to be used for an HTML element:</p>
+<pre><code>&lt;h1 style="font-family:verdana;"&gt;This is a heading&lt;/h1&gt;
+&lt;p style="font-family:courier;"&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+
+        <h2>Text Size</h2>
+        <p>The CSS <code>font-size</code> property defines the text size for an HTML element:</p>
+<pre><code>&lt;h1 style="font-size:300%;"&gt;This is a heading&lt;/h1&gt;
+&lt;p style="font-size:160%;"&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+
+        <h2>Text Alignment</h2>
+        <p>The CSS <code>text-align</code> property defines the horizontal text alignment for an HTML element:</p>
+<pre><code>&lt;h1 style="text-align:center;"&gt;Centered Heading&lt;/h1&gt;
+&lt;p style="text-align:center;"&gt;Centered paragraph.&lt;/p&gt;</code></pre>
+
+        <h2>Chapter Summary</h2>
+        <ul>
+          <li>Use the <code>style</code> attribute for styling HTML elements</li>
+          <li>Use <code>background-color</code> for background color</li>
+          <li>Use <code>color</code> for text colors</li>
+          <li>Use <code>font-family</code> for text fonts</li>
+          <li>Use <code>font-size</code> for text sizes</li>
+          <li>Use <code>text-align</code> for text alignment</li>
+        </ul>
+
+        <hr>
+        <h2>Practice: HTML Styles Game</h2>
+        <section id="styles-quiz" class="quiz-stage">
+          <!-- Q1: Drag-and-drop background color syntax -->
+          <div id="sq1" class="quiz-screen">
+            <h3>Quick Quiz 1</h3>
+            <section class="dnd-quiz" aria-live="polite">
+              <p class="note">Drag the correct markup to set the background color of the document.</p>
+              <div class="dnd-choices" role="list">
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<body style='background-color:pink;'>"><code>&lt;body style='background-color:pink;'&gt;</code></div>
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<body background-color='pink;'>"><code>&lt;body background-color='pink;'&gt;</code></div>
+                <div class="dnd-choice" role="listitem" draggable="true" data-value="<body style='bgcolor:pink;'>"><code>&lt;body style='bgcolor:pink;'&gt;</code></div>
+              </div>
+              <div class="dnd-answer-wrap">
+                <div id="sq1-drop" class="dnd-drop" tabindex="0" aria-label="Answer drop zone">Drop answer here</div>
+              </div>
+              <div id="sq1-result" class="dnd-result" aria-live="polite"></div>
+              <div class="reveal-row">
+                <button type="button" class="button secondary" id="sq1-reveal">Show Answer</button>
+                <button type="button" class="button secondary" id="sq1-reset">Reset</button>
+              </div>
+            </section>
+          </div>
+
+          <!-- Q2: Set color blue -->
+          <div id="sq2" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 2</h3>
+            <p class="note">Use the correct HTML attribute, and CSS, to set the color of the paragraph to "blue".</p>
+            <section id="color-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">&lt;p <span class="lslot" tabindex="0" data-accept="style-attr" aria-label="style attribute"></span>=<span class="lslot" tabindex="0" data-accept="color-blue" aria-label="color blue value"></span>&gt;This is a paragraph.&lt;/p&gt;</div>
+              </div>
+              <div class="reveal-row"><button type="button" class="button secondary" id="sq2-reveal">Show Answer</button> <button type="button" class="button secondary" id="sq2-reset">Reset</button></div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="style-attr"><code>style</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="color-blue"><code>"color:blue;"</code></div>
+              </div>
+              <div id="sq2-score" class="link-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <!-- Q3: font-family courier -->
+          <div id="sq3" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 3</h3>
+            <p class="note">Use CSS to set the font of the paragraph to "courier".</p>
+            <section id="font-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">&lt;p <span class="lslot" tabindex="0" data-accept="style-attr" aria-label="style attribute"></span>=<span class="lslot" tabindex="0" data-accept="font-courier" aria-label="font value"></span>&gt;This is a paragraph.&lt;/p&gt;</div>
+              </div>
+              <div class="reveal-row"><button type="button" class="button secondary" id="sq3-reveal">Show Answer</button> <button type="button" class="button secondary" id="sq3-reset">Reset</button></div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="style-attr"><code>style</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="font-courier"><code>"font-family:courier;"</code></div>
+              </div>
+              <div id="sq3-score" class="link-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <!-- Q4: text-align center paragraph -->
+          <div id="sq4" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 4</h3>
+            <p class="note">Use CSS to center align the paragraph.</p>
+            <section id="alignp-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">&lt;p <span class="lslot" tabindex="0" data-accept="style-attr" aria-label="style attribute"></span>=<span class="lslot" tabindex="0" data-accept="align-center" aria-label="text-align value"></span>&gt;This is a paragraph.&lt;/p&gt;</div>
+              </div>
+              <div class="reveal-row"><button type="button" class="button secondary" id="sq4-reveal">Show Answer</button> <button type="button" class="button secondary" id="sq4-reset">Reset</button></div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="style-attr"><code>style</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="align-center"><code>"text-align:center;"</code></div>
+              </div>
+              <div id="sq4-score" class="link-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <!-- Q5: font-size 50px paragraph -->
+          <div id="sq5" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 5</h3>
+            <p class="note">Use CSS to set the text size to 50 pixels.</p>
+            <section id="size-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">&lt;p <span class="lslot" tabindex="0" data-accept="style-attr" aria-label="style attribute"></span>=<span class="lslot" tabindex="0" data-accept="size-50" aria-label="font-size value"></span>&gt;This is a paragraph.&lt;/p&gt;</div>
+              </div>
+              <div class="reveal-row"><button type="button" class="button secondary" id="sq5-reveal">Show Answer</button> <button type="button" class="button secondary" id="sq5-reset">Reset</button></div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="style-attr"><code>style</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="size-50"><code>"font-size:50px;"</code></div>
+              </div>
+              <div id="sq5-score" class="link-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <!-- Q6: set body background yellow -->
+          <div id="sq6" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 6</h3>
+            <p class="note">Use CSS to set the background color of the document to yellow.</p>
+            <section id="bgdoc-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">&lt;html&gt;</div>
+                <div class="code-line">&lt;body <span class="lslot" tabindex="0" data-accept="style-attr" aria-label="style attribute"></span>=<span class="lslot" tabindex="0" data-accept="bg-yellow" aria-label="bg yellow"></span>&gt;</div>
+                <div class="code-line">&lt;h1&gt;This is a heading&lt;/h1&gt;</div>
+                <div class="code-line">&lt;p&gt;This is a paragraph.&lt;/p&gt;</div>
+                <div class="code-line">&lt;/body&gt;</div>
+                <div class="code-line">&lt;/html&gt;</div>
+              </div>
+              <div class="reveal-row"><button type="button" class="button secondary" id="sq6-reveal">Show Answer</button> <button type="button" class="button secondary" id="sq6-reset">Reset</button></div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="style-attr"><code>style</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="bg-yellow"><code>"background-color:yellow;"</code></div>
+              </div>
+              <div id="sq6-score" class="link-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <!-- Q7: center align the document -->
+          <div id="sq7" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>Quick Quiz 7</h3>
+            <p class="note">Use CSS to center align the document.</p>
+            <section id="centerdoc-quiz" class="link-quiz" aria-live="polite">
+              <div class="link-board">
+                <div class="code-line">&lt;html&gt;</div>
+                <div class="code-line">&lt;body <span class="lslot" tabindex="0" data-accept="style-attr" aria-label="style attribute"></span>=<span class="lslot" tabindex="0" data-accept="align-center" aria-label="text align"></span>&gt;</div>
+                <div class="code-line">&lt;h1&gt;This is a heading&lt;/h1&gt;</div>
+                <div class="code-line">&lt;p&gt;This is a paragraph.&lt;/p&gt;</div>
+                <div class="code-line">&lt;/body&gt;</div>
+                <div class="code-line">&lt;/html&gt;</div>
+              </div>
+              <div class="reveal-row"><button type="button" class="button secondary" id="sq7-reveal">Show Answer</button> <button type="button" class="button secondary" id="sq7-reset">Reset</button></div>
+              <div class="ltag-choices" role="list">
+                <div class="ltag" role="listitem" draggable="true" data-token="style-attr"><code>style</code></div>
+                <div class="ltag" role="listitem" draggable="true" data-token="align-center"><code>"text-align:center;"</code></div>
+              </div>
+              <div id="sq7-score" class="link-score" aria-live="polite">Score: 0/2</div>
+            </section>
+          </div>
+
+          <!-- Done screen -->
+          <div id="sq-done" class="quiz-screen is-hidden" aria-hidden="true" inert>
+            <h3>All Quizzes Completed</h3>
+            <div class="done-card">
+              <p><strong>Great!</strong> You passed all HTML styles quizzes.</p>
+              <p><button type="button" class="button" id="sq-restart">Restart</button></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section video-section">
+          <h2>Video Tutorial</h2>
+          <p>Learn more about inline styling and modern CSS in <a href="https://www.youtube.com/watch?v=yfoY53QXEnI" target="_blank" rel="noopener">Traversy Media's CSS Crash Course for Absolute Beginners</a>.</p>
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/yfoY53QXEnI" title="CSS Crash Course for Absolute Beginners" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <script defer src="/assets/styles-quiz.js"></script>
+
+        <!-- Comments Section -->
+        <div id="comments-section"></div>
+      </article>
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS - Typography | Co.Razer Docs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/css-docs.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#6ee7ff',
+            accent: '#64f5a1',
+            'dark-bg': '#0b0d10',
+            'dark-panel': '#11151a',
+            'dark-border': '#1e2630',
+          }
+        }
+      }
+    }
+  </script>
+  <script defer src="/assets/app.js"></script>
+  <script defer src="/assets/css-quiz.js"></script>
+  <script defer src="/assets/comments.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container docs">
+    <button class="sidebar-toggle" type="button" aria-controls="page-sidebar" aria-expanded="false">
+      <span class="sidebar-toggle__icon" aria-hidden="true">&#9776;</span>
+      <span class="sidebar-toggle__label">CSS Docs</span>
+    </button>
+
+    <aside id="page-sidebar" class="sidebar" aria-labelledby="docs-nav-heading" tabindex="-1">
+      <h3 id="docs-nav-heading">CSS Docs</h3>
+      <a href="/css/introduction.html">Introduction</a>
+      <a href="/css/selectors.html">Selectors</a>
+      <a href="/css/layout.html">Layout</a>
+      <a href="/css/box-model.html">Box Model</a>
+      <a href="/css/typography.html">Typography</a>
+      <a href="/css/flexbox.html">Flexbox</a>
+      <a href="/css/grid.html">Grid</a>
+      <a href="/css/variables.html">Custom Properties</a>
+    </aside>
+
+    <article class="article css-article">
+      <header>
+        <h1>CSS Typography</h1>
+        <p class="lead">Typography sets the voice of your interface. Use font stacks, rhythm, and weight to create hierarchy that feels intentional.</p>
+      </header>
+
+      <section class="doc-section">
+        <h2>Choosing a Font Stack</h2>
+        <p>Define resilient font stacks that fall back gracefully. Modern systems ship with high quality sans-serif and serif fonts you can lean on before loading custom typefaces. Pair the stack with <code>font-display: swap</code> when using web fonts so text stays readable while fonts download.</p>
+        <div class="typography-showcase" style="font-family: &quot;Inter&quot;, &quot;Segoe UI&quot;, Roboto, sans-serif;">
+          <h3>Typography Preview</h3>
+          <p>Readable paragraphs start with a base size around 16&nbsp;px and a comfortable line height of roughly 1.5. Mixing weights draws attention without needing extra colors.</p>
+          <p style="font-weight: 600; letter-spacing: 0.04em;">This line uses a semi-bold weight with a touch of letter-spacing for emphasis.</p>
+        </div>
+<pre><code>body {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}</code></pre>
+      </section>
+
+      <section class="doc-section">
+        <h2>Scale And Rhythm</h2>
+        <p>Use relative units like <code>rem</code> so type scales with user preferences. Fluid sizing with <code>clamp()</code> eases transitions between mobile and desktop, while consistent line-height keeps blocks readable. Set a comfortable measure by capping paragraph width in characters.</p>
+<pre><code>h1 {
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  line-height: 1.1;
+}
+
+p {
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: 1.6;
+  max-width: 65ch;
+}</code></pre>
+        <p>Think in "characters per line": 60-75 characters maintains flow for long-form content.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>Weight, Style, And Letter-Spacing</h2>
+        <p>Adjust <code>font-weight</code> and <code>font-style</code> to create a visual hierarchy. For uppercase or wide headings, add gentle <code>letter-spacing</code> to prevent crowding. Variable fonts expose finer weight granularity; when available, choose numeric weights (e.g. <code>font-weight: 480;</code>).</p>
+<pre><code>.eyebrow {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(125, 211, 252, 0.9);
+}</code></pre>
+        <p>Limit the number of distinct font sizes on a page to keep typography cohesive. Lean on CSS custom properties to describe typography scales so updates remain consistent.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>Readability And Accessibility</h2>
+        <ul class="definition-list">
+          <li><strong>Contrast:</strong> Meet WCAG contrast ratios (4.5:1 for body copy, 3:1 for large text). Tools like DevTools' color picker confirm compliance.</li>
+          <li><strong>Spacing:</strong> Give interactive elements enough line-height and padding so they remain tappable on touch devices.</li>
+          <li><strong>Motion preferences:</strong> Honor <code>@media (prefers-reduced-motion)</code> by disabling elaborate text animations for users who request it.</li>
+          <li><strong>Language support:</strong> When serving multilingual sites, ensure your font stack includes fonts that cover required glyphs or defines fallbacks per writing system.</li>
+        </ul>
+        <p>Thoughtful typography respects user settings, devices, and accessibility needs as much as visual polish.</p>
+      </section>
+
+      <section class="css-quiz" id="typography-quiz" aria-labelledby="typography-quiz-heading">
+        <h2 id="typography-quiz-heading">Mini Game: Typeset The Page</h2>
+        <p class="note">Drag tokens into the blanks to configure a balanced type system.</p>
+
+        <div class="quiz-stage" data-stage="foundations" tabindex="-1">
+          <h3>Stage 1 - Base Styles</h3>
+          <p>Complete the base typography rules for body text.</p>
+<pre><code>body {
+  <span class="drop-slot" data-accept="family-line" data-placeholder="font-family: ?"></span>
+  <span class="drop-slot" data-accept="size-line" data-placeholder="font-size: ?"></span>
+  <span class="drop-slot" data-accept="line-line" data-placeholder="line-height: ?"></span>
+}</code></pre>
+          <div class="token-bank">
+            <div class="drag-token" data-token="family-line" data-display="<code>font-family: &quot;Inter&quot;, &quot;Segoe UI&quot;, sans-serif;</code>"><code>font-family: "Inter", "Segoe UI", sans-serif;</code></div>
+            <div class="drag-token" data-token="size-line" data-display="<code>font-size: clamp(1rem, 1.2vw, 1.125rem);</code>"><code>font-size: clamp(1rem, 1.2vw, 1.125rem);</code></div>
+            <div class="drag-token" data-token="line-line" data-display="<code>line-height: 1.6;</code>"><code>line-height: 1.6;</code></div>
+          </div>
+          <div class="quiz-score" data-role="score">Score: 0/3</div>
+          <div class="quiz-actions">
+            <button type="button" data-role="reset">Reset stage</button>
+          </div>
+          <p class="is-hidden" data-role="complete">Solid foundation! Your paragraphs will read smoothly.</p>
+        </div>
+
+        <div class="quiz-stage is-hidden" data-stage="hierarchy" tabindex="-1">
+          <h3>Stage 2 - Typographic Hierarchy</h3>
+          <p>Assign the properties that best match each description.</p>
+          <ul class="definition-list">
+            <li><span class="drop-slot" data-accept="weight-bold" data-placeholder="Drop property"></span> makes headings stand out on desktop screens.</li>
+            <li><span class="drop-slot" data-accept="style-italic" data-placeholder="Drop property"></span> gives pull quotes a softer voice.</li>
+            <li><span class="drop-slot" data-accept="spacing-wide" data-placeholder="Drop property"></span> keeps uppercase eyebrow text readable.</li>
+          </ul>
+          <div class="token-bank">
+            <div class="drag-token" data-token="weight-bold" data-display="<code>font-weight: 700;</code>"><code>font-weight: 700;</code></div>
+            <div class="drag-token" data-token="style-italic" data-display="<code>font-style: italic;</code>"><code>font-style: italic;</code></div>
+            <div class="drag-token" data-token="spacing-wide" data-display="<code>letter-spacing: 0.08em;</code>"><code>letter-spacing: 0.08em;</code></div>
+          </div>
+          <div class="quiz-score" data-role="score">Score: 0/3</div>
+          <div class="quiz-actions">
+            <button type="button" data-role="reset">Reset stage</button>
+          </div>
+          <p class="is-hidden" data-role="complete">Beautiful! Your hierarchy is expressive and consistent.</p>
+        </div>
+
+        <div class="quiz-complete is-hidden" data-role="quiz-done" aria-hidden="true">
+          <h3>You typeset a clean page!</h3>
+          <p>Keep practicing to make typography second nature.</p>
+          <button type="button" class="button" data-role="restart">Play again</button>
+        </div>
+      </section>
+
+      <!-- Comments Section -->
+      <div id="comments-section"></div>
+    </article>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
